@@ -3,8 +3,9 @@ pragma solidity ^0.8.20;
 
 import "@erc721a/ERC721A.sol";
 import "openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
+import "openzeppelin-contracts/contracts/access/Ownable.sol";
 //_packedOwnershipOf(tokenId); == previous ownership
-contract tesouroDireto is ERC721A{
+contract tesouroDireto is ERC721A, Ownable(msg.sender){
     //-----------------------------------------------------------------------------------------------
     //
     //                                      ERRORS

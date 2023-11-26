@@ -1,3 +1,54 @@
+# How te use CCIP emission Tesouro Direto:
+
+- Scritp de deploy do NFT já setado a destinação. O comando de run inserimos a netowork de destinaçao que os parametros estão em uma enum do contrato Helpers chamada SupportedNetworks. Portando a network "0" seria a sepolia.
+
+`forge script ./script/TesouroCrossChain.s.sol:DeployDestination -vvv --broadcast --rpc-url sepolia --sig "run(uint8)" -- 0 --verify -vvvv`
+
+- Deve aparecer a seguinte mensagem:
+
+== Logs ==
+  Address of mercadoAberto:  0x77EA4eAA6558B14bD1d40E523E4f6Fea2bf0e6dA
+  tesourodireto deployed on  Ethereum Sepolia with address:  0x156CeEd4A2B6b726cc6c72689183473A93B5C531
+  DestinationMinter deployed on  Ethereum Sepolia with address:  0x929168FE46576F5d51c552fe145ec918D8D25d04
+  Minter role granted to:  0x929168FE46576F5d51c552fe145ec918D8D25d04
+Script ran successfully.
+
+`forge script ./script/TesouroCrossChain.s.sol:DeploySource -vvv --broadcast --rpc-url mumbai --sig "run(uint8)" -- 4 --verify -vvvv`
+
+- Meu endereço:
+
+== Logs ==
+  SourceMinter deployed on  Polygon Mumbai with address:  0x94673693c7C8201FACAdE1ff62AB3f760A81DF1d
+
+- Devemos financiar o contrato acima com LINK para funcionar as proximas etapas.
+
+
+- Agora conseguimos mintar o NFT que está na sepolia pela mumbai, com o seguinte comando:
+
+`forge script ./script/TesouroCrossChain.s.sol:Mint -vvv --broadcast --rpc-url mumbai --sig "run(address,uint8,address,uint8)" -- 0x7Ad4A4049885e3c3eCa359fC32Cd84730b5CBbbD 0 0xF5bBA6D41bf6aE69598C0A8aF5cf8fFDB0933A69 1`
+
+- Verifique:
+`forge verify-contract 0x94673693c7C8201FACAdE1ff62AB3f760A81DF1d src/cross-chain-nft-minter/SourceMinterTesouro.sol:SourceMinter --chain-id 80001 --num-of-optimizations 1000000 --watch --constructor-args $(cast abi-encode "constructor(address,address)" 0x70499c328e1E2a3c41108bd3730F6670a44595D1 0x326C977E6efc84E512bB9C30f76E30c160eD06FB) \--etherscan-api-key EBDF8WC3ADE16T9YUD9Y81F8TJJF52FG7E`
+
+- O contrato e os parametros:
+https://mumbai.polygonscan.com/address/0x94673693c7C8201FACAdE1ff62AB3f760A81DF1d#writeContract
+
+receive: 0x929168FE46576F5d51c552fe145ec918D8D25d04
+
+payfeesIn:
+1
+
+![exemplo](image-1.png)
+
+
+https://mumbai.polygonscan.com/tx/0xd1368c001ff1aa7cc39d73e7cd69e8aa0684a77bb4047ffb9f8b40a37d7b790f
+
+- pegue o hash da sua operacao igual ao exemplo acima e insira no CCIP Explorer:
+
+https://ccip.chain.link/msg/0x0c3e0c8f5c282c03f8f1274ad2cbcd39902330b13a7b87efd2e0c466f7ab3e86
+
+- Feito isso veja o sua comprovacao de emissao entre a blockchain Mumbai e mint na Sepolia e no futuro sera na rede do DREX. Portanto, interoperabilidade entre blockchain publica e privada.
+
 # Foundry Template [![Open in Gitpod][gitpod-badge]][gitpod] [![Github Actions][gha-badge]][gha] [![Foundry][foundry-badge]][foundry] [![License: MIT][license-badge]][license]
 
 [gitpod]: https://gitpod.io/#https://github.com/PaulRBerg/foundry-template
