@@ -45,6 +45,8 @@ contract Tesouro is Test {
         });
         vm.prank(owner,owner);
         tesourodireto.emitTreasury(_data);
+        vm.prank(owner,owner);
+        tesourodireto.openPublicOffer(0);
         console.log("Balance of mercado Aberto: ", tesourodireto.balanceOf(address(mercadoAberto)));
         console.log("Owner of token 0: ", tesourodireto.ownerOf(0));
 

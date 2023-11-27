@@ -82,24 +82,30 @@ contract tesouroDireto is ERC721A, Ownable(msg.sender){
         _data._creation = block.timestamp;
         tokenInfo[_nextTokenId()] = _data;
         if (_data._type == treasuryType.LTN){
-            ERC721A._safeMint(openMarket, 1, "");
+            ERC721A._safeMint(address(this), 1, "");
             ERC721A._setExtraDataAt(ERC721A._nextTokenId()-1, _data._apy);
         }else if(_data._type == treasuryType.NTN_F){
-            ERC721A._safeMint(openMarket, 1, "");
+            ERC721A._safeMint(address(this), 1, "");
             ERC721A._setExtraDataAt(ERC721A._nextTokenId()-1, _data._apy);
         }else if(_data._type == treasuryType.LFT){
-            ERC721A._safeMint(openMarket, 1, "");
+            ERC721A._safeMint(address(this), 1, "");
             ERC721A._setExtraDataAt(ERC721A._nextTokenId()-1, _data._apy);
         }else if(_data._type == treasuryType.NTN_B_MAIN){
-            ERC721A._safeMint(openMarket, 1, "");
+            ERC721A._safeMint(address(this), 1, "");
             ERC721A._setExtraDataAt(ERC721A._nextTokenId()-1, _data._apy);
         }else if(_data._type == treasuryType.NTN_B){
-            ERC721A._safeMint(openMarket, 1, "");
+            ERC721A._safeMint(address(this), 1, "");
             ERC721A._setExtraDataAt(ERC721A._nextTokenId()-1, _data._apy);
         }else{
             revert NotValidTreasuryType();
         }
         emit treasuryCreated(_data._avlbTokens*_data._minInvestment, _data._apy, _data._validThru, _data._type);
+    }
+
+    function openPublicOffer(uint256 _tokenId) public onlyEmitter {
+        require(ownerOf(_tokenId) == address(this), "Tesouro Direto : Not in treasury ownership");
+        ERC721A._tokenApprovals[_tokenId].value = msg.sender;
+        safeTransferFrom(address(this), openMarket, _tokenId);
     }
 
     function retriveFullInvestment(uint256 _tokenId, uint256 _amount) external returns(bool){
@@ -136,6 +142,10 @@ contract tesouroDireto is ERC721A, Ownable(msg.sender){
         uint24 previousExtraData
     ) internal pure override returns (uint24) {
         return previousExtraData;
+    }
+
+    function onERC721Received(address operator, address from, uint256 tokenId, bytes calldata data) public returns (bytes4) {
+        return this.onERC721Received.selector;
     }
 
 
