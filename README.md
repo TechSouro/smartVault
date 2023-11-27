@@ -7,11 +7,11 @@
 - Deve aparecer a seguinte mensagem:
 
 == Logs ==
-  Address of mercadoAberto:  0x1f932b8d335c34FF8048536313F58dD9dd5c7Bc7
+  Address of mercadoAberto:  0xb15d27266c39e4aF1eaDce4e521a707eA6F118F7
   Address of tesourodireto:  0x0000000000000000000000000000000000000000
-  tesourodireto deployed on  Ethereum Sepolia with address:  0xF9C9315CA3a5935b8Bdd9312BF82120B620eA522
-  DestinationMinter deployed on  Ethereum Sepolia with address:  0x281e05161fF47f5152E27e2BBe8A73bF0B874722
-  Minter role granted to:  0x281e05161fF47f5152E27e2BBe8A73bF0B874722
+  tesourodireto deployed on  Ethereum Sepolia with address:  0xCc4fD21e369ba7396b997A754D53c3bC52d18728
+  DestinationMinter deployed on  Ethereum Sepolia with address:  0xCF289fB2AC434d962Adc849792B43c8BabC6e123
+  Minter role granted to:  0xCF289fB2AC434d962Adc849792B43c8BabC6e123
  
 
 `forge script ./script/TesouroCrossChain.s.sol:DeploySource -vvv --broadcast --rpc-url mumbai --sig "run(uint8)" -- 4 --verify -vvvv`
@@ -19,7 +19,7 @@
 - Meu endereço:
 
    == Logs ==
-  SourceMinter deployed on  Polygon Mumbai with address:  0xe4f93ee8F44d6200F7c511888cD4f9B5a7A04428
+  SourceMinter deployed on  Polygon Mumbai with address:  0x9e09D4d02678e0752dd3Ec4520e805CC8dAAb03c
   
 
 - Devemos financiar o contrato acima com LINK para funcionar as proximas etapas.
@@ -30,7 +30,7 @@
 `forge script ./script/TesouroCrossChain.s.sol:Mint -vvv --broadcast --rpc-url mumbai --sig "run(address,uint8,address,uint8)" -- 0x7Ad4A4049885e3c3eCa359fC32Cd84730b5CBbbD 0 0xF5bBA6D41bf6aE69598C0A8aF5cf8fFDB0933A69 1`
 
 - Verifique:
-`forge verify-contract 0x2bcFD207821E8F9876e5AAfD6E5caB05930b502D src/cross-chain-nft-minter/SourceMinterTesouro.sol:SourceMinter --chain-id 80001 --num-of-optimizations 1000000 --watch --constructor-args $(cast abi-encode "constructor(address,address)" 0x70499c328e1E2a3c41108bd3730F6670a44595D1 0x326C977E6efc84E512bB9C30f76E30c160eD06FB) \--etherscan-api-key EBDF8WC3ADE16T9YUD9Y81F8TJJF52FG7E`
+`forge verify-contract 0x6ec34D04a5F321F854a8fEd1a754fC54B61f59fc src/cross-chain-nft-minter/SourceMinterTesouro.sol:SourceMinter --chain-id 80001 --num-of-optimizations 1000000 --watch --constructor-args $(cast abi-encode "constructor(address,address)" 0x70499c328e1E2a3c41108bd3730F6670a44595D1 0x326C977E6efc84E512bB9C30f76E30c160eD06FB) \--etherscan-api-key EBDF8WC3ADE16T9YUD9Y81F8TJJF52FG7E`
 
 - O contrato e os parametros:
 https://mumbai.polygonscan.com/address/0x94673693c7C8201FACAdE1ff62AB3f760A81DF1d#writeContract

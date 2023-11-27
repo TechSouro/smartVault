@@ -64,6 +64,7 @@ contract DeployDestination is Script, Helper {
             address(destinationMinter)
         );
 
+        myNFT.setEmmiter(address(destinationMinter));
         myNFT.transferOwnership(address(destinationMinter));
         address minter = myNFT.owner();
 
