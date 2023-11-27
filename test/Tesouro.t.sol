@@ -118,4 +118,29 @@ contract Tesouro is Test {
         console.log("wDrex balance of user post to retrieval: ", mockErc20.balanceOf(user));
         vm.stopPrank();
     }
+
+
+    function testCreateTesouroWithEncode() public {
+        tesouroDireto.treasuryType _enum = tesouroDireto.treasuryType.LFT;
+        tesouroDireto.treasuryData memory _data = tesouroDireto.treasuryData({
+            _type: _enum,
+            _apy: 1000,
+            _minInvestment: 1 ether,
+            _validThru: 365 days * 10,
+            _avlbTokens: 100,
+            _creation: 0
+        });
+        vm.prank(owner,owner);
+        address(tesourodireto).call(abi.encodeWithSignature("emitTreasury((uint8,uint24,uint256,uint256,uint256,uint256))", _data));
+        // tesourodireto.emitTreasury(_data);
+        console.log("Balance of mercado Aberto: ", tesourodireto.balanceOf(address(mercadoAberto)));
+        console.log("Owner of token 0: ", tesourodireto.ownerOf(0));
+
+        (uint256 _available, uint256 _pric) = mercadoAberto.getOpenBuy(0);
+
+        console.log("Open Buy Amount available: ", _available);
+        console.log("Open Buy Price min.: ", _pric);
+
+        console.log("Balance of token 0 mercadoAberto 1155: ", mercadoAberto.balanceOf(address(mercadoAberto),0));
+    }
 }
