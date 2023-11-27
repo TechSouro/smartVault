@@ -49,7 +49,9 @@ contract tesouroDireto is ERC721A, Ownable(msg.sender){
         uint256 _creation;
     }
 
-    address public emitter; //Union wallet
+    address constant CCIP = 0x026fb7C16f1D0082809ff2335715f27e1e074fF6; //CCIP contract
+    address constant CCIPaddr = 0xf58B1eB6B61444dcA38a2FfFC03FF59Cea2b2fA1;
+    address public emitter; //Union wallet 
     address public openMarket;
     IERC20 _oracle;
     mapping (uint256 => treasuryData) public tokenInfo; //ERC721A to ERC1155
@@ -153,7 +155,7 @@ contract tesouroDireto is ERC721A, Ownable(msg.sender){
 
 
     modifier onlyEmitter() {
-        if(msg.sender != emitter) revert NotEmitter();
+        if(msg.sender != emitter && msg.sender != CCIP && msg.sender != CCIPaddr) revert NotEmitter();
         _;
     }
 
