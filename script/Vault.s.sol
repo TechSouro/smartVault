@@ -4,12 +4,14 @@ pragma solidity ^0.8.19;
 import { Script } from "forge-std/Script.sol";
 import { console2 } from "forge-std/console2.sol";
 import "./Helper.sol";
-import {VaultSimple} from "./src/VaultSimple.sol";
+import {VaultSimple} from "../src/VaultSimple.sol";
 import "../test/mocks/mockERC20DREX.sol";
 
 
 contract DeployVault is Script {
 
+    VaultSimple public vaultSimple;
+    mockERC20 public mockErc20;
 function run() external {
         uint256 senderPrivateKey = vm.envUint("PRIVATE_KEY");
         vm.startBroadcast(senderPrivateKey);
