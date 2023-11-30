@@ -6,7 +6,7 @@ import "@ERC3643/token/IToken.sol";
 import "openzeppelin-contracts/contracts/access/Ownable.sol";
 
 
-contract VaultSimple is Ownable(msg.sender) {
+contract VaultERC3643 is Ownable(msg.sender) {
     
     
     /// @dev ERC20 drex which can be deposited into this strategy. Do not use anything but ERC20s.

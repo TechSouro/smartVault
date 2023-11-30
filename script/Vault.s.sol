@@ -19,7 +19,7 @@ function run() external {
 
         // vm.startPrank(owner);
         mockErc20 = new mockERC20();
-        vaultSimple = new VaultSimple(address(vaultSimple));
+        vaultSimple = new VaultSimple(address(mockErc20));
         
 
         console2.log("Address of vaultSimple: ", address(vaultSimple));

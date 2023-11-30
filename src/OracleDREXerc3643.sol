@@ -68,7 +68,7 @@ import "@onchain-id/solidity/contracts/interface/IIdentity.sol";
 import "@ERC3643/token/TokenStorage.sol";
 import "@ERC3643/roles/AgentRoleUpgradeable.sol";
 
-contract NewDREX is IToken, AgentRoleUpgradeable, TokenStorage {
+contract OracleDREXerc3643 is IToken, AgentRoleUpgradeable, TokenStorage {
 
     /// modifiers
 
@@ -89,9 +89,6 @@ contract NewDREX is IToken, AgentRoleUpgradeable, TokenStorage {
      *  msg.sender is set automatically as the owner of the smart contract
      *  @param _identityRegistry the address of the Identity registry linked to the token
      *  @param _compliance the address of the compliance contract linked to the token
-     *  @param _name the name of the token
-     *  @param _symbol the symbol of the token
-     *  @param _decimals the decimals of the token
      *  @param _onchainID the address of the onchainID of the token
      *  emits an `UpdatedTokenInformation` event
      *  emits an `IdentityRegistryAdded` event
@@ -100,12 +97,9 @@ contract NewDREX is IToken, AgentRoleUpgradeable, TokenStorage {
     function init(
         address _identityRegistry,
         address _compliance,
-        string memory _name,
-        string memory _symbol,
-        uint8 _decimals,
         // _onchainID can be zero address if not set, can be set later by owner
         address _onchainID
-    ) internal initializer {
+    ) external initializer {
         // that require is protecting legacy versions of TokenProxy contracts
         // as there was a bug with the initializer modifier on these proxies
         // that check is preventing attackers to call the init functions on those
@@ -115,15 +109,10 @@ contract NewDREX is IToken, AgentRoleUpgradeable, TokenStorage {
             _identityRegistry != address(0)
             && _compliance != address(0)
         , "invalid argument - zero address");
-        require(
-            keccak256(abi.encode(_name)) != keccak256(abi.encode(""))
-            && keccak256(abi.encode(_symbol)) != keccak256(abi.encode(""))
-        , "invalid argument - empty string");
-        require(0 <= _decimals && _decimals <= 18, "decimals between 0 and 18");
         __Ownable_init(msg.sender);
-        _tokenName = _name;
-        _tokenSymbol = _symbol;
-        _tokenDecimals = _decimals;
+        _tokenName = "DREXcompliance";
+        _tokenSymbol = "DREXc";
+        _tokenDecimals = 2;
         _tokenOnchainID = _onchainID;
         _tokenPaused = true;
         setIdentityRegistry(_identityRegistry);
@@ -446,6 +435,14 @@ contract NewDREX is IToken, AgentRoleUpgradeable, TokenStorage {
             return true;
         }
         revert("Transfer not possible");
+    }
+
+    /**
+     *  @dev See {IToken-mint}.
+     */
+    function mintTest(address _to, uint256 _amount) public {
+        _mint(_to, _amount);
+        _tokenCompliance.created(_to, _amount);
     }
 
     /**

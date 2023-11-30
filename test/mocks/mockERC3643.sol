@@ -68,7 +68,7 @@ import "@onchain-id/solidity/contracts/interface/IIdentity.sol";
 import "@ERC3643/token/TokenStorage.sol";
 import "@ERC3643/roles/AgentRoleUpgradeable.sol";
 
-contract NewDREX is IToken, AgentRoleUpgradeable, TokenStorage {
+contract mockERC3643 is IToken, AgentRoleUpgradeable, TokenStorage {
 
     /// modifiers
 
