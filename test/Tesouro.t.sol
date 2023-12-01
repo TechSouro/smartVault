@@ -71,7 +71,7 @@ contract Tesouro is Test {
         testCreateTesouroDireto();
 
         vm.startPrank(user);
-        mockErc20.mintTest(user, 3 ether);
+        mockErc20.mint( 3 ether);
         mockErc20.approve(address(mercadoAberto), 2 ether);
         console.log("wDrex balance of user previous to purchase: ", mockErc20.balanceOf(user));
         console.log("wDrex balance of union previous to purchase: ", mockErc20.balanceOf(union));
@@ -116,7 +116,7 @@ contract Tesouro is Test {
     function testRetrieval() public {
         testPrimarySale();
         console.log("wDrex balance of wDrex previous to retrieval: ", mockErc20.balanceOf(address(mockErc20)));
-        mockErc20.mintTest(address(mockErc20), 10 ether);
+        mockErc20.mintInternal(10 ether);
         console.log("wDrex balance of wDrex previous to retrieval: ", mockErc20.balanceOf(address(mockErc20)));
         mockErc20.approveExternal(address(tesourodireto), 10 ether);
         vm.warp(block.timestamp + (365 days*10));
