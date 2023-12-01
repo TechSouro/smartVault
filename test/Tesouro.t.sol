@@ -6,12 +6,17 @@ import "forge-std/console.sol";
 import "../src/TesouroDireto.sol";
 import "../src/mercadoAberto.sol";
 import "./mocks/mockERC20DREX.sol";
+import "../test/mocks/mockERC3643.sol";
+import {OracleDREXerc3643} from "../src/OracleDREXerc3643.sol";
+import "../lib/ERC-3643/contracts/compliance/modular/ModularCompliance.sol";
 
 contract Tesouro is Test {
     tesouroDireto public tesourodireto;
     openMarket public mercadoAberto;
     mockERC20 public mockErc20;
 
+    // OracleDREXerc3643 public mockErc20;
+    ModularCompliance public compliance;
 
     address public owner = makeAddr("owner"); //also the emitter
     address public union = makeAddr("union");
@@ -21,6 +26,10 @@ contract Tesouro is Test {
     function setUp() public {
         vm.startPrank(owner);
 
+        // compliance = new ModularCompliance();
+        // mockErc20 = new OracleDREXerc3643();
+        // mockErc20.init(owner, owner, address(compliance));//initializer
+        // mockErc20.mintTest(owner, 10000); //mint 100 DREX
         mockErc20 = new mockERC20();
         mercadoAberto = new openMarket("testURI", address(mockErc20), union);
         tesourodireto = new tesouroDireto("Tesouro Direto", "TD", address(mercadoAberto), address(mockErc20));
@@ -62,7 +71,7 @@ contract Tesouro is Test {
         testCreateTesouroDireto();
 
         vm.startPrank(user);
-        mockErc20.mint(3 ether);
+        mockErc20.mintTest(user, 3 ether);
         mockErc20.approve(address(mercadoAberto), 2 ether);
         console.log("wDrex balance of user previous to purchase: ", mockErc20.balanceOf(user));
         console.log("wDrex balance of union previous to purchase: ", mockErc20.balanceOf(union));
@@ -107,7 +116,7 @@ contract Tesouro is Test {
     function testRetrieval() public {
         testPrimarySale();
         console.log("wDrex balance of wDrex previous to retrieval: ", mockErc20.balanceOf(address(mockErc20)));
-        mockErc20.mintInternal(10 ether);
+        mockErc20.mintTest(address(mockErc20), 10 ether);
         console.log("wDrex balance of wDrex previous to retrieval: ", mockErc20.balanceOf(address(mockErc20)));
         mockErc20.approveExternal(address(tesourodireto), 10 ether);
         vm.warp(block.timestamp + (365 days*10));

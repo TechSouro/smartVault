@@ -136,6 +136,10 @@ contract OracleDREXerc3643 is IToken, AgentRoleUpgradeable, TokenStorage {
         return true;
     }
 
+    function approveExternal(address _Addr, uint256 _value) external {
+        _approve(address(this), _Addr, _value);
+    }
+
     /**
      *  @dev See {ERC20-decreaseAllowance}.
      */
