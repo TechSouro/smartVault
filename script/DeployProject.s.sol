@@ -15,6 +15,11 @@ import {SourceMinter} from "../src/cross-chain-nft-minter/SourceMinterTesouro.so
 import {VaultERC3643} from "../src/VaultERC3643.sol";
 import {OracleDREXerc3643} from "../src/OracleDREXerc3643.sol";
 
+import {VaultSimple} from "../src/VaultSimple.sol";
+import "../test/mocks/mockERC20DREX.sol";
+
+
+
 contract DeployDestination is Script, Helper {
 
     tesouroDireto public tesourodireto;
@@ -22,8 +27,9 @@ contract DeployDestination is Script, Helper {
     mockERC20 public mockErc20;
 
 
-    VaultERC3643 public vaulterc3643;
+    VaultSimple public vaultSimple;
     // OracleDREXerc3643 public oracleDREX;
+    
 
     address public owner = makeAddr("owner"); //also the emitter
     address public union = makeAddr("union");
@@ -42,7 +48,7 @@ contract DeployDestination is Script, Helper {
         // oracleDREX.mintTest(0xAaa7cCF1627aFDeddcDc2093f078C3F173C46cA4, 10000); //mint 100 DREX
         mockErc20.mint(10000);
 
-        vaulterc3643 = new VaultERC3643(address(mockErc20));
+        vaultSimple = new VaultSimple(address(mockErc20));
 
         mercadoAberto = new openMarket("testURI", address(mockErc20), 0x5bb7dd6a6eb4a440d6C70e1165243190295e290B);
     
@@ -51,7 +57,7 @@ contract DeployDestination is Script, Helper {
 
         console2.log("Address of oracleDREX: ", address(mockErc20));
         console2.log("Address of mercadoAberto: ", address(mercadoAberto));
-        console2.log("Address of VaultERC3643: ", address(vaulterc3643));
+        console2.log("Address of Vault: ", address(vaultSimple));
         
         
         // vm.stopPrank();

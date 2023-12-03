@@ -1,4 +1,44 @@
-# How te use CCIP emission Tesouro Direto:
+
+# Bem vindos aos Smart Contracts do TechSouro:
+
+- Confira o Fluxo completo:
+
+![Miro:](image.png)
+
+
+- O fluxo acima se trata dos seguintes contrato:
+
+```txt
+src
+├─ TesouroDireto — Responsavel pela emissao de titulos pela Administracao publica.
+├─ mercadoAberto — Responsavel pela realizacao do fracionamento e oferta publica na plataforma.
+```
+
+
+
+- Fluxo dos contratos referente a aplicacao no DREX e HYperledger Besu:
+
+![Miro](image-2.png)
+
+```txt
+src
+├─ oracleDREX — Contrato de Oracle em blockchain publica onde o tesouro atualiza as informacoes e escreve para o funcionamento correto entre diferentes blockchains e suas atualizacoes.
+├─ VaultSimple — Um contrato de rastreabilidade e deposito de DREX.
+```
+
+### Entenda os contratos referente a interoperabilidade utilizando o protocolo da Chainlink CCIP (Cross Chain):
+
+- obs. Como o protocolo e muito recente, nao esta aberto para o publico a utilizacao em redes permissionadas, ja possuem aplicacoes reais com permissionadas e vamos simular esse uso com blockchains publicas.
+
+- Os contratos abaixo sao os mais importantes referentes ao CCIP:
+
+```txt
+src
+├─ SourceMinterTesouro — Contrato responsavel que interage com o Tesouro direto e emite o tesouro entre redes diferentes.
+├─ DestinationMinterTesouro — Contrato que define a destinacao e a rota utilizando o contrato da ChainLink que faz a comunicacao entre redes distintas.
+```
+
+### Como usar o CCIP emission Tesouro Direto:
 
 - Scritp de deploy do NFT já setado a destinação. O comando de run inserimos a netowork de destinaçao que os parametros estão em uma enum do contrato Helpers chamada SupportedNetworks. Portando a network "0" seria a sepolia.
 
