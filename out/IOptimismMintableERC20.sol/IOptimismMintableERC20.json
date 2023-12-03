@@ -1,0 +1,724 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "bridge",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "burn",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "mint",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "remoteToken",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceId",
+          "type": "bytes4"
+        }
+      ],
+      "name": "supportsInterface",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "bridge()": "e78cea92",
+    "burn(address,uint256)": "9dc29fac",
+    "mint(address,uint256)": "40c10f19",
+    "remoteToken()": "d6c0b2c4",
+    "supportsInterface(bytes4)": "01ffc9a7"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"bridge\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"remoteToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas.\"}},\"title\":\"IOptimismMintableERC20\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"bridge()\":{\"notice\":\"Returns the address of the bridge on L2.\"},\"remoteToken()\":{\"notice\":\"Returns the address of the token on L1.\"}},\"notice\":\"This is the complete interface for the Optimism mintable ERC20 token as defined in https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/universal/IOptimismMintableERC20.sol\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/v0.8/shared/token/ERC20/IOptimismMintableERC20.sol\":\"IOptimismMintableERC20\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/v0.8/shared/token/ERC20/IOptimismMintableERC20.sol\":{\"keccak256\":\"0x3297d02295832e478cc0b2af126a4a56c1754f18f6905a653c000f6f3c9a7610\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5f59e8296b84073ade0f32ac2f10877e14eade950ccc1b96e08026fd021ec2dd\",\"dweb:/ipfs/QmZLM1Bk23wErNuBjZuT1rfKYAyBhnRrXFuenWNvRWweam\"]},\"src/v0.8/vendor/openzeppelin-solidity/v4.8.0/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0xa36a31b4bb17fad88d023474893b3b895fa421650543b1ce5aefc78efbd43244\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f235b9175d95111f301d729566e214c32559e55a2b0579c947484748e20679d\",\"dweb:/ipfs/QmSsNBuPejy1wNe2u3JSt2p9wFhrjvBjFrnAaNe1nDNkEA\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "bridge",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_from",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "burn"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "mint"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "remoteToken",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes4",
+              "name": "interfaceId",
+              "type": "bytes4"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "supportsInterface",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "supportsInterface(bytes4)": {
+            "details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "bridge()": {
+            "notice": "Returns the address of the bridge on L2."
+          },
+          "remoteToken()": {
+            "notice": "Returns the address of the token on L1."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/v0.8/shared/token/ERC20/IOptimismMintableERC20.sol": "IOptimismMintableERC20"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/v0.8/shared/token/ERC20/IOptimismMintableERC20.sol": {
+        "keccak256": "0x3297d02295832e478cc0b2af126a4a56c1754f18f6905a653c000f6f3c9a7610",
+        "urls": [
+          "bzz-raw://5f59e8296b84073ade0f32ac2f10877e14eade950ccc1b96e08026fd021ec2dd",
+          "dweb:/ipfs/QmZLM1Bk23wErNuBjZuT1rfKYAyBhnRrXFuenWNvRWweam"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/vendor/openzeppelin-solidity/v4.8.0/contracts/utils/introspection/IERC165.sol": {
+        "keccak256": "0xa36a31b4bb17fad88d023474893b3b895fa421650543b1ce5aefc78efbd43244",
+        "urls": [
+          "bzz-raw://0f235b9175d95111f301d729566e214c32559e55a2b0579c947484748e20679d",
+          "dweb:/ipfs/QmSsNBuPejy1wNe2u3JSt2p9wFhrjvBjFrnAaNe1nDNkEA"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/v0.8/shared/token/ERC20/IOptimismMintableERC20.sol",
+    "id": 125628,
+    "exportedSymbols": {
+      "IERC165": [
+        139523
+      ],
+      "IOptimismMintableERC20": [
+        125627
+      ],
+      "IOptimismMintableERC20Minimal": [
+        125607
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:1158:269",
+    "nodes": [
+      {
+        "id": 125589,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:269",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 125591,
+        "nodeType": "ImportDirective",
+        "src": "57:111:269",
+        "nodes": [],
+        "absolutePath": "src/v0.8/vendor/openzeppelin-solidity/v4.8.0/contracts/utils/introspection/IERC165.sol",
+        "file": "../../../vendor/openzeppelin-solidity/v4.8.0/contracts/utils/introspection/IERC165.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 125628,
+        "sourceUnit": 139524,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 125590,
+              "name": "IERC165",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 139523,
+              "src": "65:7:269",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 125607,
+        "nodeType": "ContractDefinition",
+        "src": "458:270:269",
+        "nodes": [
+          {
+            "id": 125600,
+            "nodeType": "FunctionDefinition",
+            "src": "567:55:269",
+            "nodes": [],
+            "documentation": {
+              "id": 125595,
+              "nodeType": "StructuredDocumentation",
+              "src": "513:51:269",
+              "text": "@notice Returns the address of the token on L1."
+            },
+            "functionSelector": "d6c0b2c4",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "remoteToken",
+            "nameLocation": "576:11:269",
+            "parameters": {
+              "id": 125596,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "587:2:269"
+            },
+            "returnParameters": {
+              "id": 125599,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 125598,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125600,
+                  "src": "613:7:269",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 125597,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "613:7:269",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "612:9:269"
+            },
+            "scope": 125607,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 125606,
+            "nodeType": "FunctionDefinition",
+            "src": "681:45:269",
+            "nodes": [],
+            "documentation": {
+              "id": 125601,
+              "nodeType": "StructuredDocumentation",
+              "src": "626:52:269",
+              "text": "@notice Returns the address of the bridge on L2."
+            },
+            "functionSelector": "e78cea92",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "bridge",
+            "nameLocation": "690:6:269",
+            "parameters": {
+              "id": 125602,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "696:2:269"
+            },
+            "returnParameters": {
+              "id": 125605,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 125604,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125606,
+                  "src": "717:7:269",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 125603,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "717:7:269",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "716:9:269"
+            },
+            "scope": 125607,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 125593,
+              "name": "IERC165",
+              "nameLocations": [
+                "501:7:269"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 139523,
+              "src": "501:7:269"
+            },
+            "id": 125594,
+            "nodeType": "InheritanceSpecifier",
+            "src": "501:7:269"
+          }
+        ],
+        "canonicalName": "IOptimismMintableERC20Minimal",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 125592,
+          "nodeType": "StructuredDocumentation",
+          "src": "170:288:269",
+          "text": "@title IOptimismMintableERC20Minimal\n @dev This interface is a subset of the Optimism ERC20 interface that is defined\n below. This is done to now have to overwrite the burn and mint functions again in\n the implementation, as that leads to more complicated, error prone code."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          125607,
+          139523
+        ],
+        "name": "IOptimismMintableERC20Minimal",
+        "nameLocation": "468:29:269",
+        "scope": 125628,
+        "usedErrors": [],
+        "usedEvents": []
+      },
+      {
+        "id": 125627,
+        "nodeType": "ContractDefinition",
+        "src": "996:193:269",
+        "nodes": [
+          {
+            "id": 125619,
+            "nodeType": "FunctionDefinition",
+            "src": "1075:53:269",
+            "nodes": [],
+            "functionSelector": "40c10f19",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nameLocation": "1084:4:269",
+            "parameters": {
+              "id": 125617,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 125614,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "1097:3:269",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125619,
+                  "src": "1089:11:269",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 125613,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1089:7:269",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 125616,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "1110:7:269",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125619,
+                  "src": "1102:15:269",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 125615,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1102:7:269",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1088:30:269"
+            },
+            "returnParameters": {
+              "id": 125618,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1127:0:269"
+            },
+            "scope": 125627,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 125626,
+            "nodeType": "FunctionDefinition",
+            "src": "1132:55:269",
+            "nodes": [],
+            "functionSelector": "9dc29fac",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burn",
+            "nameLocation": "1141:4:269",
+            "parameters": {
+              "id": 125624,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 125621,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "1154:5:269",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125626,
+                  "src": "1146:13:269",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 125620,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1146:7:269",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 125623,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "1169:7:269",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 125626,
+                  "src": "1161:15:269",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 125622,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1161:7:269",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1145:32:269"
+            },
+            "returnParameters": {
+              "id": 125625,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1186:0:269"
+            },
+            "scope": 125627,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 125609,
+              "name": "IERC165",
+              "nameLocations": [
+                "1032:7:269"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 139523,
+              "src": "1032:7:269"
+            },
+            "id": 125610,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1032:7:269"
+          },
+          {
+            "baseName": {
+              "id": 125611,
+              "name": "IOptimismMintableERC20Minimal",
+              "nameLocations": [
+                "1041:29:269"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 125607,
+              "src": "1041:29:269"
+            },
+            "id": 125612,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1041:29:269"
+          }
+        ],
+        "canonicalName": "IOptimismMintableERC20",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 125608,
+          "nodeType": "StructuredDocumentation",
+          "src": "730:266:269",
+          "text": "@title IOptimismMintableERC20\n @notice This is the complete interface for the Optimism mintable ERC20 token as defined in\n https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/contracts/universal/IOptimismMintableERC20.sol"
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          125627,
+          125607,
+          139523
+        ],
+        "name": "IOptimismMintableERC20",
+        "nameLocation": "1006:22:269",
+        "scope": 125628,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 269
+}

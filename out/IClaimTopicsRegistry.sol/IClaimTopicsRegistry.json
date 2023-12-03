@@ -1,0 +1,580 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "claimTopic",
+          "type": "uint256"
+        }
+      ],
+      "name": "ClaimTopicAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "claimTopic",
+          "type": "uint256"
+        }
+      ],
+      "name": "ClaimTopicRemoved",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_claimTopic",
+          "type": "uint256"
+        }
+      ],
+      "name": "addClaimTopic",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getClaimTopics",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_claimTopic",
+          "type": "uint256"
+        }
+      ],
+      "name": "removeClaimTopic",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "addClaimTopic(uint256)": "c7b22551",
+    "getClaimTopics()": "df09d604",
+    "removeClaimTopic(uint256)": "08297846"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"claimTopic\",\"type\":\"uint256\"}],\"name\":\"ClaimTopicAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"claimTopic\",\"type\":\"uint256\"}],\"name\":\"ClaimTopicRemoved\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_claimTopic\",\"type\":\"uint256\"}],\"name\":\"addClaimTopic\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getClaimTopics\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_claimTopic\",\"type\":\"uint256\"}],\"name\":\"removeClaimTopic\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"addClaimTopic(uint256)\":{\"details\":\"Add a trusted claim topic (For example: KYC=1, AML=2). Only owner can call. emits `ClaimTopicAdded` event cannot add more than 15 topics for 1 token as adding more could create gas issues\",\"params\":{\"_claimTopic\":\"The claim topic index\"}},\"getClaimTopics()\":{\"details\":\"Get the trusted claim topics for the security token\",\"returns\":{\"_0\":\"Array of trusted claim topics\"}},\"removeClaimTopic(uint256)\":{\"details\":\"Remove a trusted claim topic (For example: KYC=1, AML=2).  Only owner can call.  emits `ClaimTopicRemoved` event\",\"params\":{\"_claimTopic\":\"The claim topic index\"}}},\"version\":1},\"userdoc\":{\"events\":{\"ClaimTopicAdded(uint256)\":{\"notice\":\"this event is emitted when a claim topic has been added to the ClaimTopicsRegistry  the event is emitted by the 'addClaimTopic' function  `claimTopic` is the required claim added to the Claim Topics Registry\"},\"ClaimTopicRemoved(uint256)\":{\"notice\":\"this event is emitted when a claim topic has been removed from the ClaimTopicsRegistry  the event is emitted by the 'removeClaimTopic' function  `claimTopic` is the required claim removed from the Claim Topics Registry\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/ERC-3643/contracts/registry/interface/IClaimTopicsRegistry.sol\":\"IClaimTopicsRegistry\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"lib/ERC-3643/contracts/registry/interface/IClaimTopicsRegistry.sol\":{\"keccak256\":\"0x1fc5a358bb1c64ee96bae25937acf9b60004a2f6c4153edacdbd5a4ecbe28fee\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://69a9346a0d24a48cb19c829c2e62bb54afa2489c10fefcfbfc1dc079422ddda3\",\"dweb:/ipfs/QmT8vKMcPPGRJCjSB7Sdya9Ly3gtP96LmMw3szLU5qQpuT\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "claimTopic",
+              "type": "uint256",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "ClaimTopicAdded",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "claimTopic",
+              "type": "uint256",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "ClaimTopicRemoved",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_claimTopic",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addClaimTopic"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getClaimTopics",
+          "outputs": [
+            {
+              "internalType": "uint256[]",
+              "name": "",
+              "type": "uint256[]"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_claimTopic",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "removeClaimTopic"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "addClaimTopic(uint256)": {
+            "details": "Add a trusted claim topic (For example: KYC=1, AML=2). Only owner can call. emits `ClaimTopicAdded` event cannot add more than 15 topics for 1 token as adding more could create gas issues",
+            "params": {
+              "_claimTopic": "The claim topic index"
+            }
+          },
+          "getClaimTopics()": {
+            "details": "Get the trusted claim topics for the security token",
+            "returns": {
+              "_0": "Array of trusted claim topics"
+            }
+          },
+          "removeClaimTopic(uint256)": {
+            "details": "Remove a trusted claim topic (For example: KYC=1, AML=2).  Only owner can call.  emits `ClaimTopicRemoved` event",
+            "params": {
+              "_claimTopic": "The claim topic index"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "lib/ERC-3643/contracts/registry/interface/IClaimTopicsRegistry.sol": "IClaimTopicsRegistry"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/ERC-3643/contracts/registry/interface/IClaimTopicsRegistry.sol": {
+        "keccak256": "0x1fc5a358bb1c64ee96bae25937acf9b60004a2f6c4153edacdbd5a4ecbe28fee",
+        "urls": [
+          "bzz-raw://69a9346a0d24a48cb19c829c2e62bb54afa2489c10fefcfbfc1dc079422ddda3",
+          "dweb:/ipfs/QmT8vKMcPPGRJCjSB7Sdya9Ly3gtP96LmMw3szLU5qQpuT"
+        ],
+        "license": "GPL-3.0"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/ERC-3643/contracts/registry/interface/IClaimTopicsRegistry.sol",
+    "id": 153,
+    "exportedSymbols": {
+      "IClaimTopicsRegistry": [
+        152
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "3817:1487:1",
+    "nodes": [
+      {
+        "id": 122,
+        "nodeType": "PragmaDirective",
+        "src": "3817:23:1",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".21"
+        ]
+      },
+      {
+        "id": 152,
+        "nodeType": "ContractDefinition",
+        "src": "3842:1461:1",
+        "nodes": [
+          {
+            "id": 127,
+            "nodeType": "EventDefinition",
+            "src": "4125:50:1",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 123,
+              "nodeType": "StructuredDocumentation",
+              "src": "3879:241:1",
+              "text": "  this event is emitted when a claim topic has been added to the ClaimTopicsRegistry\n  the event is emitted by the 'addClaimTopic' function\n  `claimTopic` is the required claim added to the Claim Topics Registry"
+            },
+            "eventSelector": "01c928b7f7ade2949e92366aa9454dbef3a416b731cf6ec786ba9595bbd814d6",
+            "name": "ClaimTopicAdded",
+            "nameLocation": "4131:15:1",
+            "parameters": {
+              "id": 126,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 125,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "claimTopic",
+                  "nameLocation": "4163:10:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 127,
+                  "src": "4147:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 124,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4147:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4146:28:1"
+            }
+          },
+          {
+            "id": 132,
+            "nodeType": "EventDefinition",
+            "src": "4438:52:1",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 128,
+              "nodeType": "StructuredDocumentation",
+              "src": "4181:252:1",
+              "text": "  this event is emitted when a claim topic has been removed from the ClaimTopicsRegistry\n  the event is emitted by the 'removeClaimTopic' function\n  `claimTopic` is the required claim removed from the Claim Topics Registry"
+            },
+            "eventSelector": "0b1381093c776453c1bbe54fd68be1b235c65db61d099cb50d194b2991e0eec5",
+            "name": "ClaimTopicRemoved",
+            "nameLocation": "4444:17:1",
+            "parameters": {
+              "id": 131,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 130,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "claimTopic",
+                  "nameLocation": "4478:10:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 132,
+                  "src": "4462:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 129,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4462:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4461:28:1"
+            }
+          },
+          {
+            "id": 138,
+            "nodeType": "FunctionDefinition",
+            "src": "4781:53:1",
+            "nodes": [],
+            "documentation": {
+              "id": 133,
+              "nodeType": "StructuredDocumentation",
+              "src": "4496:280:1",
+              "text": " @dev Add a trusted claim topic (For example: KYC=1, AML=2).\n Only owner can call.\n emits `ClaimTopicAdded` event\n cannot add more than 15 topics for 1 token as adding more could create gas issues\n @param _claimTopic The claim topic index"
+            },
+            "functionSelector": "c7b22551",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addClaimTopic",
+            "nameLocation": "4790:13:1",
+            "parameters": {
+              "id": 136,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 135,
+                  "mutability": "mutable",
+                  "name": "_claimTopic",
+                  "nameLocation": "4812:11:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 138,
+                  "src": "4804:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 134,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4804:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4803:21:1"
+            },
+            "returnParameters": {
+              "id": 137,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4833:0:1"
+            },
+            "scope": 152,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 144,
+            "nodeType": "FunctionDefinition",
+            "src": "5045:56:1",
+            "nodes": [],
+            "documentation": {
+              "id": 139,
+              "nodeType": "StructuredDocumentation",
+              "src": "4840:200:1",
+              "text": "  @dev Remove a trusted claim topic (For example: KYC=1, AML=2).\n  Only owner can call.\n  emits `ClaimTopicRemoved` event\n  @param _claimTopic The claim topic index"
+            },
+            "functionSelector": "08297846",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeClaimTopic",
+            "nameLocation": "5054:16:1",
+            "parameters": {
+              "id": 142,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 141,
+                  "mutability": "mutable",
+                  "name": "_claimTopic",
+                  "nameLocation": "5079:11:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 144,
+                  "src": "5071:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 140,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5071:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5070:21:1"
+            },
+            "returnParameters": {
+              "id": 143,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5100:0:1"
+            },
+            "scope": 152,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 151,
+            "nodeType": "FunctionDefinition",
+            "src": "5234:67:1",
+            "nodes": [],
+            "documentation": {
+              "id": 145,
+              "nodeType": "StructuredDocumentation",
+              "src": "5107:122:1",
+              "text": "  @dev Get the trusted claim topics for the security token\n  @return Array of trusted claim topics"
+            },
+            "functionSelector": "df09d604",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getClaimTopics",
+            "nameLocation": "5243:14:1",
+            "parameters": {
+              "id": 146,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5257:2:1"
+            },
+            "returnParameters": {
+              "id": 150,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 149,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 151,
+                  "src": "5283:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 147,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "5283:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 148,
+                    "nodeType": "ArrayTypeName",
+                    "src": "5283:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5282:18:1"
+            },
+            "scope": 152,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IClaimTopicsRegistry",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          152
+        ],
+        "name": "IClaimTopicsRegistry",
+        "nameLocation": "3852:20:1",
+        "scope": 153,
+        "usedErrors": [],
+        "usedEvents": [
+          127,
+          132
+        ]
+      }
+    ],
+    "license": "GPL-3.0"
+  },
+  "id": 1
+}

@@ -1,0 +1,950 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "AlreadySet",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "EmptySendersList",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotAllowedToSetSenders",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "UnauthorizedSender",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "AuthorizedSendersActive",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "senders",
+          "type": "address[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "changedBy",
+          "type": "address"
+        }
+      ],
+      "name": "AuthorizedSendersChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "AuthorizedSendersDeactive",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "activateAuthorizedReceiver",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "senders",
+          "type": "address[]"
+        }
+      ],
+      "name": "addAuthorizedSenders",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "authorizedReceiverActive",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "on",
+          "type": "bool"
+        }
+      ],
+      "name": "changeSetAuthorizedSender",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "deactivateAuthorizedReceiver",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAuthorizedSenders",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "isAuthorizedSender",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "senders",
+          "type": "address[]"
+        }
+      ],
+      "name": "removeAuthorizedSenders",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "verifyValidateAuthorizedSender",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x60806040526003805460ff1916600117905534801561001d57600080fd5b506000805460ff19166001179055610a248061003a6000396000f3fe608060405234801561001057600080fd5b50600436106100a35760003560e01c80634dcef40411610076578063bd8fe0611161005b578063bd8fe06114610115578063f88c64ba1461011d578063fa00763a1461015c57600080fd5b80634dcef404146100fa57806391bb64eb1461010d57600080fd5b806303e1bf23146100a8578063110254c8146100bd5780632408afaa146100c55780634b4fa0c1146100e3575b600080fd5b6100bb6100b6366004610792565b61016f565b005b6100bb610276565b6100cd610350565b6040516100da9190610807565b60405180910390f35b60005460ff165b60405190151581526020016100da565b6100bb610108366004610792565b610361565b6100bb610428565b6100ea6104f8565b6100bb61012b366004610861565b600380547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016911515919091179055565b6100ea61016a3660046108ac565b610508565b60035460ff166101ab576040517fad77f06100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60008190036101e6576040517f75158c3b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60005b8181101561023657610223838383818110610206576102066108c7565b905060200201602081019061021b91906108ac565b60019061052c565b508061022e81610925565b9150506101e9565b507ff263cfb3e4298332e776194610cf9fdc09ccb3ada8b9aa39764d882e11fbf0a082823360405161026a9392919061095d565b60405180910390a15050565b60035460ff166102b2576040517fad77f06100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60005460ff16156102ef576040517fa741a04500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001660011790556040513381527fae51766a982895b0c444fc99fc1a560762b464d709e6c78376c85617f7eeb5ce906020015b60405180910390a1565b606061035c6001610555565b905090565b60035460ff1661039d576040517fad77f06100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60008190036103d8576040517f75158c3b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60005b81811015610236576104158383838181106103f8576103f86108c7565b905060200201602081019061040d91906108ac565b600190610562565b508061042081610925565b9150506103db565b60035460ff16610464576040517fad77f06100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60005460ff166104a0576040517fa741a04500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001690556040513381527fea3828816a323b8d7ff49d755efd105e7719166d6c76fad97a28eee5eccc3d9a90602001610346565b6000610502610584565b50600190565b6000805460ff1661051b57506001919050565b6105266001836105c5565b92915050565b600061054e8373ffffffffffffffffffffffffffffffffffffffff84166105f4565b9392505050565b6060600061054e836106e7565b600061054e8373ffffffffffffffffffffffffffffffffffffffff8416610743565b61058d32610508565b6105c3576040517f0809490800000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b565b73ffffffffffffffffffffffffffffffffffffffff81166000908152600183016020526040812054151561054e565b600081815260018301602052604081205480156106dd5760006106186001836109d5565b855490915060009061062c906001906109d5565b905081811461069157600086600001828154811061064c5761064c6108c7565b906000526020600020015490508087600001848154811061066f5761066f6108c7565b6000918252602080832090910192909255918252600188019052604090208390555b85548690806106a2576106a26109e8565b600190038181906000526020600020016000905590558560010160008681526020019081526020016000206000905560019350505050610526565b6000915050610526565b60608160000180548060200260200160405190810160405280929190818152602001828054801561073757602002820191906000526020600020905b815481526020019060010190808311610723575b50505050509050919050565b600081815260018301602052604081205461078a57508154600181810184556000848152602080822090930184905584548482528286019093526040902091909155610526565b506000610526565b600080602083850312156107a557600080fd5b823567ffffffffffffffff808211156107bd57600080fd5b818501915085601f8301126107d157600080fd5b8135818111156107e057600080fd5b8660208260051b85010111156107f557600080fd5b60209290920196919550909350505050565b6020808252825182820181905260009190848201906040850190845b8181101561085557835173ffffffffffffffffffffffffffffffffffffffff1683529284019291840191600101610823565b50909695505050505050565b60006020828403121561087357600080fd5b8135801515811461054e57600080fd5b803573ffffffffffffffffffffffffffffffffffffffff811681146108a757600080fd5b919050565b6000602082840312156108be57600080fd5b61054e82610883565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203610956576109566108f6565b5060010190565b6040808252810183905260008460608301825b868110156109ab5773ffffffffffffffffffffffffffffffffffffffff61099684610883565b16825260209283019290910190600101610970565b50809250505073ffffffffffffffffffffffffffffffffffffffff83166020830152949350505050565b81810381811115610526576105266108f6565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603160045260246000fdfea164736f6c6343000815000a",
+    "sourceMap": "131:465:177:-:0;;;207:45;;;-1:-1:-1;;207:45:177;248:4;207:45;;;131:465;;;;;;;;;-1:-1:-1;1076:8:142;:15;;-1:-1:-1;;1076:15:142;1087:4;1076:15;;;131:465:177;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b50600436106100a35760003560e01c80634dcef40411610076578063bd8fe0611161005b578063bd8fe06114610115578063f88c64ba1461011d578063fa00763a1461015c57600080fd5b80634dcef404146100fa57806391bb64eb1461010d57600080fd5b806303e1bf23146100a8578063110254c8146100bd5780632408afaa146100c55780634b4fa0c1146100e3575b600080fd5b6100bb6100b6366004610792565b61016f565b005b6100bb610276565b6100cd610350565b6040516100da9190610807565b60405180910390f35b60005460ff165b60405190151581526020016100da565b6100bb610108366004610792565b610361565b6100bb610428565b6100ea6104f8565b6100bb61012b366004610861565b600380547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016911515919091179055565b6100ea61016a3660046108ac565b610508565b60035460ff166101ab576040517fad77f06100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60008190036101e6576040517f75158c3b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60005b8181101561023657610223838383818110610206576102066108c7565b905060200201602081019061021b91906108ac565b60019061052c565b508061022e81610925565b9150506101e9565b507ff263cfb3e4298332e776194610cf9fdc09ccb3ada8b9aa39764d882e11fbf0a082823360405161026a9392919061095d565b60405180910390a15050565b60035460ff166102b2576040517fad77f06100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60005460ff16156102ef576040517fa741a04500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001660011790556040513381527fae51766a982895b0c444fc99fc1a560762b464d709e6c78376c85617f7eeb5ce906020015b60405180910390a1565b606061035c6001610555565b905090565b60035460ff1661039d576040517fad77f06100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60008190036103d8576040517f75158c3b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60005b81811015610236576104158383838181106103f8576103f86108c7565b905060200201602081019061040d91906108ac565b600190610562565b508061042081610925565b9150506103db565b60035460ff16610464576040517fad77f06100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60005460ff166104a0576040517fa741a04500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b600080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff001690556040513381527fea3828816a323b8d7ff49d755efd105e7719166d6c76fad97a28eee5eccc3d9a90602001610346565b6000610502610584565b50600190565b6000805460ff1661051b57506001919050565b6105266001836105c5565b92915050565b600061054e8373ffffffffffffffffffffffffffffffffffffffff84166105f4565b9392505050565b6060600061054e836106e7565b600061054e8373ffffffffffffffffffffffffffffffffffffffff8416610743565b61058d32610508565b6105c3576040517f0809490800000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b565b73ffffffffffffffffffffffffffffffffffffffff81166000908152600183016020526040812054151561054e565b600081815260018301602052604081205480156106dd5760006106186001836109d5565b855490915060009061062c906001906109d5565b905081811461069157600086600001828154811061064c5761064c6108c7565b906000526020600020015490508087600001848154811061066f5761066f6108c7565b6000918252602080832090910192909255918252600188019052604090208390555b85548690806106a2576106a26109e8565b600190038181906000526020600020016000905590558560010160008681526020019081526020016000206000905560019350505050610526565b6000915050610526565b60608160000180548060200260200160405190810160405280929190818152602001828054801561073757602002820191906000526020600020905b815481526020019060010190808311610723575b50505050509050919050565b600081815260018301602052604081205461078a57508154600181810184556000848152602080822090930184905584548482528286019093526040902091909155610526565b506000610526565b600080602083850312156107a557600080fd5b823567ffffffffffffffff808211156107bd57600080fd5b818501915085601f8301126107d157600080fd5b8135818111156107e057600080fd5b8660208260051b85010111156107f557600080fd5b60209290920196919550909350505050565b6020808252825182820181905260009190848201906040850190845b8181101561085557835173ffffffffffffffffffffffffffffffffffffffff1683529284019291840191600101610823565b50909695505050505050565b60006020828403121561087357600080fd5b8135801515811461054e57600080fd5b803573ffffffffffffffffffffffffffffffffffffffff811681146108a757600080fd5b919050565b6000602082840312156108be57600080fd5b61054e82610883565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8203610956576109566108f6565b5060010190565b6040808252810183905260008460608301825b868110156109ab5773ffffffffffffffffffffffffffffffffffffffff61099684610883565b16825260209283019290910190600101610970565b50809250505073ffffffffffffffffffffffffffffffffffffffff83166020830152949350505050565b81810381811115610526576105266108f6565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603160045260246000fdfea164736f6c6343000815000a",
+    "sourceMap": "131:465:177:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2734:344:142;;;;;;:::i;:::-;;:::i;:::-;;1456:230;;;:::i;3177:139::-;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1183:106;1257:4;1276:8;;;1183:106;;;1485:14:351;;1478:22;1460:41;;1448:2;1433:18;1183:106:142;1320:187:351;2234:338:142;;;;;;:::i;:::-;;:::i;1839:236::-;;;:::i;355:118:177:-;;;:::i;257:94::-;;;;;;:::i;:::-;316:25;:30;;;;;;;;;;;;;257:94;3514:198:142;;;;;;:::i;:::-;;:::i;2734:344::-;564:25:177;;;;4462:79:142;;4510:24;;;;;;;;;;;;;;4462:79;2872:1:::1;2854:19:::0;;;2850:65:::1;;2890:18;;;;;;;;;;;;;;2850:65;2925:9;2920:98;2940:18:::0;;::::1;2920:98;;;2973:38;3000:7;;3008:1;3000:10;;;;;;;:::i;:::-;;;;;;;;;;;;;;:::i;:::-;2973:19;::::0;:26:::1;:38::i;:::-;-1:-1:-1::0;2960:3:142;::::1;::::0;::::1;:::i;:::-;;;;2920:98;;;;3028:45;3053:7;;3062:10;3028:45;;;;;;;;:::i;:::-;;;;;;;;2734:344:::0;;:::o;1456:230::-;564:25:177;;;;4462:79:142;;4510:24;;;;;;;;;;;;;;4462:79;1257:4;1276:8;;;1549:66:::1;;;1596:12;;;;;;;;;;;;;;1549:66;1620:8;:15:::0;;;::::1;1631:4;1620:15;::::0;;1646:35:::1;::::0;1670:10:::1;3698:74:351::0;;1646:35:142::1;::::0;3686:2:351;3671:18;1646:35:142::1;;;;;;;;1456:230::o:0;3177:139::-;3239:16;3270:41;3291:19;3270:20;:41::i;:::-;3263:48;;3177:139;:::o;2234:338::-;564:25:177;;;;4462:79:142;;4510:24;;;;;;;;;;;;;;4462:79;2369:1:::1;2351:19:::0;;;2347:65:::1;;2387:18;;;;;;;;;;;;;;2347:65;2422:9;2417:95;2437:18:::0;;::::1;2417:95;;;2470:35;2494:7;;2502:1;2494:10;;;;;;;:::i;:::-;;;;;;;;;;;;;;:::i;:::-;2470:19;::::0;:23:::1;:35::i;:::-;-1:-1:-1::0;2457:3:142;::::1;::::0;::::1;:::i;:::-;;;;2417:95;;1839:236:::0;564:25:177;;;;4462:79:142;;4510:24;;;;;;;;;;;;;;4462:79;1257:4;1276:8;;;1934:67:::1;;1982:12;;;;;;;;;;;;;;1934:67;2017:5;2006:16:::0;;;::::1;::::0;;2033:37:::1;::::0;2059:10:::1;3698:74:351::0;;2033:37:142::1;::::0;3686:2:351;3671:18;2033:37:142::1;3552:226:351::0;355:118:177;445:4;4285:29:142;:27;:29::i;:::-;-1:-1:-1;464:4:177::1;355:118:::0;:::o;3514:198:142:-;3588:4;1276:8;;;;3600:59;;-1:-1:-1;3648:4:142;;3514:198;-1:-1:-1;3514:198:142:o;3600:59::-;3671:36;:19;3700:6;3671:28;:36::i;:::-;3664:43;3514:198;-1:-1:-1;;3514:198:142:o;8071:150:346:-;8144:4;8163:53;8171:3;8191:23;;;8163:7;:53::i;:::-;8156:60;8071:150;-1:-1:-1;;;8071:150:346:o;9627:268::-;9690:16;9714:22;9739:19;9747:3;9739:7;:19::i;7773:144::-;7843:4;7862:50;7867:3;7887:23;;;7862:4;:50::i;4014:141:142:-;4078:29;4097:9;4078:18;:29::i;:::-;4073:78;;4124:20;;;;;;;;;;;;;;4073:78;4014:141::o;8294:159:346:-;8423:23;;;8374:4;4067:19;;;:12;;;:19;;;;;;:24;;8393:55;3975:121;2660:1242;2726:4;2855:19;;;:12;;;:19;;;;;;2885:15;;2881:1017;;3224:21;3248:14;3261:1;3248:10;:14;:::i;:::-;3290:18;;3224:38;;-1:-1:-1;3270:17:346;;3290:22;;3311:1;;3290:22;:::i;:::-;3270:42;;3338:13;3325:9;:26;3321:352;;3363:17;3383:3;:11;;3395:9;3383:22;;;;;;;;:::i;:::-;;;;;;;;;3363:42;;3518:9;3489:3;:11;;3501:13;3489:26;;;;;;;;:::i;:::-;;;;;;;;;;;;:38;;;;3585:23;;;:12;;;:23;;;;;:36;;;3321:352;3739:17;;:3;;:17;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;3819:3;:12;;:19;3832:5;3819:19;;;;;;;;;;;3812:26;;;3854:4;3847:11;;;;;;;2881:1017;3886:5;3879:12;;;;;5224:103;5280:16;5311:3;:11;;5304:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5224:103;;;:::o;2152:354::-;2215:4;4067:19;;;:12;;;:19;;;;;;2227:275;;-1:-1:-1;2263:23:346;;;;;;;;:11;:23;;;;;;;;;;;;;2425:18;;2403:19;;;:12;;;:19;;;;;;:40;;;;2451:11;;2227:275;-1:-1:-1;2490:5:346;2483:12;;14:615:351;100:6;108;161:2;149:9;140:7;136:23;132:32;129:52;;;177:1;174;167:12;129:52;217:9;204:23;246:18;287:2;279:6;276:14;273:34;;;303:1;300;293:12;273:34;341:6;330:9;326:22;316:32;;386:7;379:4;375:2;371:13;367:27;357:55;;408:1;405;398:12;357:55;448:2;435:16;474:2;466:6;463:14;460:34;;;490:1;487;480:12;460:34;543:7;538:2;528:6;525:1;521:14;517:2;513:23;509:32;506:45;503:65;;;564:1;561;554:12;503:65;595:2;587:11;;;;;617:6;;-1:-1:-1;14:615:351;;-1:-1:-1;;;;14:615:351:o;634:681::-;805:2;857:21;;;927:13;;830:18;;;949:22;;;776:4;;805:2;1028:15;;;;1002:2;987:18;;;776:4;1071:218;1085:6;1082:1;1079:13;1071:218;;;1150:13;;1165:42;1146:62;1134:75;;1264:15;;;;1229:12;;;;1107:1;1100:9;1071:218;;;-1:-1:-1;1306:3:351;;634:681;-1:-1:-1;;;;;;634:681:351:o;1512:273::-;1568:6;1621:2;1609:9;1600:7;1596:23;1592:32;1589:52;;;1637:1;1634;1627:12;1589:52;1676:9;1663:23;1729:5;1722:13;1715:21;1708:5;1705:32;1695:60;;1751:1;1748;1741:12;1790:196;1858:20;;1918:42;1907:54;;1897:65;;1887:93;;1976:1;1973;1966:12;1887:93;1790:196;;;:::o;1991:186::-;2050:6;2103:2;2091:9;2082:7;2078:23;2074:32;2071:52;;;2119:1;2116;2109:12;2071:52;2142:29;2161:9;2142:29;:::i;2182:184::-;2234:77;2231:1;2224:88;2331:4;2328:1;2321:15;2355:4;2352:1;2345:15;2371:184;2423:77;2420:1;2413:88;2520:4;2517:1;2510:15;2544:4;2541:1;2534:15;2560:195;2599:3;2630:66;2623:5;2620:77;2617:103;;2700:18;;:::i;:::-;-1:-1:-1;2747:1:351;2736:13;;2560:195::o;2760:787::-;2988:2;3000:21;;;2973:18;;3056:22;;;2940:4;3135:6;3109:2;3094:18;;2940:4;3169:258;3183:6;3180:1;3177:13;3169:258;;;3276:42;3248:26;3267:6;3248:26;:::i;:::-;3244:75;3232:88;;3343:4;3402:15;;;;3367:12;;;;3205:1;3198:9;3169:258;;;3173:3;3444;3436:11;;;;3497:42;3489:6;3485:55;3478:4;3467:9;3463:20;3456:85;2760:787;;;;;;:::o;3783:128::-;3850:9;;;3871:11;;;3868:37;;;3885:18;;:::i;3916:184::-;3968:77;3965:1;3958:88;4065:4;4062:1;4055:15;4089:4;4086:1;4079:15",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "activateAuthorizedReceiver()": "110254c8",
+    "addAuthorizedSenders(address[])": "4dcef404",
+    "authorizedReceiverActive()": "4b4fa0c1",
+    "changeSetAuthorizedSender(bool)": "f88c64ba",
+    "deactivateAuthorizedReceiver()": "91bb64eb",
+    "getAuthorizedSenders()": "2408afaa",
+    "isAuthorizedSender(address)": "fa00763a",
+    "removeAuthorizedSenders(address[])": "03e1bf23",
+    "verifyValidateAuthorizedSender()": "bd8fe061"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"AlreadySet\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"EmptySendersList\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotAllowedToSetSenders\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UnauthorizedSender\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"AuthorizedSendersActive\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"senders\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"changedBy\",\"type\":\"address\"}],\"name\":\"AuthorizedSendersChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"AuthorizedSendersDeactive\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"activateAuthorizedReceiver\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"senders\",\"type\":\"address[]\"}],\"name\":\"addAuthorizedSenders\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"authorizedReceiverActive\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"on\",\"type\":\"bool\"}],\"name\":\"changeSetAuthorizedSender\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deactivateAuthorizedReceiver\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAuthorizedSenders\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"isAuthorizedSender\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"senders\",\"type\":\"address[]\"}],\"name\":\"removeAuthorizedSenders\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"verifyValidateAuthorizedSender\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"activateAuthorizedReceiver()\":{\"details\":\"Triggers AuthorizedOriginReceiver usage to block unuthorized senders. Requirements: - The contract must not be deactive.\"},\"addAuthorizedSenders(address[])\":{\"params\":{\"senders\":\"The addresses of the wallet addresses to grant access\"}},\"authorizedReceiverActive()\":{\"details\":\"Returns true if the contract is paused, and false otherwise.\"},\"deactivateAuthorizedReceiver()\":{\"details\":\"Triggers AuthorizedOriginReceiver usage to allow all senders. Requirements: - The contract must be active.\"},\"getAuthorizedSenders()\":{\"returns\":{\"_0\":\"array of addresses\"}},\"isAuthorizedSender(address)\":{\"params\":{\"sender\":\"The address of the Chainlink node\"},\"returns\":{\"_0\":\"The authorization status of the node\"}},\"removeAuthorizedSenders(address[])\":{\"params\":{\"senders\":\"The addresses of the wallet addresses to revoke access\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"addAuthorizedSenders(address[])\":{\"notice\":\"Sets the permission to request for the given wallet(s).\"},\"getAuthorizedSenders()\":{\"notice\":\"Retrieve a list of authorized senders\"},\"isAuthorizedSender(address)\":{\"notice\":\"Use this to check if a node is authorized for fulfilling requests\"},\"removeAuthorizedSenders(address[])\":{\"notice\":\"Remove the permission to request for the given wallet(s).\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/v0.8/functions/tests/v0_0_0/testhelpers/AuthorizedOriginReceiverTestHelper.sol\":\"AuthorizedOriginReceiverTestHelper\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/v0.8/functions/dev/v0_0_0/accessControl/AuthorizedOriginReceiver.sol\":{\"keccak256\":\"0xfcc213d10c8074769283c116b11c1440d6a7c20347058e4599708dc0ef74975a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ee82f22d6c705e0d18138df4e4c008ae735c2769e3164a0b06ed754e27854665\",\"dweb:/ipfs/QmT7ZbthuRZ7D7jpxLzb9gVvKqasWA7rsD3joADEWQTrSV\"]},\"src/v0.8/functions/dev/v0_0_0/accessControl/interfaces/IAuthorizedOriginReceiver.sol\":{\"keccak256\":\"0x51be6fc61309735c88fd7f86da100848201e776b450963e7a5aee8e2bacc3f11\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4726924cbf3d6cbe70aad9c65753008562ef95cd4f85662cd954fe1e45b0b343\",\"dweb:/ipfs/QmevVQS4Psue9UVK2GPRUUQEoWpdEooR7biGKB7Pe5Bb82\"]},\"src/v0.8/functions/tests/v0_0_0/testhelpers/AuthorizedOriginReceiverTestHelper.sol\":{\"keccak256\":\"0x91087817050388144060c3558ae98864df2f713347cac8e305a0142465b6ae36\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6c93ffe809254bafc09e8eef1d45660370efee89442e9f1c571975ae99f88561\",\"dweb:/ipfs/QmTYR94QCqs9XvPbnS4CFh5hA71P6vVB24s1QoPTNtBMYS\"]},\"src/v0.8/vendor/openzeppelin-solidity/v4.8.0/contracts/utils/structs/EnumerableSet.sol\":{\"keccak256\":\"0x9ec0d82ee53d4137be44f1f38f9a82d0d3a2027b3b8b226a5a90e4ee76e926d6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f783b453420dee16bb4f0839e3d2485d753d2dcd317adbeecb7e510c39563f57\",\"dweb:/ipfs/QmUd4BeCaw6ZujaYvvMrCn2BNqmiP4bt4eA9rxiXY5od5E\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "AlreadySet"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "EmptySendersList"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "NotAllowedToSetSenders"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "UnauthorizedSender"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "AuthorizedSendersActive",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address[]",
+              "name": "senders",
+              "type": "address[]",
+              "indexed": false
+            },
+            {
+              "internalType": "address",
+              "name": "changedBy",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "AuthorizedSendersChanged",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "AuthorizedSendersDeactive",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "activateAuthorizedReceiver"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address[]",
+              "name": "senders",
+              "type": "address[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addAuthorizedSenders"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "authorizedReceiverActive",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bool",
+              "name": "on",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "changeSetAuthorizedSender"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "deactivateAuthorizedReceiver"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getAuthorizedSenders",
+          "outputs": [
+            {
+              "internalType": "address[]",
+              "name": "",
+              "type": "address[]"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "isAuthorizedSender",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address[]",
+              "name": "senders",
+              "type": "address[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "removeAuthorizedSenders"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "verifyValidateAuthorizedSender",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "activateAuthorizedReceiver()": {
+            "details": "Triggers AuthorizedOriginReceiver usage to block unuthorized senders. Requirements: - The contract must not be deactive."
+          },
+          "addAuthorizedSenders(address[])": {
+            "params": {
+              "senders": "The addresses of the wallet addresses to grant access"
+            }
+          },
+          "authorizedReceiverActive()": {
+            "details": "Returns true if the contract is paused, and false otherwise."
+          },
+          "deactivateAuthorizedReceiver()": {
+            "details": "Triggers AuthorizedOriginReceiver usage to allow all senders. Requirements: - The contract must be active."
+          },
+          "getAuthorizedSenders()": {
+            "returns": {
+              "_0": "array of addresses"
+            }
+          },
+          "isAuthorizedSender(address)": {
+            "params": {
+              "sender": "The address of the Chainlink node"
+            },
+            "returns": {
+              "_0": "The authorization status of the node"
+            }
+          },
+          "removeAuthorizedSenders(address[])": {
+            "params": {
+              "senders": "The addresses of the wallet addresses to revoke access"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "addAuthorizedSenders(address[])": {
+            "notice": "Sets the permission to request for the given wallet(s)."
+          },
+          "getAuthorizedSenders()": {
+            "notice": "Retrieve a list of authorized senders"
+          },
+          "isAuthorizedSender(address)": {
+            "notice": "Use this to check if a node is authorized for fulfilling requests"
+          },
+          "removeAuthorizedSenders(address[])": {
+            "notice": "Remove the permission to request for the given wallet(s)."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/v0.8/functions/tests/v0_0_0/testhelpers/AuthorizedOriginReceiverTestHelper.sol": "AuthorizedOriginReceiverTestHelper"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/v0.8/functions/dev/v0_0_0/accessControl/AuthorizedOriginReceiver.sol": {
+        "keccak256": "0xfcc213d10c8074769283c116b11c1440d6a7c20347058e4599708dc0ef74975a",
+        "urls": [
+          "bzz-raw://ee82f22d6c705e0d18138df4e4c008ae735c2769e3164a0b06ed754e27854665",
+          "dweb:/ipfs/QmT7ZbthuRZ7D7jpxLzb9gVvKqasWA7rsD3joADEWQTrSV"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/functions/dev/v0_0_0/accessControl/interfaces/IAuthorizedOriginReceiver.sol": {
+        "keccak256": "0x51be6fc61309735c88fd7f86da100848201e776b450963e7a5aee8e2bacc3f11",
+        "urls": [
+          "bzz-raw://4726924cbf3d6cbe70aad9c65753008562ef95cd4f85662cd954fe1e45b0b343",
+          "dweb:/ipfs/QmevVQS4Psue9UVK2GPRUUQEoWpdEooR7biGKB7Pe5Bb82"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/functions/tests/v0_0_0/testhelpers/AuthorizedOriginReceiverTestHelper.sol": {
+        "keccak256": "0x91087817050388144060c3558ae98864df2f713347cac8e305a0142465b6ae36",
+        "urls": [
+          "bzz-raw://6c93ffe809254bafc09e8eef1d45660370efee89442e9f1c571975ae99f88561",
+          "dweb:/ipfs/QmTYR94QCqs9XvPbnS4CFh5hA71P6vVB24s1QoPTNtBMYS"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/vendor/openzeppelin-solidity/v4.8.0/contracts/utils/structs/EnumerableSet.sol": {
+        "keccak256": "0x9ec0d82ee53d4137be44f1f38f9a82d0d3a2027b3b8b226a5a90e4ee76e926d6",
+        "urls": [
+          "bzz-raw://f783b453420dee16bb4f0839e3d2485d753d2dcd317adbeecb7e510c39563f57",
+          "dweb:/ipfs/QmUd4BeCaw6ZujaYvvMrCn2BNqmiP4bt4eA9rxiXY5od5E"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/v0.8/functions/tests/v0_0_0/testhelpers/AuthorizedOriginReceiverTestHelper.sol",
+    "id": 94694,
+    "exportedSymbols": {
+      "AuthorizedOriginReceiver": [
+        83669
+      ],
+      "AuthorizedOriginReceiverTestHelper": [
+        94693
+      ],
+      "EnumerableSet": [
+        143769
+      ],
+      "IAuthorizedOriginReceiver": [
+        84363
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:565:177",
+    "nodes": [
+      {
+        "id": 94657,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:177",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 94658,
+        "nodeType": "ImportDirective",
+        "src": "57:72:177",
+        "nodes": [],
+        "absolutePath": "src/v0.8/functions/dev/v0_0_0/accessControl/AuthorizedOriginReceiver.sol",
+        "file": "../../../dev/v0_0_0/accessControl/AuthorizedOriginReceiver.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 94694,
+        "sourceUnit": 83670,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 94693,
+        "nodeType": "ContractDefinition",
+        "src": "131:465:177",
+        "nodes": [
+          {
+            "id": 94663,
+            "nodeType": "VariableDeclaration",
+            "src": "207:45:177",
+            "nodes": [],
+            "constant": false,
+            "mutability": "mutable",
+            "name": "s_canSetAuthorizedSenders",
+            "nameLocation": "220:25:177",
+            "scope": 94693,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 94661,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "207:4:177",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": {
+              "hexValue": "74727565",
+              "id": 94662,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "bool",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "248:4:177",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              },
+              "value": "true"
+            },
+            "visibility": "private"
+          },
+          {
+            "id": 94673,
+            "nodeType": "FunctionDefinition",
+            "src": "257:94:177",
+            "nodes": [],
+            "body": {
+              "id": 94672,
+              "nodeType": "Block",
+              "src": "310:41:177",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 94670,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 94668,
+                      "name": "s_canSetAuthorizedSenders",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 94663,
+                      "src": "316:25:177",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 94669,
+                      "name": "on",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 94665,
+                      "src": "344:2:177",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "316:30:177",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 94671,
+                  "nodeType": "ExpressionStatement",
+                  "src": "316:30:177"
+                }
+              ]
+            },
+            "functionSelector": "f88c64ba",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "changeSetAuthorizedSender",
+            "nameLocation": "266:25:177",
+            "parameters": {
+              "id": 94666,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 94665,
+                  "mutability": "mutable",
+                  "name": "on",
+                  "nameLocation": "297:2:177",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94673,
+                  "src": "292:7:177",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 94664,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "292:4:177",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "291:9:177"
+            },
+            "returnParameters": {
+              "id": 94667,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "310:0:177"
+            },
+            "scope": 94693,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 94683,
+            "nodeType": "FunctionDefinition",
+            "src": "355:118:177",
+            "nodes": [],
+            "body": {
+              "id": 94682,
+              "nodeType": "Block",
+              "src": "451:22:177",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "hexValue": "74727565",
+                    "id": 94680,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "464:4:177",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 94679,
+                  "id": 94681,
+                  "nodeType": "Return",
+                  "src": "457:11:177"
+                }
+              ]
+            },
+            "functionSelector": "bd8fe061",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 94676,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 94675,
+                  "name": "validateAuthorizedSender",
+                  "nameLocations": [
+                    "411:24:177"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 83655,
+                  "src": "411:24:177"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "411:24:177"
+              }
+            ],
+            "name": "verifyValidateAuthorizedSender",
+            "nameLocation": "364:30:177",
+            "parameters": {
+              "id": 94674,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "394:2:177"
+            },
+            "returnParameters": {
+              "id": 94679,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 94678,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94683,
+                  "src": "445:4:177",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 94677,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "445:4:177",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "444:6:177"
+            },
+            "scope": 94693,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 94692,
+            "nodeType": "FunctionDefinition",
+            "src": "477:117:177",
+            "nodes": [],
+            "body": {
+              "id": 94691,
+              "nodeType": "Block",
+              "src": "551:43:177",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 94689,
+                    "name": "s_canSetAuthorizedSenders",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 94663,
+                    "src": "564:25:177",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 94688,
+                  "id": 94690,
+                  "nodeType": "Return",
+                  "src": "557:32:177"
+                }
+              ]
+            },
+            "baseFunctions": [
+              83632
+            ],
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_canSetAuthorizedSenders",
+            "nameLocation": "486:24:177",
+            "overrides": {
+              "id": 94685,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "527:8:177"
+            },
+            "parameters": {
+              "id": 94684,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "510:2:177"
+            },
+            "returnParameters": {
+              "id": 94688,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 94687,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94692,
+                  "src": "545:4:177",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 94686,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "545:4:177",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "544:6:177"
+            },
+            "scope": 94693,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 94659,
+              "name": "AuthorizedOriginReceiver",
+              "nameLocations": [
+                "178:24:177"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 83669,
+              "src": "178:24:177"
+            },
+            "id": 94660,
+            "nodeType": "InheritanceSpecifier",
+            "src": "178:24:177"
+          }
+        ],
+        "canonicalName": "AuthorizedOriginReceiverTestHelper",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          94693,
+          83669,
+          84363
+        ],
+        "name": "AuthorizedOriginReceiverTestHelper",
+        "nameLocation": "140:34:177",
+        "scope": 94694,
+        "usedErrors": [
+          83417,
+          83419,
+          83421,
+          83423
+        ],
+        "usedEvents": [
+          83407,
+          83411,
+          83415
+        ]
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 177
+}

@@ -1,0 +1,820 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getToken",
+      "outputs": [
+        {
+          "internalType": "contract IERC20",
+          "name": "token",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "originalSender",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "receiver",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint64",
+          "name": "destChainSelector",
+          "type": "uint64"
+        },
+        {
+          "internalType": "bytes",
+          "name": "extraArgs",
+          "type": "bytes"
+        }
+      ],
+      "name": "lockOrBurn",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "originalSender",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint64",
+          "name": "sourceChainSelector",
+          "type": "uint64"
+        },
+        {
+          "internalType": "bytes",
+          "name": "extraData",
+          "type": "bytes"
+        }
+      ],
+      "name": "releaseOrMint",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "getToken()": "21df0da7",
+    "lockOrBurn(address,bytes,uint256,uint64,bytes)": "96875445",
+    "releaseOrMint(bytes,address,uint256,uint64,bytes)": "8627fad6"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getToken\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"token\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"originalSender\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"receiver\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint64\",\"name\":\"destChainSelector\",\"type\":\"uint64\"},{\"internalType\":\"bytes\",\"name\":\"extraArgs\",\"type\":\"bytes\"}],\"name\":\"lockOrBurn\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"originalSender\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint64\",\"name\":\"sourceChainSelector\",\"type\":\"uint64\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"name\":\"releaseOrMint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getToken()\":{\"returns\":{\"token\":\"The IERC20 token representation.\"}},\"lockOrBurn(address,bytes,uint256,uint64,bytes)\":{\"params\":{\"amount\":\"Amount to lock or burn.\",\"destChainSelector\":\"Destination chain Id.\",\"extraArgs\":\"Additional data passed in by sender for lockOrBurn processing in custom pools on source chain.\",\"originalSender\":\"Original sender of the tokens.\",\"receiver\":\"Receiver of the tokens on destination chain.\"},\"returns\":{\"_0\":\"retData Optional field that contains bytes. Unused for now but already implemented to allow future upgrades while preserving the interface.\"}},\"releaseOrMint(bytes,address,uint256,uint64,bytes)\":{\"details\":\"offchainData can come from any untrusted source.\",\"params\":{\"amount\":\"Amount to release or mint.\",\"extraData\":\"Additional data supplied offchain for releaseOrMint processing in custom pools on dest chain. This could be an attestation that was retrieved through a third party API.\",\"originalSender\":\"Original sender of the tokens.\",\"receiver\":\"Receiver of the tokens.\",\"sourceChainSelector\":\"Source chain Id.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getToken()\":{\"notice\":\"Gets the IERC20 token that this pool can lock or burn.\"},\"lockOrBurn(address,bytes,uint256,uint64,bytes)\":{\"notice\":\"Lock tokens into the pool or burn the tokens.\"},\"releaseOrMint(bytes,address,uint256,uint64,bytes)\":{\"notice\":\"Releases or mints tokens to the receiver address.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/v0.8/ccip/interfaces/pools/IPool.sol\":\"IPool\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/v0.8/ccip/interfaces/pools/IPool.sol\":{\"keccak256\":\"0xd1304829f4a2f244935c2825bb963a2ce885d67716a8286d2e09230679cae840\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0e0cc32b9a6e49b56ebf8231e173c650b29cb83b8d47cbf186564cb5cf4c9e7e\",\"dweb:/ipfs/QmawsMRBgPHyRifjqsY9iw7ebMkzJsKHvDHahYa9A1kLDZ\"]},\"src/v0.8/vendor/openzeppelin-solidity/v4.8.0/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x527e858729af8197f6c8f99554d32bfc4f5a72b15975489c94809363d7ae522f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6828dfa867eaff18f383aad4ca4b5aaedb93109023d74aaf418fee6c06e556c2\",\"dweb:/ipfs/QmXSQ9WnaJ6Ba9gvKvgNxDY7sa7ATJ9V55uwGSGCpBuJKu\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getToken",
+          "outputs": [
+            {
+              "internalType": "contract IERC20",
+              "name": "token",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "originalSender",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "receiver",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint64",
+              "name": "destChainSelector",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraArgs",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "lockOrBurn",
+          "outputs": [
+            {
+              "internalType": "bytes",
+              "name": "",
+              "type": "bytes"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "originalSender",
+              "type": "bytes"
+            },
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint64",
+              "name": "sourceChainSelector",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "releaseOrMint"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "getToken()": {
+            "returns": {
+              "token": "The IERC20 token representation."
+            }
+          },
+          "lockOrBurn(address,bytes,uint256,uint64,bytes)": {
+            "params": {
+              "amount": "Amount to lock or burn.",
+              "destChainSelector": "Destination chain Id.",
+              "extraArgs": "Additional data passed in by sender for lockOrBurn processing in custom pools on source chain.",
+              "originalSender": "Original sender of the tokens.",
+              "receiver": "Receiver of the tokens on destination chain."
+            },
+            "returns": {
+              "_0": "retData Optional field that contains bytes. Unused for now but already implemented to allow future upgrades while preserving the interface."
+            }
+          },
+          "releaseOrMint(bytes,address,uint256,uint64,bytes)": {
+            "details": "offchainData can come from any untrusted source.",
+            "params": {
+              "amount": "Amount to release or mint.",
+              "extraData": "Additional data supplied offchain for releaseOrMint processing in custom pools on dest chain. This could be an attestation that was retrieved through a third party API.",
+              "originalSender": "Original sender of the tokens.",
+              "receiver": "Receiver of the tokens.",
+              "sourceChainSelector": "Source chain Id."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "getToken()": {
+            "notice": "Gets the IERC20 token that this pool can lock or burn."
+          },
+          "lockOrBurn(address,bytes,uint256,uint64,bytes)": {
+            "notice": "Lock tokens into the pool or burn the tokens."
+          },
+          "releaseOrMint(bytes,address,uint256,uint64,bytes)": {
+            "notice": "Releases or mints tokens to the receiver address."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/v0.8/ccip/interfaces/pools/IPool.sol": "IPool"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/v0.8/ccip/interfaces/pools/IPool.sol": {
+        "keccak256": "0xd1304829f4a2f244935c2825bb963a2ce885d67716a8286d2e09230679cae840",
+        "urls": [
+          "bzz-raw://0e0cc32b9a6e49b56ebf8231e173c650b29cb83b8d47cbf186564cb5cf4c9e7e",
+          "dweb:/ipfs/QmawsMRBgPHyRifjqsY9iw7ebMkzJsKHvDHahYa9A1kLDZ"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/vendor/openzeppelin-solidity/v4.8.0/contracts/token/ERC20/IERC20.sol": {
+        "keccak256": "0x527e858729af8197f6c8f99554d32bfc4f5a72b15975489c94809363d7ae522f",
+        "urls": [
+          "bzz-raw://6828dfa867eaff18f383aad4ca4b5aaedb93109023d74aaf418fee6c06e556c2",
+          "dweb:/ipfs/QmXSQ9WnaJ6Ba9gvKvgNxDY7sa7ATJ9V55uwGSGCpBuJKu"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/v0.8/ccip/interfaces/pools/IPool.sol",
+    "id": 71193,
+    "exportedSymbols": {
+      "IERC20": [
+        137559
+      ],
+      "IPool": [
+        71192
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:1933:120",
+    "nodes": [
+      {
+        "id": 71152,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:120",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 71154,
+        "nodeType": "ImportDirective",
+        "src": "57:101:120",
+        "nodes": [],
+        "absolutePath": "src/v0.8/vendor/openzeppelin-solidity/v4.8.0/contracts/token/ERC20/IERC20.sol",
+        "file": "../../../vendor/openzeppelin-solidity/v4.8.0/contracts/token/ERC20/IERC20.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 71193,
+        "sourceUnit": 137560,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 71153,
+              "name": "IERC20",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 137559,
+              "src": "65:6:120",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 71192,
+        "nodeType": "ContractDefinition",
+        "src": "294:1670:120",
+        "nodes": [
+          {
+            "id": 71170,
+            "nodeType": "FunctionDefinition",
+            "src": "881:193:120",
+            "nodes": [],
+            "documentation": {
+              "id": 71155,
+              "nodeType": "StructuredDocumentation",
+              "src": "314:564:120",
+              "text": "@notice Lock tokens into the pool or burn the tokens.\n @param originalSender Original sender of the tokens.\n @param receiver Receiver of the tokens on destination chain.\n @param amount Amount to lock or burn.\n @param destChainSelector Destination chain Id.\n @param extraArgs Additional data passed in by sender for lockOrBurn processing\n in custom pools on source chain.\n @return retData Optional field that contains bytes. Unused for now but already\n implemented to allow future upgrades while preserving the interface."
+            },
+            "functionSelector": "96875445",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "lockOrBurn",
+            "nameLocation": "890:10:120",
+            "parameters": {
+              "id": 71166,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71157,
+                  "mutability": "mutable",
+                  "name": "originalSender",
+                  "nameLocation": "914:14:120",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71170,
+                  "src": "906:22:120",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 71156,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "906:7:120",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 71159,
+                  "mutability": "mutable",
+                  "name": "receiver",
+                  "nameLocation": "949:8:120",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71170,
+                  "src": "934:23:120",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 71158,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "934:5:120",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 71161,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "971:6:120",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71170,
+                  "src": "963:14:120",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 71160,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "963:7:120",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 71163,
+                  "mutability": "mutable",
+                  "name": "destChainSelector",
+                  "nameLocation": "990:17:120",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71170,
+                  "src": "983:24:120",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 71162,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "983:6:120",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 71165,
+                  "mutability": "mutable",
+                  "name": "extraArgs",
+                  "nameLocation": "1028:9:120",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71170,
+                  "src": "1013:24:120",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 71164,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1013:5:120",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "900:141:120"
+            },
+            "returnParameters": {
+              "id": 71169,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71168,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71170,
+                  "src": "1060:12:120",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 71167,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1060:5:120",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1059:14:120"
+            },
+            "scope": 71192,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 71184,
+            "nodeType": "FunctionDefinition",
+            "src": "1608:171:120",
+            "nodes": [],
+            "documentation": {
+              "id": 71171,
+              "nodeType": "StructuredDocumentation",
+              "src": "1078:527:120",
+              "text": "@notice Releases or mints tokens to the receiver address.\n @param originalSender Original sender of the tokens.\n @param receiver Receiver of the tokens.\n @param amount Amount to release or mint.\n @param sourceChainSelector Source chain Id.\n @param extraData Additional data supplied offchain for releaseOrMint processing in\n custom pools on dest chain. This could be an attestation that was retrieved through a\n third party API.\n @dev offchainData can come from any untrusted source."
+            },
+            "functionSelector": "8627fad6",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "releaseOrMint",
+            "nameLocation": "1617:13:120",
+            "parameters": {
+              "id": 71182,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71173,
+                  "mutability": "mutable",
+                  "name": "originalSender",
+                  "nameLocation": "1649:14:120",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71184,
+                  "src": "1636:27:120",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 71172,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1636:5:120",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 71175,
+                  "mutability": "mutable",
+                  "name": "receiver",
+                  "nameLocation": "1677:8:120",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71184,
+                  "src": "1669:16:120",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 71174,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1669:7:120",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 71177,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1699:6:120",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71184,
+                  "src": "1691:14:120",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 71176,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1691:7:120",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 71179,
+                  "mutability": "mutable",
+                  "name": "sourceChainSelector",
+                  "nameLocation": "1718:19:120",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71184,
+                  "src": "1711:26:120",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 71178,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1711:6:120",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 71181,
+                  "mutability": "mutable",
+                  "name": "extraData",
+                  "nameLocation": "1756:9:120",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71184,
+                  "src": "1743:22:120",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 71180,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1743:5:120",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1630:139:120"
+            },
+            "returnParameters": {
+              "id": 71183,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1778:0:120"
+            },
+            "scope": 71192,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 71191,
+            "nodeType": "FunctionDefinition",
+            "src": "1905:57:120",
+            "nodes": [],
+            "documentation": {
+              "id": 71185,
+              "nodeType": "StructuredDocumentation",
+              "src": "1783:119:120",
+              "text": "@notice Gets the IERC20 token that this pool can lock or burn.\n @return token The IERC20 token representation."
+            },
+            "functionSelector": "21df0da7",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getToken",
+            "nameLocation": "1914:8:120",
+            "parameters": {
+              "id": 71186,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1922:2:120"
+            },
+            "returnParameters": {
+              "id": 71190,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71189,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "1955:5:120",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71191,
+                  "src": "1948:12:120",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20_$137559",
+                    "typeString": "contract IERC20"
+                  },
+                  "typeName": {
+                    "id": 71188,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 71187,
+                      "name": "IERC20",
+                      "nameLocations": [
+                        "1948:6:120"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 137559,
+                      "src": "1948:6:120"
+                    },
+                    "referencedDeclaration": 137559,
+                    "src": "1948:6:120",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20_$137559",
+                      "typeString": "contract IERC20"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1947:14:120"
+            },
+            "scope": 71192,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IPool",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          71192
+        ],
+        "name": "IPool",
+        "nameLocation": "304:5:120",
+        "scope": 71193,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 120
+}

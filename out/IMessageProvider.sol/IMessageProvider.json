@@ -1,0 +1,315 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "messageNum",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "InboxMessageDelivered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "messageNum",
+          "type": "uint256"
+        }
+      ],
+      "name": "InboxMessageDeliveredFromOrigin",
+      "type": "event"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"messageNum\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"InboxMessageDelivered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"messageNum\",\"type\":\"uint256\"}],\"name\":\"InboxMessageDeliveredFromOrigin\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/v0.8/vendor/arb-bridge-eth/v0.8.0-custom/contracts/bridge/interfaces/IMessageProvider.sol\":\"IMessageProvider\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/v0.8/vendor/arb-bridge-eth/v0.8.0-custom/contracts/bridge/interfaces/IMessageProvider.sol\":{\"keccak256\":\"0x0b910d5d048b54d0e2f4dd41531dc8f4ac1539aa2361b31662b84b2673620152\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ec70534ed7b99a61e28909c7ef0252c5f50f9cf748429b4dfbc6b1a28de83dbc\",\"dweb:/ipfs/QmQdZUhNrCo7JZUk4Y9HbTCmJpRDTMycHzthbLPe1XYnK5\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "messageNum",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "InboxMessageDelivered",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "messageNum",
+              "type": "uint256",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "InboxMessageDeliveredFromOrigin",
+          "anonymous": false
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/v0.8/vendor/arb-bridge-eth/v0.8.0-custom/contracts/bridge/interfaces/IMessageProvider.sol": "IMessageProvider"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/v0.8/vendor/arb-bridge-eth/v0.8.0-custom/contracts/bridge/interfaces/IMessageProvider.sol": {
+        "keccak256": "0x0b910d5d048b54d0e2f4dd41531dc8f4ac1539aa2361b31662b84b2673620152",
+        "urls": [
+          "bzz-raw://ec70534ed7b99a61e28909c7ef0252c5f50f9cf748429b4dfbc6b1a28de83dbc",
+          "dweb:/ipfs/QmQdZUhNrCo7JZUk4Y9HbTCmJpRDTMycHzthbLPe1XYnK5"
+        ],
+        "license": "Apache-2.0"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/v0.8/vendor/arb-bridge-eth/v0.8.0-custom/contracts/bridge/interfaces/IMessageProvider.sol",
+    "id": 129286,
+    "exportedSymbols": {
+      "IMessageProvider": [
+        129285
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "693:197:291",
+    "nodes": [
+      {
+        "id": 129274,
+        "nodeType": "PragmaDirective",
+        "src": "693:23:291",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 129285,
+        "nodeType": "ContractDefinition",
+        "src": "718:171:291",
+        "nodes": [
+          {
+            "id": 129280,
+            "nodeType": "EventDefinition",
+            "src": "749:68:291",
+            "nodes": [],
+            "anonymous": false,
+            "eventSelector": "ff64905f73a67fb594e0f940a8075a860db489ad991e032f48c81123eb52d60b",
+            "name": "InboxMessageDelivered",
+            "nameLocation": "755:21:291",
+            "parameters": {
+              "id": 129279,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 129276,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "messageNum",
+                  "nameLocation": "793:10:291",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129280,
+                  "src": "777:26:291",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 129275,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "777:7:291",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 129278,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "811:4:291",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129280,
+                  "src": "805:10:291",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 129277,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "805:5:291",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "776:40:291"
+            }
+          },
+          {
+            "id": 129284,
+            "nodeType": "EventDefinition",
+            "src": "821:66:291",
+            "nodes": [],
+            "anonymous": false,
+            "eventSelector": "ab532385be8f1005a4b6ba8fa20a2245facb346134ac739fe9a5198dc1580b9c",
+            "name": "InboxMessageDeliveredFromOrigin",
+            "nameLocation": "827:31:291",
+            "parameters": {
+              "id": 129283,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 129282,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "messageNum",
+                  "nameLocation": "875:10:291",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129284,
+                  "src": "859:26:291",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 129281,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "859:7:291",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "858:28:291"
+            }
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IMessageProvider",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          129285
+        ],
+        "name": "IMessageProvider",
+        "nameLocation": "728:16:291",
+        "scope": 129286,
+        "usedErrors": [],
+        "usedEvents": [
+          129280,
+          129284
+        ]
+      }
+    ],
+    "license": "Apache-2.0"
+  },
+  "id": 291
+}

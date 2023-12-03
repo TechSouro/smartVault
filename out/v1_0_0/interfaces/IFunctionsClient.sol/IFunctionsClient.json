@@ -1,0 +1,312 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "requestId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "response",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "err",
+          "type": "bytes"
+        }
+      ],
+      "name": "handleOracleFulfillment",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "handleOracleFulfillment(bytes32,bytes,bytes)": "0ca76175"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"requestId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"response\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"err\",\"type\":\"bytes\"}],\"name\":\"handleOracleFulfillment\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"handleOracleFulfillment(bytes32,bytes,bytes)\":{\"details\":\"Either response or error parameter will be set, but never both.\",\"params\":{\"err\":\"Aggregated error either from the request's source code or from the execution pipeline.\",\"requestId\":\"The requestId returned by FunctionsClient.sendRequest().\",\"response\":\"Aggregated response from the request's source code.\"}}},\"title\":\"Chainlink Functions client interface.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"handleOracleFulfillment(bytes32,bytes,bytes)\":{\"notice\":\"Chainlink Functions response handler called by the Functions Router during fullilment from the designated transmitter node in an OCR round.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/v0.8/functions/dev/v1_0_0/interfaces/IFunctionsClient.sol\":\"IFunctionsClient\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/v0.8/functions/dev/v1_0_0/interfaces/IFunctionsClient.sol\":{\"keccak256\":\"0x6117b82e7c4eec44ce557b0fc8bc1ac5f49e5d160ac6d4485452d6aafdd762ff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0e0828ef423afef9f6f709bb173a7e3991fe555bf9337a4941d65da525ac4ad3\",\"dweb:/ipfs/QmXz1jHRZFTqdnNxP2tffVQ9NnUE1xgtBMRWuyUrTVY4pm\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "requestId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "response",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "err",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "handleOracleFulfillment"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "handleOracleFulfillment(bytes32,bytes,bytes)": {
+            "details": "Either response or error parameter will be set, but never both.",
+            "params": {
+              "err": "Aggregated error either from the request's source code or from the execution pipeline.",
+              "requestId": "The requestId returned by FunctionsClient.sendRequest().",
+              "response": "Aggregated response from the request's source code."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "handleOracleFulfillment(bytes32,bytes,bytes)": {
+            "notice": "Chainlink Functions response handler called by the Functions Router during fullilment from the designated transmitter node in an OCR round."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/v0.8/functions/dev/v1_0_0/interfaces/IFunctionsClient.sol": "IFunctionsClient"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/v0.8/functions/dev/v1_0_0/interfaces/IFunctionsClient.sol": {
+        "keccak256": "0x6117b82e7c4eec44ce557b0fc8bc1ac5f49e5d160ac6d4485452d6aafdd762ff",
+        "urls": [
+          "bzz-raw://0e0828ef423afef9f6f709bb173a7e3991fe555bf9337a4941d65da525ac4ad3",
+          "dweb:/ipfs/QmXz1jHRZFTqdnNxP2tffVQ9NnUE1xgtBMRWuyUrTVY4pm"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/v0.8/functions/dev/v1_0_0/interfaces/IFunctionsClient.sol",
+    "id": 91877,
+    "exportedSymbols": {
+      "IFunctionsClient": [
+        91876
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:704:165",
+    "nodes": [
+      {
+        "id": 91864,
+        "nodeType": "PragmaDirective",
+        "src": "32:24:165",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".19"
+        ]
+      },
+      {
+        "id": 91876,
+        "nodeType": "ContractDefinition",
+        "src": "107:628:165",
+        "nodes": [
+          {
+            "id": 91875,
+            "nodeType": "FunctionDefinition",
+            "src": "631:102:165",
+            "nodes": [],
+            "documentation": {
+              "id": 91866,
+              "nodeType": "StructuredDocumentation",
+              "src": "138:490:165",
+              "text": "@notice Chainlink Functions response handler called by the Functions Router\n during fullilment from the designated transmitter node in an OCR round.\n @param requestId The requestId returned by FunctionsClient.sendRequest().\n @param response Aggregated response from the request's source code.\n @param err Aggregated error either from the request's source code or from the execution pipeline.\n @dev Either response or error parameter will be set, but never both."
+            },
+            "functionSelector": "0ca76175",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "handleOracleFulfillment",
+            "nameLocation": "640:23:165",
+            "parameters": {
+              "id": 91873,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 91868,
+                  "mutability": "mutable",
+                  "name": "requestId",
+                  "nameLocation": "672:9:165",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91875,
+                  "src": "664:17:165",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 91867,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "664:7:165",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 91870,
+                  "mutability": "mutable",
+                  "name": "response",
+                  "nameLocation": "696:8:165",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91875,
+                  "src": "683:21:165",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 91869,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "683:5:165",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 91872,
+                  "mutability": "mutable",
+                  "name": "err",
+                  "nameLocation": "719:3:165",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91875,
+                  "src": "706:16:165",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 91871,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "706:5:165",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "663:60:165"
+            },
+            "returnParameters": {
+              "id": 91874,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "732:0:165"
+            },
+            "scope": 91876,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IFunctionsClient",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 91865,
+          "nodeType": "StructuredDocumentation",
+          "src": "58:49:165",
+          "text": "@title Chainlink Functions client interface."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          91876
+        ],
+        "name": "IFunctionsClient",
+        "nameLocation": "117:16:165",
+        "scope": 91877,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 165
+}

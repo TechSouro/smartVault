@@ -1,0 +1,2937 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "claimTopicsRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "ClaimTopicsRegistrySet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint16",
+          "name": "country",
+          "type": "uint16"
+        }
+      ],
+      "name": "CountryUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "contract IIdentity",
+          "name": "identity",
+          "type": "address"
+        }
+      ],
+      "name": "IdentityRegistered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "investorAddress",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "contract IIdentity",
+          "name": "identity",
+          "type": "address"
+        }
+      ],
+      "name": "IdentityRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "identityStorage",
+          "type": "address"
+        }
+      ],
+      "name": "IdentityStorageSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IIdentity",
+          "name": "oldIdentity",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "contract IIdentity",
+          "name": "newIdentity",
+          "type": "address"
+        }
+      ],
+      "name": "IdentityUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "trustedIssuersRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "TrustedIssuersRegistrySet",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_userAddresses",
+          "type": "address[]"
+        },
+        {
+          "internalType": "contract IIdentity[]",
+          "name": "_identities",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint16[]",
+          "name": "_countries",
+          "type": "uint16[]"
+        }
+      ],
+      "name": "batchRegisterIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userAddress",
+          "type": "address"
+        }
+      ],
+      "name": "contains",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userAddress",
+          "type": "address"
+        }
+      ],
+      "name": "deleteIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userAddress",
+          "type": "address"
+        }
+      ],
+      "name": "identity",
+      "outputs": [
+        {
+          "internalType": "contract IIdentity",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "identityStorage",
+      "outputs": [
+        {
+          "internalType": "contract IIdentityRegistryStorage",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userAddress",
+          "type": "address"
+        }
+      ],
+      "name": "investorCountry",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userAddress",
+          "type": "address"
+        }
+      ],
+      "name": "isVerified",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "issuersRegistry",
+      "outputs": [
+        {
+          "internalType": "contract ITrustedIssuersRegistry",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IIdentity",
+          "name": "_identity",
+          "type": "address"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_country",
+          "type": "uint16"
+        }
+      ],
+      "name": "registerIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_claimTopicsRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "setClaimTopicsRegistry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_identityRegistryStorage",
+          "type": "address"
+        }
+      ],
+      "name": "setIdentityRegistryStorage",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_trustedIssuersRegistry",
+          "type": "address"
+        }
+      ],
+      "name": "setTrustedIssuersRegistry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "topicsRegistry",
+      "outputs": [
+        {
+          "internalType": "contract IClaimTopicsRegistry",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_country",
+          "type": "uint16"
+        }
+      ],
+      "name": "updateCountry",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IIdentity",
+          "name": "_identity",
+          "type": "address"
+        }
+      ],
+      "name": "updateIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "batchRegisterIdentity(address[],address[],uint16[])": "653dc9f1",
+    "contains(address)": "5dbe47e8",
+    "deleteIdentity(address)": "a8d29d1d",
+    "identity(address)": "f0eb5e54",
+    "identityStorage()": "f11abfd8",
+    "investorCountry(address)": "7e42683b",
+    "isVerified(address)": "b9209e33",
+    "issuersRegistry()": "b4f3fcb7",
+    "registerIdentity(address,address,uint16)": "454a03e0",
+    "setClaimTopicsRegistry(address)": "670af6a9",
+    "setIdentityRegistryStorage(address)": "26d941ae",
+    "setTrustedIssuersRegistry(address)": "e744d789",
+    "topicsRegistry()": "3b3e12f4",
+    "updateCountry(address,uint16)": "3b239a7f",
+    "updateIdentity(address,address)": "8e098ca1"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"claimTopicsRegistry\",\"type\":\"address\"}],\"name\":\"ClaimTopicsRegistrySet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint16\",\"name\":\"country\",\"type\":\"uint16\"}],\"name\":\"CountryUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"contract IIdentity\",\"name\":\"identity\",\"type\":\"address\"}],\"name\":\"IdentityRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"investorAddress\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"contract IIdentity\",\"name\":\"identity\",\"type\":\"address\"}],\"name\":\"IdentityRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"identityStorage\",\"type\":\"address\"}],\"name\":\"IdentityStorageSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"contract IIdentity\",\"name\":\"oldIdentity\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"contract IIdentity\",\"name\":\"newIdentity\",\"type\":\"address\"}],\"name\":\"IdentityUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trustedIssuersRegistry\",\"type\":\"address\"}],\"name\":\"TrustedIssuersRegistrySet\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_userAddresses\",\"type\":\"address[]\"},{\"internalType\":\"contract IIdentity[]\",\"name\":\"_identities\",\"type\":\"address[]\"},{\"internalType\":\"uint16[]\",\"name\":\"_countries\",\"type\":\"uint16[]\"}],\"name\":\"batchRegisterIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userAddress\",\"type\":\"address\"}],\"name\":\"contains\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userAddress\",\"type\":\"address\"}],\"name\":\"deleteIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userAddress\",\"type\":\"address\"}],\"name\":\"identity\",\"outputs\":[{\"internalType\":\"contract IIdentity\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"identityStorage\",\"outputs\":[{\"internalType\":\"contract IIdentityRegistryStorage\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userAddress\",\"type\":\"address\"}],\"name\":\"investorCountry\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userAddress\",\"type\":\"address\"}],\"name\":\"isVerified\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"issuersRegistry\",\"outputs\":[{\"internalType\":\"contract ITrustedIssuersRegistry\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userAddress\",\"type\":\"address\"},{\"internalType\":\"contract IIdentity\",\"name\":\"_identity\",\"type\":\"address\"},{\"internalType\":\"uint16\",\"name\":\"_country\",\"type\":\"uint16\"}],\"name\":\"registerIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_claimTopicsRegistry\",\"type\":\"address\"}],\"name\":\"setClaimTopicsRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_identityRegistryStorage\",\"type\":\"address\"}],\"name\":\"setIdentityRegistryStorage\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_trustedIssuersRegistry\",\"type\":\"address\"}],\"name\":\"setTrustedIssuersRegistry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"topicsRegistry\",\"outputs\":[{\"internalType\":\"contract IClaimTopicsRegistry\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userAddress\",\"type\":\"address\"},{\"internalType\":\"uint16\",\"name\":\"_country\",\"type\":\"uint16\"}],\"name\":\"updateCountry\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userAddress\",\"type\":\"address\"},{\"internalType\":\"contract IIdentity\",\"name\":\"_identity\",\"type\":\"address\"}],\"name\":\"updateIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"batchRegisterIdentity(address[],address[],uint16[])\":{\"details\":\"function allowing to register identities in batch  This function can only be called by a wallet set as agent of the smart contract  Requires that none of the users has an identity contract already registered.  IMPORTANT : THIS TRANSACTION COULD EXCEED GAS LIMIT IF `_userAddresses.length` IS TOO HIGH,  USE WITH CARE OR YOU COULD LOSE TX FEES WITH AN \\\"OUT OF GAS\\\" TRANSACTION\",\"params\":{\"_countries\":\"The countries of the corresponding investors  emits _userAddresses.length `IdentityRegistered` events\",\"_identities\":\"The addresses of the corresponding identity contracts\",\"_userAddresses\":\"The addresses of the users\"}},\"contains(address)\":{\"details\":\"This functions checks whether a wallet has its Identity registered or not  in the Identity Registry.\",\"params\":{\"_userAddress\":\"The address of the user to be checked.\"},\"returns\":{\"_0\":\"'True' if the address is contained in the Identity Registry, 'false' if not.\"}},\"deleteIdentity(address)\":{\"details\":\"Removes an user from the identity registry.  Requires that the user have an identity contract already deployed that will be deleted.  This function can only be called by a wallet set as agent of the smart contract\",\"params\":{\"_userAddress\":\"The address of the user to be removed  emits `IdentityRemoved` event\"}},\"identity(address)\":{\"details\":\"Returns the onchainID of an investor.\",\"params\":{\"_userAddress\":\"The wallet of the investor\"}},\"identityStorage()\":{\"details\":\"Returns the IdentityRegistryStorage linked to the current IdentityRegistry.\"},\"investorCountry(address)\":{\"details\":\"Returns the country code of an investor.\",\"params\":{\"_userAddress\":\"The wallet of the investor\"}},\"isVerified(address)\":{\"details\":\"This functions checks whether an identity contract  corresponding to the provided user address has the required claims or not based  on the data fetched from trusted issuers registry and from the claim topics registry\",\"params\":{\"_userAddress\":\"The address of the user to be verified.\"},\"returns\":{\"_0\":\"'True' if the address is verified, 'false' if not.\"}},\"issuersRegistry()\":{\"details\":\"Returns the TrustedIssuersRegistry linked to the current IdentityRegistry.\"},\"registerIdentity(address,address,uint16)\":{\"details\":\"Register an identity contract corresponding to a user address.  Requires that the user doesn't have an identity contract already registered.  This function can only be called by a wallet set as agent of the smart contract\",\"params\":{\"_country\":\"The country of the investor  emits `IdentityRegistered` event\",\"_identity\":\"The address of the user's identity contract\",\"_userAddress\":\"The address of the user\"}},\"setClaimTopicsRegistry(address)\":{\"details\":\"Replace the actual claimTopicsRegistry contract with a new one.  This function can only be called by the wallet set as owner of the smart contract\",\"params\":{\"_claimTopicsRegistry\":\"The address of the new claim Topics Registry  emits `ClaimTopicsRegistrySet` event\"}},\"setIdentityRegistryStorage(address)\":{\"details\":\"Replace the actual identityRegistryStorage contract with a new one.  This function can only be called by the wallet set as owner of the smart contract\",\"params\":{\"_identityRegistryStorage\":\"The address of the new Identity Registry Storage  emits `IdentityStorageSet` event\"}},\"setTrustedIssuersRegistry(address)\":{\"details\":\"Replace the actual trustedIssuersRegistry contract with a new one.  This function can only be called by the wallet set as owner of the smart contract\",\"params\":{\"_trustedIssuersRegistry\":\"The address of the new Trusted Issuers Registry  emits `TrustedIssuersRegistrySet` event\"}},\"topicsRegistry()\":{\"details\":\"Returns the ClaimTopicsRegistry linked to the current IdentityRegistry.\"},\"updateCountry(address,uint16)\":{\"details\":\"Updates the country corresponding to a user address.  Requires that the user should have an identity contract already deployed that will be replaced.  This function can only be called by a wallet set as agent of the smart contract\",\"params\":{\"_country\":\"The new country of the user  emits `CountryUpdated` event\",\"_userAddress\":\"The address of the user\"}},\"updateIdentity(address,address)\":{\"details\":\"Updates an identity contract corresponding to a user address.  Requires that the user address should be the owner of the identity contract.  Requires that the user should have an identity contract already deployed that will be replaced.  This function can only be called by a wallet set as agent of the smart contract\",\"params\":{\"_identity\":\"The address of the user's new identity contract  emits `IdentityUpdated` event\",\"_userAddress\":\"The address of the user\"}}},\"version\":1},\"userdoc\":{\"events\":{\"ClaimTopicsRegistrySet(address)\":{\"notice\":\"this event is emitted when the ClaimTopicsRegistry has been set for the IdentityRegistry  the event is emitted by the IdentityRegistry constructor  `claimTopicsRegistry` is the address of the Claim Topics Registry contract\"},\"CountryUpdated(address,uint16)\":{\"notice\":\"this event is emitted when an Identity's country has been updated  the event is emitted by the 'updateCountry' function  `investorAddress` is the address on which the country has been updated  `country` is the numeric code (ISO 3166-1) of the new country\"},\"IdentityRegistered(address,address)\":{\"notice\":\"this event is emitted when an Identity is registered into the Identity Registry.  the event is emitted by the 'registerIdentity' function  `investorAddress` is the address of the investor's wallet  `identity` is the address of the Identity smart contract (onchainID)\"},\"IdentityRemoved(address,address)\":{\"notice\":\"this event is emitted when an Identity is removed from the Identity Registry.  the event is emitted by the 'deleteIdentity' function  `investorAddress` is the address of the investor's wallet  `identity` is the address of the Identity smart contract (onchainID)\"},\"IdentityStorageSet(address)\":{\"notice\":\"this event is emitted when the IdentityRegistryStorage has been set for the IdentityRegistry  the event is emitted by the IdentityRegistry constructor  `identityStorage` is the address of the Identity Registry Storage contract\"},\"IdentityUpdated(address,address)\":{\"notice\":\"this event is emitted when an Identity has been updated  the event is emitted by the 'updateIdentity' function  `oldIdentity` is the old Identity contract's address to update  `newIdentity` is the new Identity contract's\"},\"TrustedIssuersRegistrySet(address)\":{\"notice\":\"this event is emitted when the TrustedIssuersRegistry has been set for the IdentityRegistry  the event is emitted by the IdentityRegistry constructor  `trustedIssuersRegistry` is the address of the Trusted Issuers Registry contract\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/ERC-3643/contracts/registry/interface/IIdentityRegistry.sol\":\"IIdentityRegistry\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"lib/ERC-3643/contracts/registry/interface/IClaimTopicsRegistry.sol\":{\"keccak256\":\"0x1fc5a358bb1c64ee96bae25937acf9b60004a2f6c4153edacdbd5a4ecbe28fee\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://69a9346a0d24a48cb19c829c2e62bb54afa2489c10fefcfbfc1dc079422ddda3\",\"dweb:/ipfs/QmT8vKMcPPGRJCjSB7Sdya9Ly3gtP96LmMw3szLU5qQpuT\"]},\"lib/ERC-3643/contracts/registry/interface/IIdentityRegistry.sol\":{\"keccak256\":\"0xff1a9341bb396c2d70a54a214f60476741600d039196c161acdfb2a1f5f2aaa7\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://a54c8a9e3212bdb9d2cd88a1b7b6984b7d9f22ef50586f97f489b822a035729b\",\"dweb:/ipfs/QmYrRwsk6DK94rNQ485b9Yc9zJwtaY7jRfYCzFkWVsfJuM\"]},\"lib/ERC-3643/contracts/registry/interface/IIdentityRegistryStorage.sol\":{\"keccak256\":\"0x8fd8c54ac1fe1f5b8ad1a6e3c90d31554d729655e3ae2bb714edaa8827f824be\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://2c98937f70d3a3c896372334c6a9350eeb1c2f6ae2d820641c87e3df35ffa121\",\"dweb:/ipfs/QmUQTHPC3hF8WfoqQWggAoBGFsjR1be9NjHBXi2xn3bW2E\"]},\"lib/ERC-3643/contracts/registry/interface/ITrustedIssuersRegistry.sol\":{\"keccak256\":\"0xb2fc816e8cb8e8190670e5b7fdfda9f4f2a0448ff74f7b62c47e53b66d0f98c5\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://e975079774db7e7c1c67d454d955d6b11d5f939f12412cd53b7cad6888083a95\",\"dweb:/ipfs/QmQUak73ntcSrJaXbDzkTBGXG7Hub7avn1jVYmzPk5Bu3P\"]},\"lib/solidity/contracts/interface/IClaimIssuer.sol\":{\"keccak256\":\"0xef47a4613398260b99f4a795ccbd136f27d8c06400393ec0e1f93912a96d0ba1\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://cc143fb49ba6e5d61008be9d0288544b9b8986ddb2e14cb3e951026f29583317\",\"dweb:/ipfs/QmS7gnSaxaV9GQkupTa6xQCBjbWX67wcTdhvy4Zdg5rpnf\"]},\"lib/solidity/contracts/interface/IERC734.sol\":{\"keccak256\":\"0x783b52a4badfe9120c3019647b3e692bd014856935e4f11aa70d2d17a5bc21b3\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://c4b0c7765f1de76101936e5c70efde67c2c2e02450fefd406a15ccec2256cf04\",\"dweb:/ipfs/QmUcy9asUMnF9VMzbFhLbuJtaBeqpZYkjnwSGssCrntAXe\"]},\"lib/solidity/contracts/interface/IERC735.sol\":{\"keccak256\":\"0x287356bd54aa3b1a73cedc7cf9f59d3cb534f645ebea9cbfc98dd306b940c8d3\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://b52a73a33ab585f491762ddd2b0578bfba76114a80483c7e2d2093203550c5cd\",\"dweb:/ipfs/QmSBK7ad7XQH8msNfXgGobtSnD3DDCeACQeCpXX9ojsuDL\"]},\"lib/solidity/contracts/interface/IIdentity.sol\":{\"keccak256\":\"0x856d1fe69eb4899b779af6cb763282a4c2846277fdb8772d8ed0f94e49a26b7b\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://3d7a61bbf1d335e635a67b47c04759ef6304a2186b24dcadff4c2485dfc5b63a\",\"dweb:/ipfs/QmfKVBzJnVCQ5adBVngetjgpsnA1LWBeHykxm5GQGMjVgK\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "claimTopicsRegistry",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "ClaimTopicsRegistrySet",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "investorAddress",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint16",
+              "name": "country",
+              "type": "uint16",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "CountryUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "investorAddress",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "contract IIdentity",
+              "name": "identity",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "IdentityRegistered",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "investorAddress",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "contract IIdentity",
+              "name": "identity",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "IdentityRemoved",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "identityStorage",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "IdentityStorageSet",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract IIdentity",
+              "name": "oldIdentity",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "contract IIdentity",
+              "name": "newIdentity",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "IdentityUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "trustedIssuersRegistry",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "TrustedIssuersRegistrySet",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address[]",
+              "name": "_userAddresses",
+              "type": "address[]"
+            },
+            {
+              "internalType": "contract IIdentity[]",
+              "name": "_identities",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint16[]",
+              "name": "_countries",
+              "type": "uint16[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "batchRegisterIdentity"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_userAddress",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "contains",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_userAddress",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "deleteIdentity"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_userAddress",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "identity",
+          "outputs": [
+            {
+              "internalType": "contract IIdentity",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "identityStorage",
+          "outputs": [
+            {
+              "internalType": "contract IIdentityRegistryStorage",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_userAddress",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "investorCountry",
+          "outputs": [
+            {
+              "internalType": "uint16",
+              "name": "",
+              "type": "uint16"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_userAddress",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "isVerified",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "issuersRegistry",
+          "outputs": [
+            {
+              "internalType": "contract ITrustedIssuersRegistry",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_userAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IIdentity",
+              "name": "_identity",
+              "type": "address"
+            },
+            {
+              "internalType": "uint16",
+              "name": "_country",
+              "type": "uint16"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "registerIdentity"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_claimTopicsRegistry",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setClaimTopicsRegistry"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_identityRegistryStorage",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setIdentityRegistryStorage"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_trustedIssuersRegistry",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setTrustedIssuersRegistry"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "topicsRegistry",
+          "outputs": [
+            {
+              "internalType": "contract IClaimTopicsRegistry",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_userAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "uint16",
+              "name": "_country",
+              "type": "uint16"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateCountry"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_userAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IIdentity",
+              "name": "_identity",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateIdentity"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "batchRegisterIdentity(address[],address[],uint16[])": {
+            "details": "function allowing to register identities in batch  This function can only be called by a wallet set as agent of the smart contract  Requires that none of the users has an identity contract already registered.  IMPORTANT : THIS TRANSACTION COULD EXCEED GAS LIMIT IF `_userAddresses.length` IS TOO HIGH,  USE WITH CARE OR YOU COULD LOSE TX FEES WITH AN \"OUT OF GAS\" TRANSACTION",
+            "params": {
+              "_countries": "The countries of the corresponding investors  emits _userAddresses.length `IdentityRegistered` events",
+              "_identities": "The addresses of the corresponding identity contracts",
+              "_userAddresses": "The addresses of the users"
+            }
+          },
+          "contains(address)": {
+            "details": "This functions checks whether a wallet has its Identity registered or not  in the Identity Registry.",
+            "params": {
+              "_userAddress": "The address of the user to be checked."
+            },
+            "returns": {
+              "_0": "'True' if the address is contained in the Identity Registry, 'false' if not."
+            }
+          },
+          "deleteIdentity(address)": {
+            "details": "Removes an user from the identity registry.  Requires that the user have an identity contract already deployed that will be deleted.  This function can only be called by a wallet set as agent of the smart contract",
+            "params": {
+              "_userAddress": "The address of the user to be removed  emits `IdentityRemoved` event"
+            }
+          },
+          "identity(address)": {
+            "details": "Returns the onchainID of an investor.",
+            "params": {
+              "_userAddress": "The wallet of the investor"
+            }
+          },
+          "identityStorage()": {
+            "details": "Returns the IdentityRegistryStorage linked to the current IdentityRegistry."
+          },
+          "investorCountry(address)": {
+            "details": "Returns the country code of an investor.",
+            "params": {
+              "_userAddress": "The wallet of the investor"
+            }
+          },
+          "isVerified(address)": {
+            "details": "This functions checks whether an identity contract  corresponding to the provided user address has the required claims or not based  on the data fetched from trusted issuers registry and from the claim topics registry",
+            "params": {
+              "_userAddress": "The address of the user to be verified."
+            },
+            "returns": {
+              "_0": "'True' if the address is verified, 'false' if not."
+            }
+          },
+          "issuersRegistry()": {
+            "details": "Returns the TrustedIssuersRegistry linked to the current IdentityRegistry."
+          },
+          "registerIdentity(address,address,uint16)": {
+            "details": "Register an identity contract corresponding to a user address.  Requires that the user doesn't have an identity contract already registered.  This function can only be called by a wallet set as agent of the smart contract",
+            "params": {
+              "_country": "The country of the investor  emits `IdentityRegistered` event",
+              "_identity": "The address of the user's identity contract",
+              "_userAddress": "The address of the user"
+            }
+          },
+          "setClaimTopicsRegistry(address)": {
+            "details": "Replace the actual claimTopicsRegistry contract with a new one.  This function can only be called by the wallet set as owner of the smart contract",
+            "params": {
+              "_claimTopicsRegistry": "The address of the new claim Topics Registry  emits `ClaimTopicsRegistrySet` event"
+            }
+          },
+          "setIdentityRegistryStorage(address)": {
+            "details": "Replace the actual identityRegistryStorage contract with a new one.  This function can only be called by the wallet set as owner of the smart contract",
+            "params": {
+              "_identityRegistryStorage": "The address of the new Identity Registry Storage  emits `IdentityStorageSet` event"
+            }
+          },
+          "setTrustedIssuersRegistry(address)": {
+            "details": "Replace the actual trustedIssuersRegistry contract with a new one.  This function can only be called by the wallet set as owner of the smart contract",
+            "params": {
+              "_trustedIssuersRegistry": "The address of the new Trusted Issuers Registry  emits `TrustedIssuersRegistrySet` event"
+            }
+          },
+          "topicsRegistry()": {
+            "details": "Returns the ClaimTopicsRegistry linked to the current IdentityRegistry."
+          },
+          "updateCountry(address,uint16)": {
+            "details": "Updates the country corresponding to a user address.  Requires that the user should have an identity contract already deployed that will be replaced.  This function can only be called by a wallet set as agent of the smart contract",
+            "params": {
+              "_country": "The new country of the user  emits `CountryUpdated` event",
+              "_userAddress": "The address of the user"
+            }
+          },
+          "updateIdentity(address,address)": {
+            "details": "Updates an identity contract corresponding to a user address.  Requires that the user address should be the owner of the identity contract.  Requires that the user should have an identity contract already deployed that will be replaced.  This function can only be called by a wallet set as agent of the smart contract",
+            "params": {
+              "_identity": "The address of the user's new identity contract  emits `IdentityUpdated` event",
+              "_userAddress": "The address of the user"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "lib/ERC-3643/contracts/registry/interface/IIdentityRegistry.sol": "IIdentityRegistry"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/ERC-3643/contracts/registry/interface/IClaimTopicsRegistry.sol": {
+        "keccak256": "0x1fc5a358bb1c64ee96bae25937acf9b60004a2f6c4153edacdbd5a4ecbe28fee",
+        "urls": [
+          "bzz-raw://69a9346a0d24a48cb19c829c2e62bb54afa2489c10fefcfbfc1dc079422ddda3",
+          "dweb:/ipfs/QmT8vKMcPPGRJCjSB7Sdya9Ly3gtP96LmMw3szLU5qQpuT"
+        ],
+        "license": "GPL-3.0"
+      },
+      "lib/ERC-3643/contracts/registry/interface/IIdentityRegistry.sol": {
+        "keccak256": "0xff1a9341bb396c2d70a54a214f60476741600d039196c161acdfb2a1f5f2aaa7",
+        "urls": [
+          "bzz-raw://a54c8a9e3212bdb9d2cd88a1b7b6984b7d9f22ef50586f97f489b822a035729b",
+          "dweb:/ipfs/QmYrRwsk6DK94rNQ485b9Yc9zJwtaY7jRfYCzFkWVsfJuM"
+        ],
+        "license": "GPL-3.0"
+      },
+      "lib/ERC-3643/contracts/registry/interface/IIdentityRegistryStorage.sol": {
+        "keccak256": "0x8fd8c54ac1fe1f5b8ad1a6e3c90d31554d729655e3ae2bb714edaa8827f824be",
+        "urls": [
+          "bzz-raw://2c98937f70d3a3c896372334c6a9350eeb1c2f6ae2d820641c87e3df35ffa121",
+          "dweb:/ipfs/QmUQTHPC3hF8WfoqQWggAoBGFsjR1be9NjHBXi2xn3bW2E"
+        ],
+        "license": "GPL-3.0"
+      },
+      "lib/ERC-3643/contracts/registry/interface/ITrustedIssuersRegistry.sol": {
+        "keccak256": "0xb2fc816e8cb8e8190670e5b7fdfda9f4f2a0448ff74f7b62c47e53b66d0f98c5",
+        "urls": [
+          "bzz-raw://e975079774db7e7c1c67d454d955d6b11d5f939f12412cd53b7cad6888083a95",
+          "dweb:/ipfs/QmQUak73ntcSrJaXbDzkTBGXG7Hub7avn1jVYmzPk5Bu3P"
+        ],
+        "license": "GPL-3.0"
+      },
+      "lib/solidity/contracts/interface/IClaimIssuer.sol": {
+        "keccak256": "0xef47a4613398260b99f4a795ccbd136f27d8c06400393ec0e1f93912a96d0ba1",
+        "urls": [
+          "bzz-raw://cc143fb49ba6e5d61008be9d0288544b9b8986ddb2e14cb3e951026f29583317",
+          "dweb:/ipfs/QmS7gnSaxaV9GQkupTa6xQCBjbWX67wcTdhvy4Zdg5rpnf"
+        ],
+        "license": "GPL-3.0"
+      },
+      "lib/solidity/contracts/interface/IERC734.sol": {
+        "keccak256": "0x783b52a4badfe9120c3019647b3e692bd014856935e4f11aa70d2d17a5bc21b3",
+        "urls": [
+          "bzz-raw://c4b0c7765f1de76101936e5c70efde67c2c2e02450fefd406a15ccec2256cf04",
+          "dweb:/ipfs/QmUcy9asUMnF9VMzbFhLbuJtaBeqpZYkjnwSGssCrntAXe"
+        ],
+        "license": "GPL-3.0"
+      },
+      "lib/solidity/contracts/interface/IERC735.sol": {
+        "keccak256": "0x287356bd54aa3b1a73cedc7cf9f59d3cb534f645ebea9cbfc98dd306b940c8d3",
+        "urls": [
+          "bzz-raw://b52a73a33ab585f491762ddd2b0578bfba76114a80483c7e2d2093203550c5cd",
+          "dweb:/ipfs/QmSBK7ad7XQH8msNfXgGobtSnD3DDCeACQeCpXX9ojsuDL"
+        ],
+        "license": "GPL-3.0"
+      },
+      "lib/solidity/contracts/interface/IIdentity.sol": {
+        "keccak256": "0x856d1fe69eb4899b779af6cb763282a4c2846277fdb8772d8ed0f94e49a26b7b",
+        "urls": [
+          "bzz-raw://3d7a61bbf1d335e635a67b47c04759ef6304a2186b24dcadff4c2485dfc5b63a",
+          "dweb:/ipfs/QmfKVBzJnVCQ5adBVngetjgpsnA1LWBeHykxm5GQGMjVgK"
+        ],
+        "license": "GPL-3.0"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/ERC-3643/contracts/registry/interface/IIdentityRegistry.sol",
+    "id": 328,
+    "exportedSymbols": {
+      "IClaimIssuer": [
+        57435
+      ],
+      "IClaimTopicsRegistry": [
+        152
+      ],
+      "IERC734": [
+        57582
+      ],
+      "IERC735": [
+        57690
+      ],
+      "IIdentity": [
+        57714
+      ],
+      "IIdentityRegistry": [
+        327
+      ],
+      "IIdentityRegistryStorage": [
+        443
+      ],
+      "ITrustedIssuersRegistry": [
+        544
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "3817:8875:2",
+    "nodes": [
+      {
+        "id": 154,
+        "nodeType": "PragmaDirective",
+        "src": "3817:23:2",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".21"
+        ]
+      },
+      {
+        "id": 155,
+        "nodeType": "ImportDirective",
+        "src": "3842:39:2",
+        "nodes": [],
+        "absolutePath": "lib/ERC-3643/contracts/registry/interface/ITrustedIssuersRegistry.sol",
+        "file": "./ITrustedIssuersRegistry.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 328,
+        "sourceUnit": 545,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 156,
+        "nodeType": "ImportDirective",
+        "src": "3882:36:2",
+        "nodes": [],
+        "absolutePath": "lib/ERC-3643/contracts/registry/interface/IClaimTopicsRegistry.sol",
+        "file": "./IClaimTopicsRegistry.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 328,
+        "sourceUnit": 153,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 157,
+        "nodeType": "ImportDirective",
+        "src": "3919:40:2",
+        "nodes": [],
+        "absolutePath": "lib/ERC-3643/contracts/registry/interface/IIdentityRegistryStorage.sol",
+        "file": "./IIdentityRegistryStorage.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 328,
+        "sourceUnit": 444,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 158,
+        "nodeType": "ImportDirective",
+        "src": "3961:67:2",
+        "nodes": [],
+        "absolutePath": "lib/solidity/contracts/interface/IClaimIssuer.sol",
+        "file": "@onchain-id/solidity/contracts/interface/IClaimIssuer.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 328,
+        "sourceUnit": 57436,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 159,
+        "nodeType": "ImportDirective",
+        "src": "4029:64:2",
+        "nodes": [],
+        "absolutePath": "lib/solidity/contracts/interface/IIdentity.sol",
+        "file": "@onchain-id/solidity/contracts/interface/IIdentity.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 328,
+        "sourceUnit": 57715,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 327,
+        "nodeType": "ContractDefinition",
+        "src": "4095:8596:2",
+        "nodes": [
+          {
+            "id": 164,
+            "nodeType": "EventDefinition",
+            "src": "4390:66:2",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 160,
+              "nodeType": "StructuredDocumentation",
+              "src": "4129:256:2",
+              "text": "  this event is emitted when the ClaimTopicsRegistry has been set for the IdentityRegistry\n  the event is emitted by the IdentityRegistry constructor\n  `claimTopicsRegistry` is the address of the Claim Topics Registry contract"
+            },
+            "eventSelector": "7170bf15b246e880b2369cd7c67d057760d8a35149e8c64dde91efa22bcc76d0",
+            "name": "ClaimTopicsRegistrySet",
+            "nameLocation": "4396:22:2",
+            "parameters": {
+              "id": 163,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 162,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "claimTopicsRegistry",
+                  "nameLocation": "4435:19:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 164,
+                  "src": "4419:35:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 161,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4419:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4418:37:2"
+            }
+          },
+          {
+            "id": 169,
+            "nodeType": "EventDefinition",
+            "src": "4727:58:2",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 165,
+              "nodeType": "StructuredDocumentation",
+              "src": "4462:260:2",
+              "text": "  this event is emitted when the IdentityRegistryStorage has been set for the IdentityRegistry\n  the event is emitted by the IdentityRegistry constructor\n  `identityStorage` is the address of the Identity Registry Storage contract"
+            },
+            "eventSelector": "2fa8b95c1db7afe99e3398f3792f008135cedc1fa26b0bb2ecd2352cd166d53c",
+            "name": "IdentityStorageSet",
+            "nameLocation": "4733:18:2",
+            "parameters": {
+              "id": 168,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 167,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "identityStorage",
+                  "nameLocation": "4768:15:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 169,
+                  "src": "4752:31:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 166,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4752:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4751:33:2"
+            }
+          },
+          {
+            "id": 174,
+            "nodeType": "EventDefinition",
+            "src": "5061:72:2",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 170,
+              "nodeType": "StructuredDocumentation",
+              "src": "4791:265:2",
+              "text": "  this event is emitted when the TrustedIssuersRegistry has been set for the IdentityRegistry\n  the event is emitted by the IdentityRegistry constructor\n  `trustedIssuersRegistry` is the address of the Trusted Issuers Registry contract"
+            },
+            "eventSelector": "1b98cb79e6f73020175fe87333f1b91ad6a881519c0afe30340c2599b2b4bde0",
+            "name": "TrustedIssuersRegistrySet",
+            "nameLocation": "5067:25:2",
+            "parameters": {
+              "id": 173,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 172,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "trustedIssuersRegistry",
+                  "nameLocation": "5109:22:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 174,
+                  "src": "5093:38:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 171,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5093:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5092:40:2"
+            }
+          },
+          {
+            "id": 182,
+            "nodeType": "EventDefinition",
+            "src": "5451:86:2",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 175,
+              "nodeType": "StructuredDocumentation",
+              "src": "5139:307:2",
+              "text": "  this event is emitted when an Identity is registered into the Identity Registry.\n  the event is emitted by the 'registerIdentity' function\n  `investorAddress` is the address of the investor's wallet\n  `identity` is the address of the Identity smart contract (onchainID)"
+            },
+            "eventSelector": "6ae73635c50d24a45af6fbd5e016ac4bed179addbc8bf24e04ff0fcc6d33af19",
+            "name": "IdentityRegistered",
+            "nameLocation": "5457:18:2",
+            "parameters": {
+              "id": 181,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 177,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "investorAddress",
+                  "nameLocation": "5492:15:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 182,
+                  "src": "5476:31:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 176,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5476:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 180,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "identity",
+                  "nameLocation": "5527:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 182,
+                  "src": "5509:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IIdentity_$57714",
+                    "typeString": "contract IIdentity"
+                  },
+                  "typeName": {
+                    "id": 179,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 178,
+                      "name": "IIdentity",
+                      "nameLocations": [
+                        "5509:9:2"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 57714,
+                      "src": "5509:9:2"
+                    },
+                    "referencedDeclaration": 57714,
+                    "src": "5509:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IIdentity_$57714",
+                      "typeString": "contract IIdentity"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5475:61:2"
+            }
+          },
+          {
+            "id": 190,
+            "nodeType": "EventDefinition",
+            "src": "5850:83:2",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 183,
+              "nodeType": "StructuredDocumentation",
+              "src": "5543:302:2",
+              "text": "  this event is emitted when an Identity is removed from the Identity Registry.\n  the event is emitted by the 'deleteIdentity' function\n  `investorAddress` is the address of the investor's wallet\n  `identity` is the address of the Identity smart contract (onchainID)"
+            },
+            "eventSelector": "59d6590e225b81befe259af056324092801080acbb7feab310eb34678871f327",
+            "name": "IdentityRemoved",
+            "nameLocation": "5856:15:2",
+            "parameters": {
+              "id": 189,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 185,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "investorAddress",
+                  "nameLocation": "5888:15:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 190,
+                  "src": "5872:31:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 184,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5872:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 188,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "identity",
+                  "nameLocation": "5923:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 190,
+                  "src": "5905:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IIdentity_$57714",
+                    "typeString": "contract IIdentity"
+                  },
+                  "typeName": {
+                    "id": 187,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 186,
+                      "name": "IIdentity",
+                      "nameLocations": [
+                        "5905:9:2"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 57714,
+                      "src": "5905:9:2"
+                    },
+                    "referencedDeclaration": 57714,
+                    "src": "5905:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IIdentity_$57714",
+                      "typeString": "contract IIdentity"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5871:61:2"
+            }
+          },
+          {
+            "id": 199,
+            "nodeType": "EventDefinition",
+            "src": "6205:84:2",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 191,
+              "nodeType": "StructuredDocumentation",
+              "src": "5939:261:2",
+              "text": "  this event is emitted when an Identity has been updated\n  the event is emitted by the 'updateIdentity' function\n  `oldIdentity` is the old Identity contract's address to update\n  `newIdentity` is the new Identity contract's"
+            },
+            "eventSelector": "e98082932c8056a0f514da9104e4a66bc2cbaef102ad59d90c4b24220ebf6010",
+            "name": "IdentityUpdated",
+            "nameLocation": "6211:15:2",
+            "parameters": {
+              "id": 198,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 194,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "oldIdentity",
+                  "nameLocation": "6245:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 199,
+                  "src": "6227:29:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IIdentity_$57714",
+                    "typeString": "contract IIdentity"
+                  },
+                  "typeName": {
+                    "id": 193,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 192,
+                      "name": "IIdentity",
+                      "nameLocations": [
+                        "6227:9:2"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 57714,
+                      "src": "6227:9:2"
+                    },
+                    "referencedDeclaration": 57714,
+                    "src": "6227:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IIdentity_$57714",
+                      "typeString": "contract IIdentity"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 197,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "newIdentity",
+                  "nameLocation": "6276:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 199,
+                  "src": "6258:29:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IIdentity_$57714",
+                    "typeString": "contract IIdentity"
+                  },
+                  "typeName": {
+                    "id": 196,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 195,
+                      "name": "IIdentity",
+                      "nameLocations": [
+                        "6258:9:2"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 57714,
+                      "src": "6258:9:2"
+                    },
+                    "referencedDeclaration": 57714,
+                    "src": "6258:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IIdentity_$57714",
+                      "typeString": "contract IIdentity"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6226:62:2"
+            }
+          },
+          {
+            "id": 206,
+            "nodeType": "EventDefinition",
+            "src": "6595:78:2",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 200,
+              "nodeType": "StructuredDocumentation",
+              "src": "6295:295:2",
+              "text": "  this event is emitted when an Identity's country has been updated\n  the event is emitted by the 'updateCountry' function\n  `investorAddress` is the address on which the country has been updated\n  `country` is the numeric code (ISO 3166-1) of the new country"
+            },
+            "eventSelector": "04ed3b726495c2dca1ff1215d9ca54e1a4030abb5e82b0f6ce55702416cee853",
+            "name": "CountryUpdated",
+            "nameLocation": "6601:14:2",
+            "parameters": {
+              "id": 205,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 202,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "investorAddress",
+                  "nameLocation": "6632:15:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 206,
+                  "src": "6616:31:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 201,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6616:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 204,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "country",
+                  "nameLocation": "6664:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 206,
+                  "src": "6649:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 203,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6649:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6615:57:2"
+            }
+          },
+          {
+            "id": 217,
+            "nodeType": "FunctionDefinition",
+            "src": "7158:125:2",
+            "nodes": [],
+            "documentation": {
+              "id": 207,
+              "nodeType": "StructuredDocumentation",
+              "src": "6679:474:2",
+              "text": "  @dev Register an identity contract corresponding to a user address.\n  Requires that the user doesn't have an identity contract already registered.\n  This function can only be called by a wallet set as agent of the smart contract\n  @param _userAddress The address of the user\n  @param _identity The address of the user's identity contract\n  @param _country The country of the investor\n  emits `IdentityRegistered` event"
+            },
+            "functionSelector": "454a03e0",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerIdentity",
+            "nameLocation": "7167:16:2",
+            "parameters": {
+              "id": 215,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 209,
+                  "mutability": "mutable",
+                  "name": "_userAddress",
+                  "nameLocation": "7201:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "7193:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 208,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7193:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 212,
+                  "mutability": "mutable",
+                  "name": "_identity",
+                  "nameLocation": "7233:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "7223:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IIdentity_$57714",
+                    "typeString": "contract IIdentity"
+                  },
+                  "typeName": {
+                    "id": 211,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 210,
+                      "name": "IIdentity",
+                      "nameLocations": [
+                        "7223:9:2"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 57714,
+                      "src": "7223:9:2"
+                    },
+                    "referencedDeclaration": 57714,
+                    "src": "7223:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IIdentity_$57714",
+                      "typeString": "contract IIdentity"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 214,
+                  "mutability": "mutable",
+                  "name": "_country",
+                  "nameLocation": "7259:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "7252:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 213,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7252:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7183:90:2"
+            },
+            "returnParameters": {
+              "id": 216,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7282:0:2"
+            },
+            "scope": 327,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 223,
+            "nodeType": "FunctionDefinition",
+            "src": "7650:55:2",
+            "nodes": [],
+            "documentation": {
+              "id": 218,
+              "nodeType": "StructuredDocumentation",
+              "src": "7289:356:2",
+              "text": "  @dev Removes an user from the identity registry.\n  Requires that the user have an identity contract already deployed that will be deleted.\n  This function can only be called by a wallet set as agent of the smart contract\n  @param _userAddress The address of the user to be removed\n  emits `IdentityRemoved` event"
+            },
+            "functionSelector": "a8d29d1d",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deleteIdentity",
+            "nameLocation": "7659:14:2",
+            "parameters": {
+              "id": 221,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 220,
+                  "mutability": "mutable",
+                  "name": "_userAddress",
+                  "nameLocation": "7682:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 223,
+                  "src": "7674:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 219,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7674:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7673:22:2"
+            },
+            "returnParameters": {
+              "id": 222,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7704:0:2"
+            },
+            "scope": 327,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 229,
+            "nodeType": "FunctionDefinition",
+            "src": "8028:79:2",
+            "nodes": [],
+            "documentation": {
+              "id": 224,
+              "nodeType": "StructuredDocumentation",
+              "src": "7711:312:2",
+              "text": "  @dev Replace the actual identityRegistryStorage contract with a new one.\n  This function can only be called by the wallet set as owner of the smart contract\n  @param _identityRegistryStorage The address of the new Identity Registry Storage\n  emits `IdentityStorageSet` event"
+            },
+            "functionSelector": "26d941ae",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setIdentityRegistryStorage",
+            "nameLocation": "8037:26:2",
+            "parameters": {
+              "id": 227,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 226,
+                  "mutability": "mutable",
+                  "name": "_identityRegistryStorage",
+                  "nameLocation": "8072:24:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 229,
+                  "src": "8064:32:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 225,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8064:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8063:34:2"
+            },
+            "returnParameters": {
+              "id": 228,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "8106:0:2"
+            },
+            "scope": 327,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 235,
+            "nodeType": "FunctionDefinition",
+            "src": "8422:71:2",
+            "nodes": [],
+            "documentation": {
+              "id": 230,
+              "nodeType": "StructuredDocumentation",
+              "src": "8113:304:2",
+              "text": "  @dev Replace the actual claimTopicsRegistry contract with a new one.\n  This function can only be called by the wallet set as owner of the smart contract\n  @param _claimTopicsRegistry The address of the new claim Topics Registry\n  emits `ClaimTopicsRegistrySet` event"
+            },
+            "functionSelector": "670af6a9",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setClaimTopicsRegistry",
+            "nameLocation": "8431:22:2",
+            "parameters": {
+              "id": 233,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 232,
+                  "mutability": "mutable",
+                  "name": "_claimTopicsRegistry",
+                  "nameLocation": "8462:20:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 235,
+                  "src": "8454:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 231,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8454:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8453:30:2"
+            },
+            "returnParameters": {
+              "id": 234,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "8492:0:2"
+            },
+            "scope": 327,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 241,
+            "nodeType": "FunctionDefinition",
+            "src": "8820:77:2",
+            "nodes": [],
+            "documentation": {
+              "id": 236,
+              "nodeType": "StructuredDocumentation",
+              "src": "8499:316:2",
+              "text": "  @dev Replace the actual trustedIssuersRegistry contract with a new one.\n  This function can only be called by the wallet set as owner of the smart contract\n  @param _trustedIssuersRegistry The address of the new Trusted Issuers Registry\n  emits `TrustedIssuersRegistrySet` event"
+            },
+            "functionSelector": "e744d789",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setTrustedIssuersRegistry",
+            "nameLocation": "8829:25:2",
+            "parameters": {
+              "id": 239,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 238,
+                  "mutability": "mutable",
+                  "name": "_trustedIssuersRegistry",
+                  "nameLocation": "8863:23:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 241,
+                  "src": "8855:31:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 237,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8855:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8854:33:2"
+            },
+            "returnParameters": {
+              "id": 240,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "8896:0:2"
+            },
+            "scope": 327,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 249,
+            "nodeType": "FunctionDefinition",
+            "src": "9318:71:2",
+            "nodes": [],
+            "documentation": {
+              "id": 242,
+              "nodeType": "StructuredDocumentation",
+              "src": "8903:410:2",
+              "text": "  @dev Updates the country corresponding to a user address.\n  Requires that the user should have an identity contract already deployed that will be replaced.\n  This function can only be called by a wallet set as agent of the smart contract\n  @param _userAddress The address of the user\n  @param _country The new country of the user\n  emits `CountryUpdated` event"
+            },
+            "functionSelector": "3b239a7f",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateCountry",
+            "nameLocation": "9327:13:2",
+            "parameters": {
+              "id": 247,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 244,
+                  "mutability": "mutable",
+                  "name": "_userAddress",
+                  "nameLocation": "9349:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 249,
+                  "src": "9341:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 243,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9341:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 246,
+                  "mutability": "mutable",
+                  "name": "_country",
+                  "nameLocation": "9370:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 249,
+                  "src": "9363:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 245,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9363:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9340:39:2"
+            },
+            "returnParameters": {
+              "id": 248,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "9388:0:2"
+            },
+            "scope": 327,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 258,
+            "nodeType": "FunctionDefinition",
+            "src": "9926:76:2",
+            "nodes": [],
+            "documentation": {
+              "id": 250,
+              "nodeType": "StructuredDocumentation",
+              "src": "9395:526:2",
+              "text": "  @dev Updates an identity contract corresponding to a user address.\n  Requires that the user address should be the owner of the identity contract.\n  Requires that the user should have an identity contract already deployed that will be replaced.\n  This function can only be called by a wallet set as agent of the smart contract\n  @param _userAddress The address of the user\n  @param _identity The address of the user's new identity contract\n  emits `IdentityUpdated` event"
+            },
+            "functionSelector": "8e098ca1",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateIdentity",
+            "nameLocation": "9935:14:2",
+            "parameters": {
+              "id": 256,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 252,
+                  "mutability": "mutable",
+                  "name": "_userAddress",
+                  "nameLocation": "9958:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 258,
+                  "src": "9950:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 251,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9950:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 255,
+                  "mutability": "mutable",
+                  "name": "_identity",
+                  "nameLocation": "9982:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 258,
+                  "src": "9972:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IIdentity_$57714",
+                    "typeString": "contract IIdentity"
+                  },
+                  "typeName": {
+                    "id": 254,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 253,
+                      "name": "IIdentity",
+                      "nameLocations": [
+                        "9972:9:2"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 57714,
+                      "src": "9972:9:2"
+                    },
+                    "referencedDeclaration": 57714,
+                    "src": "9972:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IIdentity_$57714",
+                      "typeString": "contract IIdentity"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9949:43:2"
+            },
+            "returnParameters": {
+              "id": 257,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "10001:0:2"
+            },
+            "scope": 327,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 272,
+            "nodeType": "FunctionDefinition",
+            "src": "10714:169:2",
+            "nodes": [],
+            "documentation": {
+              "id": 259,
+              "nodeType": "StructuredDocumentation",
+              "src": "10008:701:2",
+              "text": "  @dev function allowing to register identities in batch\n  This function can only be called by a wallet set as agent of the smart contract\n  Requires that none of the users has an identity contract already registered.\n  IMPORTANT : THIS TRANSACTION COULD EXCEED GAS LIMIT IF `_userAddresses.length` IS TOO HIGH,\n  USE WITH CARE OR YOU COULD LOSE TX FEES WITH AN \"OUT OF GAS\" TRANSACTION\n  @param _userAddresses The addresses of the users\n  @param _identities The addresses of the corresponding identity contracts\n  @param _countries The countries of the corresponding investors\n  emits _userAddresses.length `IdentityRegistered` events"
+            },
+            "functionSelector": "653dc9f1",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "batchRegisterIdentity",
+            "nameLocation": "10723:21:2",
+            "parameters": {
+              "id": 270,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 262,
+                  "mutability": "mutable",
+                  "name": "_userAddresses",
+                  "nameLocation": "10773:14:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 272,
+                  "src": "10754:33:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 260,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "10754:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 261,
+                    "nodeType": "ArrayTypeName",
+                    "src": "10754:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 266,
+                  "mutability": "mutable",
+                  "name": "_identities",
+                  "nameLocation": "10818:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 272,
+                  "src": "10797:32:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_contract$_IIdentity_$57714_$dyn_calldata_ptr",
+                    "typeString": "contract IIdentity[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 264,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 263,
+                        "name": "IIdentity",
+                        "nameLocations": [
+                          "10797:9:2"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 57714,
+                        "src": "10797:9:2"
+                      },
+                      "referencedDeclaration": 57714,
+                      "src": "10797:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IIdentity_$57714",
+                        "typeString": "contract IIdentity"
+                      }
+                    },
+                    "id": 265,
+                    "nodeType": "ArrayTypeName",
+                    "src": "10797:11:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_IIdentity_$57714_$dyn_storage_ptr",
+                      "typeString": "contract IIdentity[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 269,
+                  "mutability": "mutable",
+                  "name": "_countries",
+                  "nameLocation": "10857:10:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 272,
+                  "src": "10839:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint16_$dyn_calldata_ptr",
+                    "typeString": "uint16[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 267,
+                      "name": "uint16",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "10839:6:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint16",
+                        "typeString": "uint16"
+                      }
+                    },
+                    "id": 268,
+                    "nodeType": "ArrayTypeName",
+                    "src": "10839:8:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint16_$dyn_storage_ptr",
+                      "typeString": "uint16[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10744:129:2"
+            },
+            "returnParameters": {
+              "id": 271,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "10882:0:2"
+            },
+            "scope": 327,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 280,
+            "nodeType": "FunctionDefinition",
+            "src": "11186:69:2",
+            "nodes": [],
+            "documentation": {
+              "id": 273,
+              "nodeType": "StructuredDocumentation",
+              "src": "10889:292:2",
+              "text": "  @dev This functions checks whether a wallet has its Identity registered or not\n  in the Identity Registry.\n  @param _userAddress The address of the user to be checked.\n  @return 'True' if the address is contained in the Identity Registry, 'false' if not."
+            },
+            "functionSelector": "5dbe47e8",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "contains",
+            "nameLocation": "11195:8:2",
+            "parameters": {
+              "id": 276,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 275,
+                  "mutability": "mutable",
+                  "name": "_userAddress",
+                  "nameLocation": "11212:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 280,
+                  "src": "11204:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 274,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11204:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11203:22:2"
+            },
+            "returnParameters": {
+              "id": 279,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 278,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 280,
+                  "src": "11249:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 277,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11249:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11248:6:2"
+            },
+            "scope": 327,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 288,
+            "nodeType": "FunctionDefinition",
+            "src": "11657:71:2",
+            "nodes": [],
+            "documentation": {
+              "id": 281,
+              "nodeType": "StructuredDocumentation",
+              "src": "11261:391:2",
+              "text": "  @dev This functions checks whether an identity contract\n  corresponding to the provided user address has the required claims or not based\n  on the data fetched from trusted issuers registry and from the claim topics registry\n  @param _userAddress The address of the user to be verified.\n  @return 'True' if the address is verified, 'false' if not."
+            },
+            "functionSelector": "b9209e33",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isVerified",
+            "nameLocation": "11666:10:2",
+            "parameters": {
+              "id": 284,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 283,
+                  "mutability": "mutable",
+                  "name": "_userAddress",
+                  "nameLocation": "11685:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 288,
+                  "src": "11677:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 282,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11677:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11676:22:2"
+            },
+            "returnParameters": {
+              "id": 287,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 286,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 288,
+                  "src": "11722:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 285,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11722:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11721:6:2"
+            },
+            "scope": 327,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 297,
+            "nodeType": "FunctionDefinition",
+            "src": "11856:74:2",
+            "nodes": [],
+            "documentation": {
+              "id": 289,
+              "nodeType": "StructuredDocumentation",
+              "src": "11734:117:2",
+              "text": "  @dev Returns the onchainID of an investor.\n  @param _userAddress The wallet of the investor"
+            },
+            "functionSelector": "f0eb5e54",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "identity",
+            "nameLocation": "11865:8:2",
+            "parameters": {
+              "id": 292,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 291,
+                  "mutability": "mutable",
+                  "name": "_userAddress",
+                  "nameLocation": "11882:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 297,
+                  "src": "11874:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 290,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11874:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11873:22:2"
+            },
+            "returnParameters": {
+              "id": 296,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 295,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 297,
+                  "src": "11919:9:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IIdentity_$57714",
+                    "typeString": "contract IIdentity"
+                  },
+                  "typeName": {
+                    "id": 294,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 293,
+                      "name": "IIdentity",
+                      "nameLocations": [
+                        "11919:9:2"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 57714,
+                      "src": "11919:9:2"
+                    },
+                    "referencedDeclaration": 57714,
+                    "src": "11919:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IIdentity_$57714",
+                      "typeString": "contract IIdentity"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11918:11:2"
+            },
+            "scope": 327,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 305,
+            "nodeType": "FunctionDefinition",
+            "src": "12061:78:2",
+            "nodes": [],
+            "documentation": {
+              "id": 298,
+              "nodeType": "StructuredDocumentation",
+              "src": "11936:120:2",
+              "text": "  @dev Returns the country code of an investor.\n  @param _userAddress The wallet of the investor"
+            },
+            "functionSelector": "7e42683b",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "investorCountry",
+            "nameLocation": "12070:15:2",
+            "parameters": {
+              "id": 301,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 300,
+                  "mutability": "mutable",
+                  "name": "_userAddress",
+                  "nameLocation": "12094:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 305,
+                  "src": "12086:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 299,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "12086:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12085:22:2"
+            },
+            "returnParameters": {
+              "id": 304,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 303,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 305,
+                  "src": "12131:6:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 302,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "12131:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12130:8:2"
+            },
+            "scope": 327,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 312,
+            "nodeType": "FunctionDefinition",
+            "src": "12250:76:2",
+            "nodes": [],
+            "documentation": {
+              "id": 306,
+              "nodeType": "StructuredDocumentation",
+              "src": "12145:100:2",
+              "text": "  @dev Returns the IdentityRegistryStorage linked to the current IdentityRegistry."
+            },
+            "functionSelector": "f11abfd8",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "identityStorage",
+            "nameLocation": "12259:15:2",
+            "parameters": {
+              "id": 307,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "12274:2:2"
+            },
+            "returnParameters": {
+              "id": 311,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 310,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 312,
+                  "src": "12300:24:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IIdentityRegistryStorage_$443",
+                    "typeString": "contract IIdentityRegistryStorage"
+                  },
+                  "typeName": {
+                    "id": 309,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 308,
+                      "name": "IIdentityRegistryStorage",
+                      "nameLocations": [
+                        "12300:24:2"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 443,
+                      "src": "12300:24:2"
+                    },
+                    "referencedDeclaration": 443,
+                    "src": "12300:24:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IIdentityRegistryStorage_$443",
+                      "typeString": "contract IIdentityRegistryStorage"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12299:26:2"
+            },
+            "scope": 327,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 319,
+            "nodeType": "FunctionDefinition",
+            "src": "12436:75:2",
+            "nodes": [],
+            "documentation": {
+              "id": 313,
+              "nodeType": "StructuredDocumentation",
+              "src": "12332:99:2",
+              "text": "  @dev Returns the TrustedIssuersRegistry linked to the current IdentityRegistry."
+            },
+            "functionSelector": "b4f3fcb7",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "issuersRegistry",
+            "nameLocation": "12445:15:2",
+            "parameters": {
+              "id": 314,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "12460:2:2"
+            },
+            "returnParameters": {
+              "id": 318,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 317,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 319,
+                  "src": "12486:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ITrustedIssuersRegistry_$544",
+                    "typeString": "contract ITrustedIssuersRegistry"
+                  },
+                  "typeName": {
+                    "id": 316,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 315,
+                      "name": "ITrustedIssuersRegistry",
+                      "nameLocations": [
+                        "12486:23:2"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 544,
+                      "src": "12486:23:2"
+                    },
+                    "referencedDeclaration": 544,
+                    "src": "12486:23:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ITrustedIssuersRegistry_$544",
+                      "typeString": "contract ITrustedIssuersRegistry"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12485:25:2"
+            },
+            "scope": 327,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 326,
+            "nodeType": "FunctionDefinition",
+            "src": "12618:71:2",
+            "nodes": [],
+            "documentation": {
+              "id": 320,
+              "nodeType": "StructuredDocumentation",
+              "src": "12517:96:2",
+              "text": "  @dev Returns the ClaimTopicsRegistry linked to the current IdentityRegistry."
+            },
+            "functionSelector": "3b3e12f4",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "topicsRegistry",
+            "nameLocation": "12627:14:2",
+            "parameters": {
+              "id": 321,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "12641:2:2"
+            },
+            "returnParameters": {
+              "id": 325,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 324,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 326,
+                  "src": "12667:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IClaimTopicsRegistry_$152",
+                    "typeString": "contract IClaimTopicsRegistry"
+                  },
+                  "typeName": {
+                    "id": 323,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 322,
+                      "name": "IClaimTopicsRegistry",
+                      "nameLocations": [
+                        "12667:20:2"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 152,
+                      "src": "12667:20:2"
+                    },
+                    "referencedDeclaration": 152,
+                    "src": "12667:20:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IClaimTopicsRegistry_$152",
+                      "typeString": "contract IClaimTopicsRegistry"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12666:22:2"
+            },
+            "scope": 327,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IIdentityRegistry",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          327
+        ],
+        "name": "IIdentityRegistry",
+        "nameLocation": "4105:17:2",
+        "scope": 328,
+        "usedErrors": [],
+        "usedEvents": [
+          164,
+          169,
+          174,
+          182,
+          190,
+          199,
+          206
+        ]
+      }
+    ],
+    "license": "GPL-3.0"
+  },
+  "id": 2
+}

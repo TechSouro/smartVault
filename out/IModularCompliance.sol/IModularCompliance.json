@@ -1,0 +1,2059 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_module",
+          "type": "address"
+        }
+      ],
+      "name": "ModuleAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "target",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes4",
+          "name": "selector",
+          "type": "bytes4"
+        }
+      ],
+      "name": "ModuleInteraction",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_module",
+          "type": "address"
+        }
+      ],
+      "name": "ModuleRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "TokenBound",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "TokenUnbound",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_module",
+          "type": "address"
+        }
+      ],
+      "name": "addModule",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "bindToken",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "callData",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "_module",
+          "type": "address"
+        }
+      ],
+      "name": "callModuleFunction",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "canTransfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "created",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "destroyed",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getModules",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getTokenBound",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_module",
+          "type": "address"
+        }
+      ],
+      "name": "isModuleBound",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_module",
+          "type": "address"
+        }
+      ],
+      "name": "removeModule",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferred",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "unbindToken",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "addModule(address)": "1ed86f19",
+    "bindToken(address)": "3ff5aa02",
+    "callModuleFunction(bytes,address)": "efb22d33",
+    "canTransfer(address,address,uint256)": "e46638e6",
+    "created(address,uint256)": "5f8dead3",
+    "destroyed(address,uint256)": "8d2ea772",
+    "getModules()": "b2494df3",
+    "getTokenBound()": "6a3edf28",
+    "isModuleBound(address)": "a446d49f",
+    "removeModule(address)": "a0632461",
+    "transferred(address,address,uint256)": "8baf29b4",
+    "unbindToken(address)": "40db3b50"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"}],\"name\":\"ModuleAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes4\",\"name\":\"selector\",\"type\":\"bytes4\"}],\"name\":\"ModuleInteraction\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"}],\"name\":\"ModuleRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"TokenBound\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"TokenUnbound\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"}],\"name\":\"addModule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"bindToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"callData\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"}],\"name\":\"callModuleFunction\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"canTransfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"created\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"destroyed\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getModules\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getTokenBound\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"}],\"name\":\"isModuleBound\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_module\",\"type\":\"address\"}],\"name\":\"removeModule\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"transferred\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"unbindToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"ModuleInteraction(address,bytes4)\":{\"details\":\"Event emitted for each executed interaction with a module contract.  For gas efficiency, only the interaction calldata selector (first 4  bytes) is included in the event. For interactions without calldata or  whose calldata is shorter than 4 bytes, the selector will be `0`.\"}},\"kind\":\"dev\",\"methods\":{\"addModule(address)\":{\"details\":\"adds a module to the list of compliance modules\",\"params\":{\"_module\":\"address of the module to add  there cannot be more than 25 modules bound to the modular compliance for gas cost reasons  This function can be called ONLY by the owner of the compliance contract  Emits a ModuleAdded event\"}},\"bindToken(address)\":{\"details\":\"binds a token to the compliance contract\",\"params\":{\"_token\":\"address of the token to bind  This function can be called ONLY by the owner of the compliance contract  Emits a TokenBound event\"}},\"callModuleFunction(bytes,address)\":{\"details\":\"calls any function on bound modules  can be called only on bound modules\",\"params\":{\"_module\":\"The address of the module  This function can be called only by the modular compliance owner  emits a `ModuleInteraction` event\",\"callData\":\"the bytecode for interaction with the module, abi encoded\"}},\"canTransfer(address,address,uint256)\":{\"details\":\"checks that the transfer is compliant.  default compliance always returns true  READ ONLY FUNCTION, this function cannot be used to increment  counters, emit events, ...\",\"params\":{\"_amount\":\"The amount of tokens involved in the transfer  This function will call moduleCheck() on every module bound to the compliance  If each of the module checks return TRUE, this function will return TRUE as well  returns FALSE otherwise\",\"_from\":\"The address of the sender\",\"_to\":\"The address of the receiver\"}},\"created(address,uint256)\":{\"details\":\"function called whenever tokens are created on a wallet  this function can update state variables in the modules bound to the compliance  these state variables being used by the module checks to decide if a transfer  is compliant or not depending on the values stored in these state variables and on  the parameters of the modules  This function can be called ONLY by the token contract bound to the compliance\",\"params\":{\"_amount\":\"The amount of tokens involved in the minting  This function calls moduleMintAction() on each module bound to the compliance contract\",\"_to\":\"The address of the receiver\"}},\"destroyed(address,uint256)\":{\"details\":\"function called whenever tokens are destroyed from a wallet  this function can update state variables in the modules bound to the compliance  these state variables being used by the module checks to decide if a transfer  is compliant or not depending on the values stored in these state variables and on  the parameters of the modules  This function can be called ONLY by the token contract bound to the compliance\",\"params\":{\"_amount\":\"The amount of tokens involved in the burn  This function calls moduleBurnAction() on each module bound to the compliance contract\",\"_from\":\"The address on which tokens are burnt\"}},\"getModules()\":{\"details\":\"getter for the modules bound to the compliance contract  returns address array of module contracts bound to the compliance\"},\"getTokenBound()\":{\"details\":\"getter for the address of the token bound  returns the address of the token\"},\"isModuleBound(address)\":{\"details\":\"checks if a module is bound to the compliance contract  returns true if module is bound, false otherwise\"},\"removeModule(address)\":{\"details\":\"removes a module from the list of compliance modules\",\"params\":{\"_module\":\"address of the module to remove  This function can be called ONLY by the owner of the compliance contract  Emits a ModuleRemoved event\"}},\"transferred(address,address,uint256)\":{\"details\":\"function called whenever tokens are transferred  from one wallet to another  this function can update state variables in the modules bound to the compliance  these state variables being used by the module checks to decide if a transfer  is compliant or not depending on the values stored in these state variables and on  the parameters of the modules  This function can be called ONLY by the token contract bound to the compliance\",\"params\":{\"_amount\":\"The amount of tokens involved in the transfer  This function calls moduleTransferAction() on each module bound to the compliance contract\",\"_from\":\"The address of the sender\",\"_to\":\"The address of the receiver\"}},\"unbindToken(address)\":{\"details\":\"unbinds a token from the compliance contract\",\"params\":{\"_token\":\"address of the token to unbind  This function can be called ONLY by the owner of the compliance contract  Emits a TokenUnbound event\"}}},\"version\":1},\"userdoc\":{\"events\":{\"ModuleAdded(address)\":{\"notice\":\"this event is emitted when a module has been added to the list of modules bound to the compliance contract  the event is emitted by the addModule function  `_module` is the address of the compliance module\"},\"ModuleRemoved(address)\":{\"notice\":\"this event is emitted when a module has been removed from the list of modules bound to the compliance contract  the event is emitted by the removeModule function  `_module` is the address of the compliance module\"},\"TokenBound(address)\":{\"notice\":\"this event is emitted when a token has been bound to the compliance contract  the event is emitted by the bindToken function  `_token` is the address of the token to bind\"},\"TokenUnbound(address)\":{\"notice\":\"this event is emitted when a token has been unbound from the compliance contract  the event is emitted by the unbindToken function  `_token` is the address of the token to unbind\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/ERC-3643/contracts/compliance/modular/IModularCompliance.sol\":\"IModularCompliance\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"lib/ERC-3643/contracts/compliance/modular/IModularCompliance.sol\":{\"keccak256\":\"0x7c31b3761cecc940a6f1af5cb648857b6581943dc600164b8ae6bf6e5b7273e5\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://a4fb6102684f896c371fc87873a7744eb260830c68c19c50a4ebd8f3fd6ba847\",\"dweb:/ipfs/QmS4MQjaJArc4Uq8cdBevswcSAKWuCbDU7ffW9M4PzFSdn\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_module",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "ModuleAdded",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "target",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "bytes4",
+              "name": "selector",
+              "type": "bytes4",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ModuleInteraction",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_module",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "ModuleRemoved",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_token",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "TokenBound",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_token",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "TokenUnbound",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_module",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addModule"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_token",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "bindToken"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "callData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "address",
+              "name": "_module",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "callModuleFunction"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "canTransfer",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "created"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_from",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "destroyed"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getModules",
+          "outputs": [
+            {
+              "internalType": "address[]",
+              "name": "",
+              "type": "address[]"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getTokenBound",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_module",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "isModuleBound",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_module",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "removeModule"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transferred"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_token",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "unbindToken"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "addModule(address)": {
+            "details": "adds a module to the list of compliance modules",
+            "params": {
+              "_module": "address of the module to add  there cannot be more than 25 modules bound to the modular compliance for gas cost reasons  This function can be called ONLY by the owner of the compliance contract  Emits a ModuleAdded event"
+            }
+          },
+          "bindToken(address)": {
+            "details": "binds a token to the compliance contract",
+            "params": {
+              "_token": "address of the token to bind  This function can be called ONLY by the owner of the compliance contract  Emits a TokenBound event"
+            }
+          },
+          "callModuleFunction(bytes,address)": {
+            "details": "calls any function on bound modules  can be called only on bound modules",
+            "params": {
+              "_module": "The address of the module  This function can be called only by the modular compliance owner  emits a `ModuleInteraction` event",
+              "callData": "the bytecode for interaction with the module, abi encoded"
+            }
+          },
+          "canTransfer(address,address,uint256)": {
+            "details": "checks that the transfer is compliant.  default compliance always returns true  READ ONLY FUNCTION, this function cannot be used to increment  counters, emit events, ...",
+            "params": {
+              "_amount": "The amount of tokens involved in the transfer  This function will call moduleCheck() on every module bound to the compliance  If each of the module checks return TRUE, this function will return TRUE as well  returns FALSE otherwise",
+              "_from": "The address of the sender",
+              "_to": "The address of the receiver"
+            }
+          },
+          "created(address,uint256)": {
+            "details": "function called whenever tokens are created on a wallet  this function can update state variables in the modules bound to the compliance  these state variables being used by the module checks to decide if a transfer  is compliant or not depending on the values stored in these state variables and on  the parameters of the modules  This function can be called ONLY by the token contract bound to the compliance",
+            "params": {
+              "_amount": "The amount of tokens involved in the minting  This function calls moduleMintAction() on each module bound to the compliance contract",
+              "_to": "The address of the receiver"
+            }
+          },
+          "destroyed(address,uint256)": {
+            "details": "function called whenever tokens are destroyed from a wallet  this function can update state variables in the modules bound to the compliance  these state variables being used by the module checks to decide if a transfer  is compliant or not depending on the values stored in these state variables and on  the parameters of the modules  This function can be called ONLY by the token contract bound to the compliance",
+            "params": {
+              "_amount": "The amount of tokens involved in the burn  This function calls moduleBurnAction() on each module bound to the compliance contract",
+              "_from": "The address on which tokens are burnt"
+            }
+          },
+          "getModules()": {
+            "details": "getter for the modules bound to the compliance contract  returns address array of module contracts bound to the compliance"
+          },
+          "getTokenBound()": {
+            "details": "getter for the address of the token bound  returns the address of the token"
+          },
+          "isModuleBound(address)": {
+            "details": "checks if a module is bound to the compliance contract  returns true if module is bound, false otherwise"
+          },
+          "removeModule(address)": {
+            "details": "removes a module from the list of compliance modules",
+            "params": {
+              "_module": "address of the module to remove  This function can be called ONLY by the owner of the compliance contract  Emits a ModuleRemoved event"
+            }
+          },
+          "transferred(address,address,uint256)": {
+            "details": "function called whenever tokens are transferred  from one wallet to another  this function can update state variables in the modules bound to the compliance  these state variables being used by the module checks to decide if a transfer  is compliant or not depending on the values stored in these state variables and on  the parameters of the modules  This function can be called ONLY by the token contract bound to the compliance",
+            "params": {
+              "_amount": "The amount of tokens involved in the transfer  This function calls moduleTransferAction() on each module bound to the compliance contract",
+              "_from": "The address of the sender",
+              "_to": "The address of the receiver"
+            }
+          },
+          "unbindToken(address)": {
+            "details": "unbinds a token from the compliance contract",
+            "params": {
+              "_token": "address of the token to unbind  This function can be called ONLY by the owner of the compliance contract  Emits a TokenUnbound event"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "lib/ERC-3643/contracts/compliance/modular/IModularCompliance.sol": "IModularCompliance"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/ERC-3643/contracts/compliance/modular/IModularCompliance.sol": {
+        "keccak256": "0x7c31b3761cecc940a6f1af5cb648857b6581943dc600164b8ae6bf6e5b7273e5",
+        "urls": [
+          "bzz-raw://a4fb6102684f896c371fc87873a7744eb260830c68c19c50a4ebd8f3fd6ba847",
+          "dweb:/ipfs/QmS4MQjaJArc4Uq8cdBevswcSAKWuCbDU7ffW9M4PzFSdn"
+        ],
+        "license": "GPL-3.0"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/ERC-3643/contracts/compliance/modular/IModularCompliance.sol",
+    "id": 121,
+    "exportedSymbols": {
+      "IModularCompliance": [
+        120
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "3817:7037:0",
+    "nodes": [
+      {
+        "id": 1,
+        "nodeType": "PragmaDirective",
+        "src": "3817:23:0",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".21"
+        ]
+      },
+      {
+        "id": 120,
+        "nodeType": "ContractDefinition",
+        "src": "3842:7011:0",
+        "nodes": [
+          {
+            "id": 8,
+            "nodeType": "EventDefinition",
+            "src": "4219:65:0",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 2,
+              "nodeType": "StructuredDocumentation",
+              "src": "3894:320:0",
+              "text": "  @dev Event emitted for each executed interaction with a module contract.\n  For gas efficiency, only the interaction calldata selector (first 4\n  bytes) is included in the event. For interactions without calldata or\n  whose calldata is shorter than 4 bytes, the selector will be `0`."
+            },
+            "eventSelector": "20d79de70adcc6e9353d8a9a5646b46dc352710d0a310b1ad1f67faeca7ef891",
+            "name": "ModuleInteraction",
+            "nameLocation": "4225:17:0",
+            "parameters": {
+              "id": 7,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "target",
+                  "nameLocation": "4259:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8,
+                  "src": "4243:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4243:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "selector",
+                  "nameLocation": "4274:8:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8,
+                  "src": "4267:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 5,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4267:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4242:41:0"
+            }
+          },
+          {
+            "id": 13,
+            "nodeType": "EventDefinition",
+            "src": "4499:33:0",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 9,
+              "nodeType": "StructuredDocumentation",
+              "src": "4290:204:0",
+              "text": "  this event is emitted when a token has been bound to the compliance contract\n  the event is emitted by the bindToken function\n  `_token` is the address of the token to bind"
+            },
+            "eventSelector": "2de35142b19ed5a07796cf30791959c592018f70b1d2d7c460eef8ffe713692b",
+            "name": "TokenBound",
+            "nameLocation": "4505:10:0",
+            "parameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "4524:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13,
+                  "src": "4516:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4516:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4515:16:0"
+            }
+          },
+          {
+            "id": 18,
+            "nodeType": "EventDefinition",
+            "src": "4755:35:0",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 14,
+              "nodeType": "StructuredDocumentation",
+              "src": "4538:212:0",
+              "text": "  this event is emitted when a token has been unbound from the compliance contract\n  the event is emitted by the unbindToken function\n  `_token` is the address of the token to unbind"
+            },
+            "eventSelector": "28a4ca7134a3b3f9aff286e79ad3daadb4a06d1b43d037a3a98bdc074edd9b7a",
+            "name": "TokenUnbound",
+            "nameLocation": "4761:12:0",
+            "parameters": {
+              "id": 17,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "4782:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18,
+                  "src": "4774:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4774:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4773:16:0"
+            }
+          },
+          {
+            "id": 23,
+            "nodeType": "EventDefinition",
+            "src": "5040:43:0",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 19,
+              "nodeType": "StructuredDocumentation",
+              "src": "4796:239:0",
+              "text": "  this event is emitted when a module has been added to the list of modules bound to the compliance contract\n  the event is emitted by the addModule function\n  `_module` is the address of the compliance module"
+            },
+            "eventSelector": "ead6a006345da1073a106d5f32372d2d2204f46cb0b4bca8f5ebafcbbed12b8a",
+            "name": "ModuleAdded",
+            "nameLocation": "5046:11:0",
+            "parameters": {
+              "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_module",
+                  "nameLocation": "5074:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23,
+                  "src": "5058:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5058:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5057:25:0"
+            }
+          },
+          {
+            "id": 28,
+            "nodeType": "EventDefinition",
+            "src": "5340:45:0",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 24,
+              "nodeType": "StructuredDocumentation",
+              "src": "5089:246:0",
+              "text": "  this event is emitted when a module has been removed from the list of modules bound to the compliance contract\n  the event is emitted by the removeModule function\n  `_module` is the address of the compliance module"
+            },
+            "eventSelector": "0a1ee69f55c33d8467c69ca59ce2007a737a88603d75392972520bf67cb513b8",
+            "name": "ModuleRemoved",
+            "nameLocation": "5346:13:0",
+            "parameters": {
+              "id": 27,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 26,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_module",
+                  "nameLocation": "5376:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28,
+                  "src": "5360:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 25,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5360:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5359:25:0"
+            }
+          },
+          {
+            "id": 34,
+            "nodeType": "FunctionDefinition",
+            "src": "5645:44:0",
+            "nodes": [],
+            "documentation": {
+              "id": 29,
+              "nodeType": "StructuredDocumentation",
+              "src": "5410:230:0",
+              "text": "  @dev binds a token to the compliance contract\n  @param _token address of the token to bind\n  This function can be called ONLY by the owner of the compliance contract\n  Emits a TokenBound event"
+            },
+            "functionSelector": "3ff5aa02",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "bindToken",
+            "nameLocation": "5654:9:0",
+            "parameters": {
+              "id": 32,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 31,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "5672:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34,
+                  "src": "5664:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 30,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5664:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5663:16:0"
+            },
+            "returnParameters": {
+              "id": 33,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5688:0:0"
+            },
+            "scope": 120,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 40,
+            "nodeType": "FunctionDefinition",
+            "src": "5938:46:0",
+            "nodes": [],
+            "documentation": {
+              "id": 35,
+              "nodeType": "StructuredDocumentation",
+              "src": "5695:238:0",
+              "text": "  @dev unbinds a token from the compliance contract\n  @param _token address of the token to unbind\n  This function can be called ONLY by the owner of the compliance contract\n  Emits a TokenUnbound event"
+            },
+            "functionSelector": "40db3b50",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unbindToken",
+            "nameLocation": "5947:11:0",
+            "parameters": {
+              "id": 38,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 37,
+                  "mutability": "mutable",
+                  "name": "_token",
+                  "nameLocation": "5967:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 40,
+                  "src": "5959:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 36,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5959:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5958:16:0"
+            },
+            "returnParameters": {
+              "id": 39,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5983:0:0"
+            },
+            "scope": 120,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 46,
+            "nodeType": "FunctionDefinition",
+            "src": "6332:45:0",
+            "nodes": [],
+            "documentation": {
+              "id": 41,
+              "nodeType": "StructuredDocumentation",
+              "src": "5990:337:0",
+              "text": "  @dev adds a module to the list of compliance modules\n  @param _module address of the module to add\n  there cannot be more than 25 modules bound to the modular compliance for gas cost reasons\n  This function can be called ONLY by the owner of the compliance contract\n  Emits a ModuleAdded event"
+            },
+            "functionSelector": "1ed86f19",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addModule",
+            "nameLocation": "6341:9:0",
+            "parameters": {
+              "id": 44,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 43,
+                  "mutability": "mutable",
+                  "name": "_module",
+                  "nameLocation": "6359:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46,
+                  "src": "6351:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 42,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6351:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6350:17:0"
+            },
+            "returnParameters": {
+              "id": 45,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6376:0:0"
+            },
+            "scope": 120,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 52,
+            "nodeType": "FunctionDefinition",
+            "src": "6637:48:0",
+            "nodes": [],
+            "documentation": {
+              "id": 47,
+              "nodeType": "StructuredDocumentation",
+              "src": "6383:249:0",
+              "text": "  @dev removes a module from the list of compliance modules\n  @param _module address of the module to remove\n  This function can be called ONLY by the owner of the compliance contract\n  Emits a ModuleRemoved event"
+            },
+            "functionSelector": "a0632461",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeModule",
+            "nameLocation": "6646:12:0",
+            "parameters": {
+              "id": 50,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 49,
+                  "mutability": "mutable",
+                  "name": "_module",
+                  "nameLocation": "6667:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 52,
+                  "src": "6659:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 48,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6659:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6658:17:0"
+            },
+            "returnParameters": {
+              "id": 51,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6684:0:0"
+            },
+            "scope": 120,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 60,
+            "nodeType": "FunctionDefinition",
+            "src": "7046:79:0",
+            "nodes": [],
+            "documentation": {
+              "id": 53,
+              "nodeType": "StructuredDocumentation",
+              "src": "6691:350:0",
+              "text": "  @dev calls any function on bound modules\n  can be called only on bound modules\n  @param callData the bytecode for interaction with the module, abi encoded\n  @param _module The address of the module\n  This function can be called only by the modular compliance owner\n  emits a `ModuleInteraction` event"
+            },
+            "functionSelector": "efb22d33",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "callModuleFunction",
+            "nameLocation": "7055:18:0",
+            "parameters": {
+              "id": 58,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 55,
+                  "mutability": "mutable",
+                  "name": "callData",
+                  "nameLocation": "7089:8:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 60,
+                  "src": "7074:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 54,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7074:5:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57,
+                  "mutability": "mutable",
+                  "name": "_module",
+                  "nameLocation": "7107:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 60,
+                  "src": "7099:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 56,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7099:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7073:42:0"
+            },
+            "returnParameters": {
+              "id": 59,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7124:0:0"
+            },
+            "scope": 120,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70,
+            "nodeType": "FunctionDefinition",
+            "src": "7895:105:0",
+            "nodes": [],
+            "documentation": {
+              "id": 61,
+              "nodeType": "StructuredDocumentation",
+              "src": "7131:759:0",
+              "text": "  @dev function called whenever tokens are transferred\n  from one wallet to another\n  this function can update state variables in the modules bound to the compliance\n  these state variables being used by the module checks to decide if a transfer\n  is compliant or not depending on the values stored in these state variables and on\n  the parameters of the modules\n  This function can be called ONLY by the token contract bound to the compliance\n  @param _from The address of the sender\n  @param _to The address of the receiver\n  @param _amount The amount of tokens involved in the transfer\n  This function calls moduleTransferAction() on each module bound to the compliance contract"
+            },
+            "functionSelector": "8baf29b4",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferred",
+            "nameLocation": "7904:11:0",
+            "parameters": {
+              "id": 68,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 63,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "7933:5:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "7925:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 62,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7925:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 65,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "7956:3:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "7948:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 64,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7948:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 67,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "7977:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "7969:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 66,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7969:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7915:75:0"
+            },
+            "returnParameters": {
+              "id": 69,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7999:0:0"
+            },
+            "scope": 120,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 78,
+            "nodeType": "FunctionDefinition",
+            "src": "8691:56:0",
+            "nodes": [],
+            "documentation": {
+              "id": 71,
+              "nodeType": "StructuredDocumentation",
+              "src": "8006:680:0",
+              "text": "  @dev function called whenever tokens are created on a wallet\n  this function can update state variables in the modules bound to the compliance\n  these state variables being used by the module checks to decide if a transfer\n  is compliant or not depending on the values stored in these state variables and on\n  the parameters of the modules\n  This function can be called ONLY by the token contract bound to the compliance\n  @param _to The address of the receiver\n  @param _amount The amount of tokens involved in the minting\n  This function calls moduleMintAction() on each module bound to the compliance contract"
+            },
+            "functionSelector": "5f8dead3",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "created",
+            "nameLocation": "8700:7:0",
+            "parameters": {
+              "id": 76,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 73,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "8716:3:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "8708:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 72,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8708:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 75,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "8729:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "8721:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 74,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8721:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8707:30:0"
+            },
+            "returnParameters": {
+              "id": 77,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "8746:0:0"
+            },
+            "scope": 120,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 86,
+            "nodeType": "FunctionDefinition",
+            "src": "9451:60:0",
+            "nodes": [],
+            "documentation": {
+              "id": 79,
+              "nodeType": "StructuredDocumentation",
+              "src": "8753:693:0",
+              "text": "  @dev function called whenever tokens are destroyed from a wallet\n  this function can update state variables in the modules bound to the compliance\n  these state variables being used by the module checks to decide if a transfer\n  is compliant or not depending on the values stored in these state variables and on\n  the parameters of the modules\n  This function can be called ONLY by the token contract bound to the compliance\n  @param _from The address on which tokens are burnt\n  @param _amount The amount of tokens involved in the burn\n  This function calls moduleBurnAction() on each module bound to the compliance contract"
+            },
+            "functionSelector": "8d2ea772",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "destroyed",
+            "nameLocation": "9460:9:0",
+            "parameters": {
+              "id": 84,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 81,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "9478:5:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 86,
+                  "src": "9470:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 80,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9470:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 83,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "9493:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 86,
+                  "src": "9485:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 82,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9485:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9469:32:0"
+            },
+            "returnParameters": {
+              "id": 85,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "9510:0:0"
+            },
+            "scope": 120,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 98,
+            "nodeType": "FunctionDefinition",
+            "src": "10107:125:0",
+            "nodes": [],
+            "documentation": {
+              "id": 87,
+              "nodeType": "StructuredDocumentation",
+              "src": "9517:585:0",
+              "text": "  @dev checks that the transfer is compliant.\n  default compliance always returns true\n  READ ONLY FUNCTION, this function cannot be used to increment\n  counters, emit events, ...\n  @param _from The address of the sender\n  @param _to The address of the receiver\n  @param _amount The amount of tokens involved in the transfer\n  This function will call moduleCheck() on every module bound to the compliance\n  If each of the module checks return TRUE, this function will return TRUE as well\n  returns FALSE otherwise"
+            },
+            "functionSelector": "e46638e6",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "canTransfer",
+            "nameLocation": "10116:11:0",
+            "parameters": {
+              "id": 94,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 89,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "10145:5:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 98,
+                  "src": "10137:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 88,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10137:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 91,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "10168:3:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 98,
+                  "src": "10160:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 90,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10160:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 93,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "10189:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 98,
+                  "src": "10181:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 92,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10181:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10127:75:0"
+            },
+            "returnParameters": {
+              "id": 97,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 96,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 98,
+                  "src": "10226:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 95,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10226:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10225:6:0"
+            },
+            "scope": 120,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 105,
+            "nodeType": "FunctionDefinition",
+            "src": "10397:63:0",
+            "nodes": [],
+            "documentation": {
+              "id": 99,
+              "nodeType": "StructuredDocumentation",
+              "src": "10238:154:0",
+              "text": "  @dev getter for the modules bound to the compliance contract\n  returns address array of module contracts bound to the compliance"
+            },
+            "functionSelector": "b2494df3",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getModules",
+            "nameLocation": "10406:10:0",
+            "parameters": {
+              "id": 100,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "10416:2:0"
+            },
+            "returnParameters": {
+              "id": 104,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 103,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 105,
+                  "src": "10442:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 101,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "10442:7:0",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 102,
+                    "nodeType": "ArrayTypeName",
+                    "src": "10442:9:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10441:18:0"
+            },
+            "scope": 120,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 111,
+            "nodeType": "FunctionDefinition",
+            "src": "10578:57:0",
+            "nodes": [],
+            "documentation": {
+              "id": 106,
+              "nodeType": "StructuredDocumentation",
+              "src": "10466:107:0",
+              "text": "  @dev getter for the address of the token bound\n  returns the address of the token"
+            },
+            "functionSelector": "6a3edf28",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTokenBound",
+            "nameLocation": "10587:13:0",
+            "parameters": {
+              "id": 107,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "10600:2:0"
+            },
+            "returnParameters": {
+              "id": 110,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 109,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 111,
+                  "src": "10626:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 108,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10626:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10625:9:0"
+            },
+            "scope": 120,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 119,
+            "nodeType": "FunctionDefinition",
+            "src": "10782:69:0",
+            "nodes": [],
+            "documentation": {
+              "id": 112,
+              "nodeType": "StructuredDocumentation",
+              "src": "10641:136:0",
+              "text": "  @dev checks if a module is bound to the compliance contract\n  returns true if module is bound, false otherwise"
+            },
+            "functionSelector": "a446d49f",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isModuleBound",
+            "nameLocation": "10791:13:0",
+            "parameters": {
+              "id": 115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 114,
+                  "mutability": "mutable",
+                  "name": "_module",
+                  "nameLocation": "10813:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 119,
+                  "src": "10805:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 113,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10805:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10804:17:0"
+            },
+            "returnParameters": {
+              "id": 118,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 117,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 119,
+                  "src": "10845:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 116,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10845:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10844:6:0"
+            },
+            "scope": 120,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IModularCompliance",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          120
+        ],
+        "name": "IModularCompliance",
+        "nameLocation": "3852:18:0",
+        "scope": 121,
+        "usedErrors": [],
+        "usedEvents": [
+          8,
+          13,
+          18,
+          23,
+          28
+        ]
+      }
+    ],
+    "license": "GPL-3.0"
+  },
+  "id": 0
+}

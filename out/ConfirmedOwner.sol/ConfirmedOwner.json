@@ -1,0 +1,523 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferRequested",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "acceptOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x608060405234801561001057600080fd5b5060405161051438038061051483398101604081905261002f9161016e565b8060006001600160a01b03821661008d5760405162461bcd60e51b815260206004820152601860248201527f43616e6e6f7420736574206f776e657220746f207a65726f000000000000000060448201526064015b60405180910390fd5b600080546001600160a01b0319166001600160a01b03848116919091179091558116156100bd576100bd816100c5565b50505061019e565b336001600160a01b0382160361011d5760405162461bcd60e51b815260206004820152601760248201527f43616e6e6f74207472616e7366657220746f2073656c660000000000000000006044820152606401610084565b600180546001600160a01b0319166001600160a01b0383811691821790925560008054604051929316917fed8889f560326eb138920d842192f0eb3dd22b4f139c87a2c57538e05bae12789190a350565b60006020828403121561018057600080fd5b81516001600160a01b038116811461019757600080fd5b9392505050565b610367806101ad6000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806379ba5097146100465780638da5cb5b14610050578063f2fde38b1461007c575b600080fd5b61004e61008f565b005b6000546040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b61004e61008a36600461031d565b610191565b60015473ffffffffffffffffffffffffffffffffffffffff163314610115576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f4d7573742062652070726f706f736564206f776e65720000000000000000000060448201526064015b60405180910390fd5b60008054337fffffffffffffffffffffffff00000000000000000000000000000000000000008083168217845560018054909116905560405173ffffffffffffffffffffffffffffffffffffffff90921692909183917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a350565b6101996101a5565b6101a281610228565b50565b60005473ffffffffffffffffffffffffffffffffffffffff163314610226576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f4f6e6c792063616c6c61626c65206279206f776e657200000000000000000000604482015260640161010c565b565b3373ffffffffffffffffffffffffffffffffffffffff8216036102a7576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601760248201527f43616e6e6f74207472616e7366657220746f2073656c66000000000000000000604482015260640161010c565b600180547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83811691821790925560008054604051929316917fed8889f560326eb138920d842192f0eb3dd22b4f139c87a2c57538e05bae12789190a350565b60006020828403121561032f57600080fd5b813573ffffffffffffffffffffffffffffffffffffffff8116811461035357600080fd5b939250505056fea164736f6c6343000815000a",
+    "sourceMap": "212:141:248:-:0;;;270:81;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;327:8;345:1;-1:-1:-1;;;;;537:22:249;;529:59;;;;-1:-1:-1;;;529:59:249;;511:2:351;529:59:249;;;493:21:351;550:2;530:18;;;523:30;589:26;569:18;;;562:54;633:18;;529:59:249;;;;;;;;;595:7;:18;;-1:-1:-1;;;;;;595:18:249;-1:-1:-1;;;;;595:18:249;;;;;;;;;;623:26;;;619:79;;659:32;678:12;659:18;:32::i;:::-;471:231;;270:81:248;212:141;;1482:188:249;1550:10;-1:-1:-1;;;;;1544:16:249;;;1536:52;;;;-1:-1:-1;;;1536:52:249;;864:2:351;1536:52:249;;;846:21:351;903:2;883:18;;;876:30;942:25;922:18;;;915:53;985:18;;1536:52:249;662:347:351;1536:52:249;1595:14;:19;;-1:-1:-1;;;;;;1595:19:249;-1:-1:-1;;;;;1595:19:249;;;;;;;;;-1:-1:-1;1653:7:249;;1626:39;;1595:19;;1653:7;;1626:39;;-1:-1:-1;1626:39:249;1482:188;:::o;14:290:351:-;84:6;137:2;125:9;116:7;112:23;108:32;105:52;;;153:1;150;143:12;105:52;179:16;;-1:-1:-1;;;;;224:31:351;;214:42;;204:70;;270:1;267;260:12;204:70;293:5;14:290;-1:-1:-1;;;14:290:351:o;662:347::-;212:141:248;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806379ba5097146100465780638da5cb5b14610050578063f2fde38b1461007c575b600080fd5b61004e61008f565b005b6000546040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b61004e61008a36600461031d565b610191565b60015473ffffffffffffffffffffffffffffffffffffffff163314610115576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f4d7573742062652070726f706f736564206f776e65720000000000000000000060448201526064015b60405180910390fd5b60008054337fffffffffffffffffffffffff00000000000000000000000000000000000000008083168217845560018054909116905560405173ffffffffffffffffffffffffffffffffffffffff90921692909183917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a350565b6101996101a5565b6101a281610228565b50565b60005473ffffffffffffffffffffffffffffffffffffffff163314610226576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f4f6e6c792063616c6c61626c65206279206f776e657200000000000000000000604482015260640161010c565b565b3373ffffffffffffffffffffffffffffffffffffffff8216036102a7576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601760248201527f43616e6e6f74207472616e7366657220746f2073656c66000000000000000000604482015260640161010c565b600180547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83811691821790925560008054604051929316917fed8889f560326eb138920d842192f0eb3dd22b4f139c87a2c57538e05bae12789190a350565b60006020828403121561032f57600080fd5b813573ffffffffffffffffffffffffffffffffffffffff8116811461035357600080fd5b939250505056fea164736f6c6343000815000a",
+    "sourceMap": "212:141:248:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1001:265:249;;;:::i;:::-;;1317:81;1364:7;1386;1317:81;;;1386:7;;;;160:74:351;;1317:81:249;;;;;148:2:351;1317:81:249;;;811:98;;;;;;:::i;:::-;;:::i;1001:265::-;1074:14;;;;1060:10;:28;1052:63;;;;;;;761:2:351;1052:63:249;;;743:21:351;800:2;780:18;;;773:30;839:24;819:18;;;812:52;881:18;;1052:63:249;;;;;;;;;1122:16;1141:7;;1164:10;1154:20;;;;;;;;-1:-1:-1;1180:27:249;;;;;;;1219:42;;1141:7;;;;;1164:10;;1141:7;;1219:42;;;1046:220;1001:265::o;811:98::-;1941:20;:18;:20::i;:::-;882:22:::1;901:2;882:18;:22::i;:::-;811:98:::0;:::o;1715:111::-;1787:7;;;;1773:10;:21;1765:56;;;;;;;1112:2:351;1765:56:249;;;1094:21:351;1151:2;1131:18;;;1124:30;1190:24;1170:18;;;1163:52;1232:18;;1765:56:249;910:346:351;1765:56:249;1715:111::o;1482:188::-;1550:10;1544:16;;;;1536:52;;;;;;;1463:2:351;1536:52:249;;;1445:21:351;1502:2;1482:18;;;1475:30;1541:25;1521:18;;;1514:53;1584:18;;1536:52:249;1261:347:351;1536:52:249;1595:14;:19;;;;;;;;;;;;;;-1:-1:-1;1653:7:249;;1626:39;;1595:19;;1653:7;;1626:39;;-1:-1:-1;1626:39:249;1482:188;:::o;245:309:351:-;304:6;357:2;345:9;336:7;332:23;328:32;325:52;;;373:1;370;363:12;325:52;412:9;399:23;462:42;455:5;451:54;444:5;441:65;431:93;;520:1;517;510:12;431:93;543:5;245:309;-1:-1:-1;;;245:309:351:o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "acceptOwnership()": "79ba5097",
+    "owner()": "8da5cb5b",
+    "transferOwnership(address)": "f2fde38b"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"OwnershipTransferRequested\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"title\":\"The ConfirmedOwner contract\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"acceptOwnership()\":{\"notice\":\"Allows an ownership transfer to be completed by the recipient.\"},\"owner()\":{\"notice\":\"Get the current owner\"},\"transferOwnership(address)\":{\"notice\":\"Allows an owner to begin transferring ownership to a new address, pending.\"}},\"notice\":\"A contract with helpers for basic contract ownership.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/v0.8/shared/access/ConfirmedOwner.sol\":\"ConfirmedOwner\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/v0.8/shared/access/ConfirmedOwner.sol\":{\"keccak256\":\"0x99d0b0786fe368970009c703f2249bfbc56340ddf1a28b60d2915bb58c34cd72\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://af0371c1af45db651823b9a3d5af761b08243c78f105166342eee28de356c8dd\",\"dweb:/ipfs/QmPnC9qNDKwJFd5unwLb9pxjrutoe8MWjm5EXHTxq2kJ4x\"]},\"src/v0.8/shared/access/ConfirmedOwnerWithProposal.sol\":{\"keccak256\":\"0x215529a99534a40e6257ef2282a91ea4a95b66debc3997866406907622efb405\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ecc56a2cddb1ba6225ca0cffb07fdf6e24bcc4234cc87710c42a59c0a21ae395\",\"dweb:/ipfs/QmSpW4vkPHeRNZ14beMEk2LEtqY5JQTueNJC4sCT8JaSoc\"]},\"src/v0.8/shared/interfaces/IOwnable.sol\":{\"keccak256\":\"0x885de72b7b4e4f1bf8ba817a3f2bcc37fd9022d342c4ce76782151c30122d767\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://17c636625a5d29a140612db496d2cca9fb4b48c673adb0fd7b3957d287e75921\",\"dweb:/ipfs/QmNoBX8TY424bdQWyQC7y3kpKfgxyWxhLw7KEhhEEoBN9q\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "OwnershipTransferRequested",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "OwnershipTransferred",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "acceptOwnership"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "owner",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transferOwnership"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "acceptOwnership()": {
+            "notice": "Allows an ownership transfer to be completed by the recipient."
+          },
+          "owner()": {
+            "notice": "Get the current owner"
+          },
+          "transferOwnership(address)": {
+            "notice": "Allows an owner to begin transferring ownership to a new address, pending."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/v0.8/shared/access/ConfirmedOwner.sol": "ConfirmedOwner"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/v0.8/shared/access/ConfirmedOwner.sol": {
+        "keccak256": "0x99d0b0786fe368970009c703f2249bfbc56340ddf1a28b60d2915bb58c34cd72",
+        "urls": [
+          "bzz-raw://af0371c1af45db651823b9a3d5af761b08243c78f105166342eee28de356c8dd",
+          "dweb:/ipfs/QmPnC9qNDKwJFd5unwLb9pxjrutoe8MWjm5EXHTxq2kJ4x"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/shared/access/ConfirmedOwnerWithProposal.sol": {
+        "keccak256": "0x215529a99534a40e6257ef2282a91ea4a95b66debc3997866406907622efb405",
+        "urls": [
+          "bzz-raw://ecc56a2cddb1ba6225ca0cffb07fdf6e24bcc4234cc87710c42a59c0a21ae395",
+          "dweb:/ipfs/QmSpW4vkPHeRNZ14beMEk2LEtqY5JQTueNJC4sCT8JaSoc"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/shared/interfaces/IOwnable.sol": {
+        "keccak256": "0x885de72b7b4e4f1bf8ba817a3f2bcc37fd9022d342c4ce76782151c30122d767",
+        "urls": [
+          "bzz-raw://17c636625a5d29a140612db496d2cca9fb4b48c673adb0fd7b3957d287e75921",
+          "dweb:/ipfs/QmNoBX8TY424bdQWyQC7y3kpKfgxyWxhLw7KEhhEEoBN9q"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/v0.8/shared/access/ConfirmedOwner.sol",
+    "id": 122272,
+    "exportedSymbols": {
+      "ConfirmedOwner": [
+        122271
+      ],
+      "ConfirmedOwnerWithProposal": [
+        122433
+      ],
+      "IOwnable": [
+        122895
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:322:248",
+    "nodes": [
+      {
+        "id": 122253,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:248",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 122254,
+        "nodeType": "ImportDirective",
+        "src": "57:42:248",
+        "nodes": [],
+        "absolutePath": "src/v0.8/shared/access/ConfirmedOwnerWithProposal.sol",
+        "file": "./ConfirmedOwnerWithProposal.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 122272,
+        "sourceUnit": 122434,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 122271,
+        "nodeType": "ContractDefinition",
+        "src": "212:141:248",
+        "nodes": [
+          {
+            "id": 122270,
+            "nodeType": "FunctionDefinition",
+            "src": "270:81:248",
+            "nodes": [],
+            "body": {
+              "id": 122269,
+              "nodeType": "Block",
+              "src": "349:2:248",
+              "nodes": [],
+              "statements": []
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 122262,
+                    "name": "newOwner",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 122259,
+                    "src": "327:8:248",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "arguments": [
+                      {
+                        "hexValue": "30",
+                        "id": 122265,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "345:1:248",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        }
+                      ],
+                      "id": 122264,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "337:7:248",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": {
+                        "id": 122263,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "337:7:248",
+                        "typeDescriptions": {}
+                      }
+                    },
+                    "id": 122266,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "337:10:248",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 122267,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 122261,
+                  "name": "ConfirmedOwnerWithProposal",
+                  "nameLocations": [
+                    "300:26:248"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 122433,
+                  "src": "300:26:248"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "300:48:248"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 122260,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 122259,
+                  "mutability": "mutable",
+                  "name": "newOwner",
+                  "nameLocation": "290:8:248",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 122270,
+                  "src": "282:16:248",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 122258,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "282:7:248",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "281:18:248"
+            },
+            "returnParameters": {
+              "id": 122268,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "349:0:248"
+            },
+            "scope": 122271,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 122256,
+              "name": "ConfirmedOwnerWithProposal",
+              "nameLocations": [
+                "239:26:248"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 122433,
+              "src": "239:26:248"
+            },
+            "id": 122257,
+            "nodeType": "InheritanceSpecifier",
+            "src": "239:26:248"
+          }
+        ],
+        "canonicalName": "ConfirmedOwner",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 122255,
+          "nodeType": "StructuredDocumentation",
+          "src": "101:110:248",
+          "text": " @title The ConfirmedOwner contract\n @notice A contract with helpers for basic contract ownership."
+        },
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          122271,
+          122433,
+          122895
+        ],
+        "name": "ConfirmedOwner",
+        "nameLocation": "221:14:248",
+        "scope": 122272,
+        "usedErrors": [],
+        "usedEvents": [
+          122287,
+          122293
+        ]
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 248
+}

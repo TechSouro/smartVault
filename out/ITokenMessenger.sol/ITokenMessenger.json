@@ -1,0 +1,882 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint64",
+          "name": "nonce",
+          "type": "uint64"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "burnToken",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "depositor",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "mintRecipient",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "destinationDomain",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "destinationTokenMessenger",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "destinationCaller",
+          "type": "bytes32"
+        }
+      ],
+      "name": "DepositForBurn",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint32",
+          "name": "destinationDomain",
+          "type": "uint32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "mintRecipient",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "burnToken",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "destinationCaller",
+          "type": "bytes32"
+        }
+      ],
+      "name": "depositForBurnWithCaller",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "nonce",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "messageBodyVersion",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "depositForBurnWithCaller(uint256,uint32,bytes32,address,bytes32)": "f856ddb6",
+    "messageBodyVersion()": "9cdbb181"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint64\",\"name\":\"nonce\",\"type\":\"uint64\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"burnToken\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"depositor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"mintRecipient\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"destinationDomain\",\"type\":\"uint32\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"destinationTokenMessenger\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"destinationCaller\",\"type\":\"bytes32\"}],\"name\":\"DepositForBurn\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint32\",\"name\":\"destinationDomain\",\"type\":\"uint32\"},{\"internalType\":\"bytes32\",\"name\":\"mintRecipient\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"burnToken\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"destinationCaller\",\"type\":\"bytes32\"}],\"name\":\"depositForBurnWithCaller\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"nonce\",\"type\":\"uint64\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"messageBodyVersion\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"DepositForBurn(uint64,address,uint256,address,bytes32,uint32,bytes32,bytes32)\":{\"params\":{\"amount\":\"Deposit amount\",\"burnToken\":\"Address of token burnt on source domain\",\"depositor\":\"Address where deposit is transferred from\",\"destinationCaller\":\"Authorized caller as bytes32 of receiveMessage() on destination domain, if not equal to bytes32(0). If equal to bytes32(0), any address can call receiveMessage().\",\"destinationDomain\":\"Destination domain\",\"destinationTokenMessenger\":\"Address of TokenMessenger on destination domain as bytes32\",\"mintRecipient\":\"Address receiving minted tokens on destination domain as bytes32\",\"nonce\":\"Unique nonce reserved by message\"}}},\"kind\":\"dev\",\"methods\":{\"depositForBurnWithCaller(uint256,uint32,bytes32,address,bytes32)\":{\"details\":\"emits DepositForBurn\",\"params\":{\"amount\":\"Amount of tokens to deposit and burn.\",\"burnToken\":\"Address of contract to burn deposited tokens, on local domain.\",\"destinationCaller\":\"Caller on the destination domain, as bytes32.\",\"destinationDomain\":\"Destination domain identifier.\",\"mintRecipient\":\"Address of mint recipient on destination domain.\"},\"returns\":{\"nonce\":\"The unique nonce used in unlocking the funds on the destination chain.\"}},\"messageBodyVersion()\":{\"details\":\"immutable\"}},\"version\":1},\"userdoc\":{\"events\":{\"DepositForBurn(uint64,address,uint256,address,bytes32,uint32,bytes32,bytes32)\":{\"notice\":\"Emitted when a DepositForBurn message is sent\"}},\"kind\":\"user\",\"methods\":{\"depositForBurnWithCaller(uint256,uint32,bytes32,address,bytes32)\":{\"notice\":\"Burns the tokens on the source side to produce a nonce through Circles Cross Chain Transfer Protocol.\"},\"messageBodyVersion()\":{\"notice\":\"Returns the version of the message body format.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/v0.8/ccip/pools/USDC/ITokenMessenger.sol\":\"ITokenMessenger\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/v0.8/ccip/pools/USDC/ITokenMessenger.sol\":{\"keccak256\":\"0x28f9bca610ff18fbf925a6bf9173ad66e608f4bc844e980f48ed2198b3ee0f70\",\"urls\":[\"bzz-raw://4a49c9cd137b391532f90c30eea1e70868d8ff7893609e8443567297f949bfca\",\"dweb:/ipfs/QmbQ1mQGsZxfU1jR97hfWXB9mfwL51GDD7oCwhYzCimvM6\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint64",
+              "name": "nonce",
+              "type": "uint64",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "burnToken",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "address",
+              "name": "depositor",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "bytes32",
+              "name": "mintRecipient",
+              "type": "bytes32",
+              "indexed": false
+            },
+            {
+              "internalType": "uint32",
+              "name": "destinationDomain",
+              "type": "uint32",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes32",
+              "name": "destinationTokenMessenger",
+              "type": "bytes32",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes32",
+              "name": "destinationCaller",
+              "type": "bytes32",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "DepositForBurn",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint32",
+              "name": "destinationDomain",
+              "type": "uint32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "mintRecipient",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "burnToken",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "destinationCaller",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "depositForBurnWithCaller",
+          "outputs": [
+            {
+              "internalType": "uint64",
+              "name": "nonce",
+              "type": "uint64"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "messageBodyVersion",
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "depositForBurnWithCaller(uint256,uint32,bytes32,address,bytes32)": {
+            "details": "emits DepositForBurn",
+            "params": {
+              "amount": "Amount of tokens to deposit and burn.",
+              "burnToken": "Address of contract to burn deposited tokens, on local domain.",
+              "destinationCaller": "Caller on the destination domain, as bytes32.",
+              "destinationDomain": "Destination domain identifier.",
+              "mintRecipient": "Address of mint recipient on destination domain."
+            },
+            "returns": {
+              "nonce": "The unique nonce used in unlocking the funds on the destination chain."
+            }
+          },
+          "messageBodyVersion()": {
+            "details": "immutable"
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "depositForBurnWithCaller(uint256,uint32,bytes32,address,bytes32)": {
+            "notice": "Burns the tokens on the source side to produce a nonce through Circles Cross Chain Transfer Protocol."
+          },
+          "messageBodyVersion()": {
+            "notice": "Returns the version of the message body format."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/v0.8/ccip/pools/USDC/ITokenMessenger.sol": "ITokenMessenger"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/v0.8/ccip/pools/USDC/ITokenMessenger.sol": {
+        "keccak256": "0x28f9bca610ff18fbf925a6bf9173ad66e608f4bc844e980f48ed2198b3ee0f70",
+        "urls": [
+          "bzz-raw://4a49c9cd137b391532f90c30eea1e70868d8ff7893609e8443567297f949bfca",
+          "dweb:/ipfs/QmbQ1mQGsZxfU1jR97hfWXB9mfwL51GDD7oCwhYzCimvM6"
+        ],
+        "license": null
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/v0.8/ccip/pools/USDC/ITokenMessenger.sol",
+    "id": 79187,
+    "exportedSymbols": {
+      "ITokenMessenger": [
+        79186
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "619:1977:136",
+    "nodes": [
+      {
+        "id": 79144,
+        "nodeType": "PragmaDirective",
+        "src": "619:23:136",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 79186,
+        "nodeType": "ContractDefinition",
+        "src": "644:1951:136",
+        "nodes": [
+          {
+            "id": 79163,
+            "nodeType": "EventDefinition",
+            "src": "1389:260:136",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 79145,
+              "nodeType": "StructuredDocumentation",
+              "src": "674:712:136",
+              "text": "@notice Emitted when a DepositForBurn message is sent\n @param nonce Unique nonce reserved by message\n @param burnToken Address of token burnt on source domain\n @param amount Deposit amount\n @param depositor Address where deposit is transferred from\n @param mintRecipient Address receiving minted tokens on destination domain as bytes32\n @param destinationDomain Destination domain\n @param destinationTokenMessenger Address of TokenMessenger on destination domain as bytes32\n @param destinationCaller Authorized caller as bytes32 of receiveMessage() on destination domain,\n if not equal to bytes32(0). If equal to bytes32(0), any address can call receiveMessage()."
+            },
+            "eventSelector": "2fa9ca894982930190727e75500a97d8dc500233a5065e0f3126c48fbe0343c0",
+            "name": "DepositForBurn",
+            "nameLocation": "1395:14:136",
+            "parameters": {
+              "id": 79162,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 79147,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "nonce",
+                  "nameLocation": "1430:5:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79163,
+                  "src": "1415:20:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 79146,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1415:6:136",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79149,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "burnToken",
+                  "nameLocation": "1457:9:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79163,
+                  "src": "1441:25:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 79148,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1441:7:136",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79151,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1480:6:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79163,
+                  "src": "1472:14:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 79150,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1472:7:136",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79153,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "depositor",
+                  "nameLocation": "1508:9:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79163,
+                  "src": "1492:25:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 79152,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1492:7:136",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79155,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "mintRecipient",
+                  "nameLocation": "1531:13:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79163,
+                  "src": "1523:21:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 79154,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1523:7:136",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79157,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "destinationDomain",
+                  "nameLocation": "1557:17:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79163,
+                  "src": "1550:24:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 79156,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1550:6:136",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79159,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "destinationTokenMessenger",
+                  "nameLocation": "1588:25:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79163,
+                  "src": "1580:33:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 79158,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1580:7:136",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79161,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "destinationCaller",
+                  "nameLocation": "1627:17:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79163,
+                  "src": "1619:25:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 79160,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1619:7:136",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1409:239:136"
+            }
+          },
+          {
+            "id": 79179,
+            "nodeType": "FunctionDefinition",
+            "src": "2257:201:136",
+            "nodes": [],
+            "documentation": {
+              "id": 79164,
+              "nodeType": "StructuredDocumentation",
+              "src": "1653:601:136",
+              "text": "@notice Burns the tokens on the source side to produce a nonce through\n Circles Cross Chain Transfer Protocol.\n @param amount Amount of tokens to deposit and burn.\n @param destinationDomain Destination domain identifier.\n @param mintRecipient Address of mint recipient on destination domain.\n @param burnToken Address of contract to burn deposited tokens, on local domain.\n @param destinationCaller Caller on the destination domain, as bytes32.\n @return nonce The unique nonce used in unlocking the funds on the destination chain.\n @dev emits DepositForBurn"
+            },
+            "functionSelector": "f856ddb6",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "depositForBurnWithCaller",
+            "nameLocation": "2266:24:136",
+            "parameters": {
+              "id": 79175,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 79166,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "2304:6:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79179,
+                  "src": "2296:14:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 79165,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2296:7:136",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79168,
+                  "mutability": "mutable",
+                  "name": "destinationDomain",
+                  "nameLocation": "2323:17:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79179,
+                  "src": "2316:24:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 79167,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2316:6:136",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79170,
+                  "mutability": "mutable",
+                  "name": "mintRecipient",
+                  "nameLocation": "2354:13:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79179,
+                  "src": "2346:21:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 79169,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2346:7:136",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79172,
+                  "mutability": "mutable",
+                  "name": "burnToken",
+                  "nameLocation": "2381:9:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79179,
+                  "src": "2373:17:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 79171,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2373:7:136",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 79174,
+                  "mutability": "mutable",
+                  "name": "destinationCaller",
+                  "nameLocation": "2404:17:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79179,
+                  "src": "2396:25:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 79173,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2396:7:136",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2290:135:136"
+            },
+            "returnParameters": {
+              "id": 79178,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 79177,
+                  "mutability": "mutable",
+                  "name": "nonce",
+                  "nameLocation": "2451:5:136",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79179,
+                  "src": "2444:12:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 79176,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2444:6:136",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2443:14:136"
+            },
+            "scope": 79186,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 79185,
+            "nodeType": "FunctionDefinition",
+            "src": "2537:56:136",
+            "nodes": [],
+            "documentation": {
+              "id": 79180,
+              "nodeType": "StructuredDocumentation",
+              "src": "2462:72:136",
+              "text": "Returns the version of the message body format.\n @dev immutable"
+            },
+            "functionSelector": "9cdbb181",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "messageBodyVersion",
+            "nameLocation": "2546:18:136",
+            "parameters": {
+              "id": 79181,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2564:2:136"
+            },
+            "returnParameters": {
+              "id": 79184,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 79183,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79185,
+                  "src": "2585:6:136",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 79182,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2585:6:136",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2584:8:136"
+            },
+            "scope": 79186,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ITokenMessenger",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          79186
+        ],
+        "name": "ITokenMessenger",
+        "nameLocation": "654:15:136",
+        "scope": 79187,
+        "usedErrors": [],
+        "usedEvents": [
+          79163
+        ]
+      }
+    ]
+  },
+  "id": 136
+}

@@ -1,0 +1,2313 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "AddedAccess",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "CheckAccessDisabled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "CheckAccessEnabled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferRequested",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "RemovedAccess",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "acceptOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "addAccess",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "checkEnabled",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "disableAccessCheck",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "enableAccessCheck",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "hasAccess",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "removeAccess",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x608060405234801561001057600080fd5b5033806000816100675760405162461bcd60e51b815260206004820152601860248201527f43616e6e6f7420736574206f776e657220746f207a65726f000000000000000060448201526064015b60405180910390fd5b600080546001600160a01b0319166001600160a01b038481169190911790915581161561009757610097816100b2565b50506001805460ff60a01b1916600160a01b1790555061015b565b336001600160a01b0382160361010a5760405162461bcd60e51b815260206004820152601760248201527f43616e6e6f74207472616e7366657220746f2073656c66000000000000000000604482015260640161005e565b600180546001600160a01b0319166001600160a01b0383811691821790925560008054604051929316917fed8889f560326eb138920d842192f0eb3dd22b4f139c87a2c57538e05bae12789190a350565b6108308061016a6000396000f3fe608060405234801561001057600080fd5b50600436106100a35760003560e01c80638823da6c11610076578063a118f2491161005b578063a118f24914610125578063dc7f012414610138578063f2fde38b1461015d57600080fd5b80638823da6c146100ea5780638da5cb5b146100fd57600080fd5b80630a756983146100a85780636b14daf8146100b257806379ba5097146100da5780638038e4a1146100e2575b600080fd5b6100b0610170565b005b6100c56100c0366004610728565b6101ef565b60405190151581526020015b60405180910390f35b6100b0610245565b6100b0610347565b6100b06100f8366004610808565b6103db565b60005460405173ffffffffffffffffffffffffffffffffffffffff90911681526020016100d1565b6100b0610133366004610808565b610495565b6001546100c59074010000000000000000000000000000000000000000900460ff1681565b6100b061016b366004610808565b610549565b61017861055a565b60015474010000000000000000000000000000000000000000900460ff16156101ed57600180547fffffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffff1690556040517f3be8a977a014527b50ae38adda80b56911c267328965c98ddc385d248f53963890600090a15b565b73ffffffffffffffffffffffffffffffffffffffff821660009081526002602052604081205460ff168061023e575060015474010000000000000000000000000000000000000000900460ff16155b9392505050565b60015473ffffffffffffffffffffffffffffffffffffffff1633146102cb576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f4d7573742062652070726f706f736564206f776e65720000000000000000000060448201526064015b60405180910390fd5b60008054337fffffffffffffffffffffffff00000000000000000000000000000000000000008083168217845560018054909116905560405173ffffffffffffffffffffffffffffffffffffffff90921692909183917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a350565b61034f61055a565b60015474010000000000000000000000000000000000000000900460ff166101ed57600180547fffffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffff16740100000000000000000000000000000000000000001790556040517faebf329500988c6488a0074e5a0a9ff304561fc5c6fc877aeb1d59c8282c348090600090a1565b6103e361055a565b73ffffffffffffffffffffffffffffffffffffffff811660009081526002602052604090205460ff16156104925773ffffffffffffffffffffffffffffffffffffffff811660008181526002602090815260409182902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016905590519182527f3d68a6fce901d20453d1a7aa06bf3950302a735948037deb182a8db66df2a0d191015b60405180910390a15b50565b61049d61055a565b73ffffffffffffffffffffffffffffffffffffffff811660009081526002602052604090205460ff166104925773ffffffffffffffffffffffffffffffffffffffff811660008181526002602090815260409182902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016600117905590519182527f87286ad1f399c8e82bf0c4ef4fcdc570ea2e1e92176e5c848b6413545b885db49101610489565b61055161055a565b610492816105db565b60005473ffffffffffffffffffffffffffffffffffffffff1633146101ed576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f4f6e6c792063616c6c61626c65206279206f776e65720000000000000000000060448201526064016102c2565b3373ffffffffffffffffffffffffffffffffffffffff82160361065a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601760248201527f43616e6e6f74207472616e7366657220746f2073656c6600000000000000000060448201526064016102c2565b600180547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83811691821790925560008054604051929316917fed8889f560326eb138920d842192f0eb3dd22b4f139c87a2c57538e05bae12789190a350565b803573ffffffffffffffffffffffffffffffffffffffff811681146106f457600080fd5b919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b6000806040838503121561073b57600080fd5b610744836106d0565b9150602083013567ffffffffffffffff8082111561076157600080fd5b818501915085601f83011261077557600080fd5b813581811115610787576107876106f9565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0908116603f011681019083821181831017156107cd576107cd6106f9565b816040528281528860208487010111156107e657600080fd5b8260208601602083013760006020848301015280955050505050509250929050565b60006020828403121561081a57600080fd5b61023e826106d056fea164736f6c6343000815000a",
+    "sourceMap": "396:1725:252:-:0;;;693:71;;;;;;;;;-1:-1:-1;722:10:252;;345:1:248;722:10:252;529:59:249;;;;-1:-1:-1;;;529:59:249;;216:2:351;529:59:249;;;198:21:351;255:2;235:18;;;228:30;294:26;274:18;;;267:54;338:18;;529:59:249;;;;;;;;;595:7;:18;;-1:-1:-1;;;;;;595:18:249;-1:-1:-1;;;;;595:18:249;;;;;;;;;;623:26;;;619:79;;659:32;678:12;659:18;:32::i;:::-;-1:-1:-1;;755:4:252::1;740:19:::0;;-1:-1:-1;;;;740:19:252::1;-1:-1:-1::0;;;740:19:252::1;::::0;;-1:-1:-1;396:1725:252;;1482:188:249;1550:10;-1:-1:-1;;;;;1544:16:249;;;1536:52;;;;-1:-1:-1;;;1536:52:249;;569:2:351;1536:52:249;;;551:21:351;608:2;588:18;;;581:30;647:25;627:18;;;620:53;690:18;;1536:52:249;367:347:351;1536:52:249;1595:14;:19;;-1:-1:-1;;;;;;1595:19:249;-1:-1:-1;;;;;1595:19:249;;;;;;;;;-1:-1:-1;1653:7:249;;1626:39;;1595:19;;1653:7;;1626:39;;-1:-1:-1;1626:39:249;1482:188;:::o;367:347:351:-;396:1725:252;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b50600436106100a35760003560e01c80638823da6c11610076578063a118f2491161005b578063a118f24914610125578063dc7f012414610138578063f2fde38b1461015d57600080fd5b80638823da6c146100ea5780638da5cb5b146100fd57600080fd5b80630a756983146100a85780636b14daf8146100b257806379ba5097146100da5780638038e4a1146100e2575b600080fd5b6100b0610170565b005b6100c56100c0366004610728565b6101ef565b60405190151581526020015b60405180910390f35b6100b0610245565b6100b0610347565b6100b06100f8366004610808565b6103db565b60005460405173ffffffffffffffffffffffffffffffffffffffff90911681526020016100d1565b6100b0610133366004610808565b610495565b6001546100c59074010000000000000000000000000000000000000000900460ff1681565b6100b061016b366004610808565b610549565b61017861055a565b60015474010000000000000000000000000000000000000000900460ff16156101ed57600180547fffffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffff1690556040517f3be8a977a014527b50ae38adda80b56911c267328965c98ddc385d248f53963890600090a15b565b73ffffffffffffffffffffffffffffffffffffffff821660009081526002602052604081205460ff168061023e575060015474010000000000000000000000000000000000000000900460ff16155b9392505050565b60015473ffffffffffffffffffffffffffffffffffffffff1633146102cb576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f4d7573742062652070726f706f736564206f776e65720000000000000000000060448201526064015b60405180910390fd5b60008054337fffffffffffffffffffffffff00000000000000000000000000000000000000008083168217845560018054909116905560405173ffffffffffffffffffffffffffffffffffffffff90921692909183917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a350565b61034f61055a565b60015474010000000000000000000000000000000000000000900460ff166101ed57600180547fffffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffff16740100000000000000000000000000000000000000001790556040517faebf329500988c6488a0074e5a0a9ff304561fc5c6fc877aeb1d59c8282c348090600090a1565b6103e361055a565b73ffffffffffffffffffffffffffffffffffffffff811660009081526002602052604090205460ff16156104925773ffffffffffffffffffffffffffffffffffffffff811660008181526002602090815260409182902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016905590519182527f3d68a6fce901d20453d1a7aa06bf3950302a735948037deb182a8db66df2a0d191015b60405180910390a15b50565b61049d61055a565b73ffffffffffffffffffffffffffffffffffffffff811660009081526002602052604090205460ff166104925773ffffffffffffffffffffffffffffffffffffffff811660008181526002602090815260409182902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016600117905590519182527f87286ad1f399c8e82bf0c4ef4fcdc570ea2e1e92176e5c848b6413545b885db49101610489565b61055161055a565b610492816105db565b60005473ffffffffffffffffffffffffffffffffffffffff1633146101ed576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f4f6e6c792063616c6c61626c65206279206f776e65720000000000000000000060448201526064016102c2565b3373ffffffffffffffffffffffffffffffffffffffff82160361065a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601760248201527f43616e6e6f74207472616e7366657220746f2073656c6600000000000000000060448201526064016102c2565b600180547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83811691821790925560008054604051929316917fed8889f560326eb138920d842192f0eb3dd22b4f139c87a2c57538e05bae12789190a350565b803573ffffffffffffffffffffffffffffffffffffffff811681146106f457600080fd5b919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b6000806040838503121561073b57600080fd5b610744836106d0565b9150602083013567ffffffffffffffff8082111561076157600080fd5b818501915085601f83011261077557600080fd5b813581811115610787576107876106f9565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0908116603f011681019083821181831017156107cd576107cd6106f9565b816040528281528860208487010111156107e657600080fd5b8260208601602083013760006020848301015280955050505050509250929050565b60006020828403121561081a57600080fd5b61023e826106d056fea164736f6c6343000815000a",
+    "sourceMap": "396:1725:252:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1809:147;;;:::i;:::-;;865:144;;;;;;:::i;:::-;;:::i;:::-;;;1628:14:351;;1621:22;1603:41;;1591:2;1576:18;865:144:252;;;;;;;;1001:265:249;;;:::i;1601:145:252:-;;;:::i;1377:163::-;;;;;;:::i;:::-;;:::i;1317:81:249:-;1364:7;1386;1317:81;;1386:7;;;;1992:74:351;;1980:2;1965:18;1317:81:249;1846:226:351;1110:158:252;;;;;;:::i;:::-;;:::i;482:24::-;;;;;;;;;;;;811:98:249;;;;;;:::i;:::-;;:::i;1809:147:252:-;1941:20:249;:18;:20::i;:::-;1868:12:252::1;::::0;;;::::1;;;1864:88;;;1890:12;:20:::0;;;::::1;::::0;;1924:21:::1;::::0;::::1;::::0;1905:5:::1;::::0;1924:21:::1;1864:88;1809:147::o:0;865:144::-;970:17;;;951:4;970:17;;;:10;:17;;;;;;;;;:34;;-1:-1:-1;992:12:252;;;;;;;991:13;970:34;963:41;865:144;-1:-1:-1;;;865:144:252:o;1001:265:249:-;1074:14;;;;1060:10;:28;1052:63;;;;;;;2279:2:351;1052:63:249;;;2261:21:351;2318:2;2298:18;;;2291:30;2357:24;2337:18;;;2330:52;2399:18;;1052:63:249;;;;;;;;;1122:16;1141:7;;1164:10;1154:20;;;;;;;;-1:-1:-1;1180:27:249;;;;;;;1219:42;;1141:7;;;;;1164:10;;1141:7;;1219:42;;;1046:220;1001:265::o;1601:145:252:-;1941:20:249;:18;:20::i;:::-;1660:12:252::1;::::0;;;::::1;;;1655:87;;1697:4;1682:19:::0;;;::::1;::::0;::::1;::::0;;1715:20:::1;::::0;::::1;::::0;1682:19;;1715:20:::1;1601:145::o:0;1377:163::-;1941:20:249;:18;:20::i;:::-;1443:17:252::1;::::0;::::1;;::::0;;;:10:::1;:17;::::0;;;;;::::1;;1439:97;;;1470:17;::::0;::::1;1490:5;1470:17:::0;;;:10:::1;:17;::::0;;;;;;;;:25;;;::::1;::::0;;1509:20;;1992:74:351;;;1509:20:252::1;::::0;1965:18:351;1509:20:252::1;;;;;;;;1439:97;1377:163:::0;:::o;1110:158::-;1941:20:249;:18;:20::i;:::-;1174:17:252::1;::::0;::::1;;::::0;;;:10:::1;:17;::::0;;;;;::::1;;1169:95;;1201:17;::::0;::::1;;::::0;;;:10:::1;:17;::::0;;;;;;;;:24;;;::::1;1221:4;1201:24;::::0;;1239:18;;1992:74:351;;;1239:18:252::1;::::0;1965::351;1239::252::1;1846:226:351::0;811:98:249;1941:20;:18;:20::i;:::-;882:22:::1;901:2;882:18;:22::i;1715:111::-:0;1787:7;;;;1773:10;:21;1765:56;;;;;;;2630:2:351;1765:56:249;;;2612:21:351;2669:2;2649:18;;;2642:30;2708:24;2688:18;;;2681:52;2750:18;;1765:56:249;2428:346:351;1482:188:249;1550:10;1544:16;;;;1536:52;;;;;;;2981:2:351;1536:52:249;;;2963:21:351;3020:2;3000:18;;;2993:30;3059:25;3039:18;;;3032:53;3102:18;;1536:52:249;2779:347:351;1536:52:249;1595:14;:19;;;;;;;;;;;;;;-1:-1:-1;1653:7:249;;1626:39;;1595:19;;1653:7;;1626:39;;-1:-1:-1;1626:39:249;1482:188;:::o;14:196:351:-;82:20;;142:42;131:54;;121:65;;111:93;;200:1;197;190:12;111:93;14:196;;;:::o;215:184::-;267:77;264:1;257:88;364:4;361:1;354:15;388:4;385:1;378:15;404:1054;481:6;489;542:2;530:9;521:7;517:23;513:32;510:52;;;558:1;555;548:12;510:52;581:29;600:9;581:29;:::i;:::-;571:39;;661:2;650:9;646:18;633:32;684:18;725:2;717:6;714:14;711:34;;;741:1;738;731:12;711:34;779:6;768:9;764:22;754:32;;824:7;817:4;813:2;809:13;805:27;795:55;;846:1;843;836:12;795:55;882:2;869:16;904:2;900;897:10;894:36;;;910:18;;:::i;:::-;1044:2;1038:9;1106:4;1098:13;;949:66;1094:22;;;1118:2;1090:31;1086:40;1074:53;;;1142:18;;;1162:22;;;1139:46;1136:72;;;1188:18;;:::i;:::-;1228:10;1224:2;1217:22;1263:2;1255:6;1248:18;1303:7;1298:2;1293;1289;1285:11;1281:20;1278:33;1275:53;;;1324:1;1321;1314:12;1275:53;1380:2;1375;1371;1367:11;1362:2;1354:6;1350:15;1337:46;1425:1;1420:2;1415;1407:6;1403:15;1399:24;1392:35;1446:6;1436:16;;;;;;;404:1054;;;;;:::o;1655:186::-;1714:6;1767:2;1755:9;1746:7;1742:23;1738:32;1735:52;;;1783:1;1780;1773:12;1735:52;1806:29;1825:9;1806:29;:::i",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "acceptOwnership()": "79ba5097",
+    "addAccess(address)": "a118f249",
+    "checkEnabled()": "dc7f0124",
+    "disableAccessCheck()": "0a756983",
+    "enableAccessCheck()": "8038e4a1",
+    "hasAccess(address,bytes)": "6b14daf8",
+    "owner()": "8da5cb5b",
+    "removeAccess(address)": "8823da6c",
+    "transferOwnership(address)": "f2fde38b"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"AddedAccess\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"CheckAccessDisabled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"CheckAccessEnabled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"OwnershipTransferRequested\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"RemovedAccess\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"addAccess\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"checkEnabled\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"disableAccessCheck\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"enableAccessCheck\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"hasAccess\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"removeAccess\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"does not make any special permissions for externally, see SimpleReadAccessController for that.\",\"kind\":\"dev\",\"methods\":{\"addAccess(address)\":{\"params\":{\"_user\":\"The address to add\"}},\"hasAccess(address,bytes)\":{\"params\":{\"_user\":\"The address to query\"}},\"removeAccess(address)\":{\"params\":{\"_user\":\"The address to remove\"}}},\"title\":\"SimpleWriteAccessController\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"acceptOwnership()\":{\"notice\":\"Allows an ownership transfer to be completed by the recipient.\"},\"addAccess(address)\":{\"notice\":\"Adds an address to the access list\"},\"disableAccessCheck()\":{\"notice\":\"makes the access check unenforced\"},\"enableAccessCheck()\":{\"notice\":\"makes the access check enforced\"},\"hasAccess(address,bytes)\":{\"notice\":\"Returns the access of an address\"},\"owner()\":{\"notice\":\"Get the current owner\"},\"removeAccess(address)\":{\"notice\":\"Removes an address from the access list\"},\"transferOwnership(address)\":{\"notice\":\"Allows an owner to begin transferring ownership to a new address, pending.\"}},\"notice\":\"Gives access to accounts explicitly added to an access list by the controller's owner.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/v0.8/shared/access/SimpleWriteAccessController.sol\":\"SimpleWriteAccessController\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/v0.8/shared/access/ConfirmedOwner.sol\":{\"keccak256\":\"0x99d0b0786fe368970009c703f2249bfbc56340ddf1a28b60d2915bb58c34cd72\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://af0371c1af45db651823b9a3d5af761b08243c78f105166342eee28de356c8dd\",\"dweb:/ipfs/QmPnC9qNDKwJFd5unwLb9pxjrutoe8MWjm5EXHTxq2kJ4x\"]},\"src/v0.8/shared/access/ConfirmedOwnerWithProposal.sol\":{\"keccak256\":\"0x215529a99534a40e6257ef2282a91ea4a95b66debc3997866406907622efb405\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ecc56a2cddb1ba6225ca0cffb07fdf6e24bcc4234cc87710c42a59c0a21ae395\",\"dweb:/ipfs/QmSpW4vkPHeRNZ14beMEk2LEtqY5JQTueNJC4sCT8JaSoc\"]},\"src/v0.8/shared/access/SimpleWriteAccessController.sol\":{\"keccak256\":\"0x2ef467db622e194c3681d6495aa8f748cf3c0772129fc1dfd571ad2504ecafcb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fff7d4c5ab86c670b587f528aeff45faa52caea59863a1c420419328659937a8\",\"dweb:/ipfs/QmVTWnwh66punAWUREo1R6b9iM5XvwkXCerKTWVkG96Kh1\"]},\"src/v0.8/shared/interfaces/AccessControllerInterface.sol\":{\"keccak256\":\"0x08aba11f50508cbaf9d6690decea5e8ca7b1874e2709bda60e4c5f98d52a00bf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9b7735e657c13fcdcaea54a2e66f7dbe32ecb09056f98b36a8727eddd045c49a\",\"dweb:/ipfs/QmYNakxBHmX4164V7WcTF1uRq3t9PQ7UJ74UmuhSYjiS2Z\"]},\"src/v0.8/shared/interfaces/IOwnable.sol\":{\"keccak256\":\"0x885de72b7b4e4f1bf8ba817a3f2bcc37fd9022d342c4ce76782151c30122d767\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://17c636625a5d29a140612db496d2cca9fb4b48c673adb0fd7b3957d287e75921\",\"dweb:/ipfs/QmNoBX8TY424bdQWyQC7y3kpKfgxyWxhLw7KEhhEEoBN9q\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "AddedAccess",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "type": "event",
+          "name": "CheckAccessDisabled",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "type": "event",
+          "name": "CheckAccessEnabled",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "OwnershipTransferRequested",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "OwnershipTransferred",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "user",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "RemovedAccess",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "acceptOwnership"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_user",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addAccess"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "checkEnabled",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "disableAccessCheck"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "enableAccessCheck"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_user",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "hasAccess",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "owner",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_user",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "removeAccess"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transferOwnership"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "addAccess(address)": {
+            "params": {
+              "_user": "The address to add"
+            }
+          },
+          "hasAccess(address,bytes)": {
+            "params": {
+              "_user": "The address to query"
+            }
+          },
+          "removeAccess(address)": {
+            "params": {
+              "_user": "The address to remove"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "acceptOwnership()": {
+            "notice": "Allows an ownership transfer to be completed by the recipient."
+          },
+          "addAccess(address)": {
+            "notice": "Adds an address to the access list"
+          },
+          "disableAccessCheck()": {
+            "notice": "makes the access check unenforced"
+          },
+          "enableAccessCheck()": {
+            "notice": "makes the access check enforced"
+          },
+          "hasAccess(address,bytes)": {
+            "notice": "Returns the access of an address"
+          },
+          "owner()": {
+            "notice": "Get the current owner"
+          },
+          "removeAccess(address)": {
+            "notice": "Removes an address from the access list"
+          },
+          "transferOwnership(address)": {
+            "notice": "Allows an owner to begin transferring ownership to a new address, pending."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/v0.8/shared/access/SimpleWriteAccessController.sol": "SimpleWriteAccessController"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/v0.8/shared/access/ConfirmedOwner.sol": {
+        "keccak256": "0x99d0b0786fe368970009c703f2249bfbc56340ddf1a28b60d2915bb58c34cd72",
+        "urls": [
+          "bzz-raw://af0371c1af45db651823b9a3d5af761b08243c78f105166342eee28de356c8dd",
+          "dweb:/ipfs/QmPnC9qNDKwJFd5unwLb9pxjrutoe8MWjm5EXHTxq2kJ4x"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/shared/access/ConfirmedOwnerWithProposal.sol": {
+        "keccak256": "0x215529a99534a40e6257ef2282a91ea4a95b66debc3997866406907622efb405",
+        "urls": [
+          "bzz-raw://ecc56a2cddb1ba6225ca0cffb07fdf6e24bcc4234cc87710c42a59c0a21ae395",
+          "dweb:/ipfs/QmSpW4vkPHeRNZ14beMEk2LEtqY5JQTueNJC4sCT8JaSoc"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/shared/access/SimpleWriteAccessController.sol": {
+        "keccak256": "0x2ef467db622e194c3681d6495aa8f748cf3c0772129fc1dfd571ad2504ecafcb",
+        "urls": [
+          "bzz-raw://fff7d4c5ab86c670b587f528aeff45faa52caea59863a1c420419328659937a8",
+          "dweb:/ipfs/QmVTWnwh66punAWUREo1R6b9iM5XvwkXCerKTWVkG96Kh1"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/shared/interfaces/AccessControllerInterface.sol": {
+        "keccak256": "0x08aba11f50508cbaf9d6690decea5e8ca7b1874e2709bda60e4c5f98d52a00bf",
+        "urls": [
+          "bzz-raw://9b7735e657c13fcdcaea54a2e66f7dbe32ecb09056f98b36a8727eddd045c49a",
+          "dweb:/ipfs/QmYNakxBHmX4164V7WcTF1uRq3t9PQ7UJ74UmuhSYjiS2Z"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/shared/interfaces/IOwnable.sol": {
+        "keccak256": "0x885de72b7b4e4f1bf8ba817a3f2bcc37fd9022d342c4ce76782151c30122d767",
+        "urls": [
+          "bzz-raw://17c636625a5d29a140612db496d2cca9fb4b48c673adb0fd7b3957d287e75921",
+          "dweb:/ipfs/QmNoBX8TY424bdQWyQC7y3kpKfgxyWxhLw7KEhhEEoBN9q"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/v0.8/shared/access/SimpleWriteAccessController.sol",
+    "id": 122638,
+    "exportedSymbols": {
+      "AccessControllerInterface": [
+        122855
+      ],
+      "ConfirmedOwner": [
+        122271
+      ],
+      "ConfirmedOwnerWithProposal": [
+        122433
+      ],
+      "IOwnable": [
+        122895
+      ],
+      "SimpleWriteAccessController": [
+        122637
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:2090:252",
+    "nodes": [
+      {
+        "id": 122481,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:252",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 122482,
+        "nodeType": "ImportDirective",
+        "src": "57:30:252",
+        "nodes": [],
+        "absolutePath": "src/v0.8/shared/access/ConfirmedOwner.sol",
+        "file": "./ConfirmedOwner.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 122638,
+        "sourceUnit": 122272,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 122483,
+        "nodeType": "ImportDirective",
+        "src": "88:53:252",
+        "nodes": [],
+        "absolutePath": "src/v0.8/shared/interfaces/AccessControllerInterface.sol",
+        "file": "../interfaces/AccessControllerInterface.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 122638,
+        "sourceUnit": 122856,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 122637,
+        "nodeType": "ContractDefinition",
+        "src": "396:1725:252",
+        "nodes": [
+          {
+            "id": 122490,
+            "nodeType": "VariableDeclaration",
+            "src": "482:24:252",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "dc7f0124",
+            "mutability": "mutable",
+            "name": "checkEnabled",
+            "nameLocation": "494:12:252",
+            "scope": 122637,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 122489,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "482:4:252",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 122494,
+            "nodeType": "VariableDeclaration",
+            "src": "510:44:252",
+            "nodes": [],
+            "constant": false,
+            "mutability": "mutable",
+            "name": "accessList",
+            "nameLocation": "544:10:252",
+            "scope": 122637,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 122493,
+              "keyName": "",
+              "keyNameLocation": "-1:-1:-1",
+              "keyType": {
+                "id": 122491,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "518:7:252",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "510:24:252",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueName": "",
+              "valueNameLocation": "-1:-1:-1",
+              "valueType": {
+                "id": 122492,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "529:4:252",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 122498,
+            "nodeType": "EventDefinition",
+            "src": "559:32:252",
+            "nodes": [],
+            "anonymous": false,
+            "eventSelector": "87286ad1f399c8e82bf0c4ef4fcdc570ea2e1e92176e5c848b6413545b885db4",
+            "name": "AddedAccess",
+            "nameLocation": "565:11:252",
+            "parameters": {
+              "id": 122497,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 122496,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nameLocation": "585:4:252",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 122498,
+                  "src": "577:12:252",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 122495,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "577:7:252",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "576:14:252"
+            }
+          },
+          {
+            "id": 122502,
+            "nodeType": "EventDefinition",
+            "src": "594:34:252",
+            "nodes": [],
+            "anonymous": false,
+            "eventSelector": "3d68a6fce901d20453d1a7aa06bf3950302a735948037deb182a8db66df2a0d1",
+            "name": "RemovedAccess",
+            "nameLocation": "600:13:252",
+            "parameters": {
+              "id": 122501,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 122500,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nameLocation": "622:4:252",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 122502,
+                  "src": "614:12:252",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 122499,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "614:7:252",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "613:14:252"
+            }
+          },
+          {
+            "id": 122504,
+            "nodeType": "EventDefinition",
+            "src": "631:27:252",
+            "nodes": [],
+            "anonymous": false,
+            "eventSelector": "aebf329500988c6488a0074e5a0a9ff304561fc5c6fc877aeb1d59c8282c3480",
+            "name": "CheckAccessEnabled",
+            "nameLocation": "637:18:252",
+            "parameters": {
+              "id": 122503,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "655:2:252"
+            }
+          },
+          {
+            "id": 122506,
+            "nodeType": "EventDefinition",
+            "src": "661:28:252",
+            "nodes": [],
+            "anonymous": false,
+            "eventSelector": "3be8a977a014527b50ae38adda80b56911c267328965c98ddc385d248f539638",
+            "name": "CheckAccessDisabled",
+            "nameLocation": "667:19:252",
+            "parameters": {
+              "id": 122505,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "686:2:252"
+            }
+          },
+          {
+            "id": 122518,
+            "nodeType": "FunctionDefinition",
+            "src": "693:71:252",
+            "nodes": [],
+            "body": {
+              "id": 122517,
+              "nodeType": "Block",
+              "src": "734:30:252",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 122515,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 122513,
+                      "name": "checkEnabled",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 122490,
+                      "src": "740:12:252",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "74727565",
+                      "id": 122514,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "755:4:252",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "740:19:252",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 122516,
+                  "nodeType": "ExpressionStatement",
+                  "src": "740:19:252"
+                }
+              ]
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "expression": {
+                      "id": 122509,
+                      "name": "msg",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": -15,
+                      "src": "722:3:252",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_message",
+                        "typeString": "msg"
+                      }
+                    },
+                    "id": 122510,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberLocation": "726:6:252",
+                    "memberName": "sender",
+                    "nodeType": "MemberAccess",
+                    "src": "722:10:252",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 122511,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 122508,
+                  "name": "ConfirmedOwner",
+                  "nameLocations": [
+                    "707:14:252"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 122271,
+                  "src": "707:14:252"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "707:26:252"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 122507,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "704:2:252"
+            },
+            "returnParameters": {
+              "id": 122512,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "734:0:252"
+            },
+            "scope": 122637,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 122537,
+            "nodeType": "FunctionDefinition",
+            "src": "865:144:252",
+            "nodes": [],
+            "body": {
+              "id": 122536,
+              "nodeType": "Block",
+              "src": "957:52:252",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "commonType": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "id": 122534,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "baseExpression": {
+                        "id": 122529,
+                        "name": "accessList",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 122494,
+                        "src": "970:10:252",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 122531,
+                      "indexExpression": {
+                        "id": 122530,
+                        "name": "_user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 122521,
+                        "src": "981:5:252",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "970:17:252",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "||",
+                    "rightExpression": {
+                      "id": 122533,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "!",
+                      "prefix": true,
+                      "src": "991:13:252",
+                      "subExpression": {
+                        "id": 122532,
+                        "name": "checkEnabled",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 122490,
+                        "src": "992:12:252",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "970:34:252",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 122528,
+                  "id": 122535,
+                  "nodeType": "Return",
+                  "src": "963:41:252"
+                }
+              ]
+            },
+            "baseFunctions": [
+              122854
+            ],
+            "documentation": {
+              "id": 122519,
+              "nodeType": "StructuredDocumentation",
+              "src": "768:94:252",
+              "text": " @notice Returns the access of an address\n @param _user The address to query"
+            },
+            "functionSelector": "6b14daf8",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "hasAccess",
+            "nameLocation": "874:9:252",
+            "overrides": {
+              "id": 122525,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "933:8:252"
+            },
+            "parameters": {
+              "id": 122524,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 122521,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nameLocation": "892:5:252",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 122537,
+                  "src": "884:13:252",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 122520,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "884:7:252",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 122523,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 122537,
+                  "src": "899:12:252",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 122522,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "899:5:252",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "883:29:252"
+            },
+            "returnParameters": {
+              "id": 122528,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 122527,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 122537,
+                  "src": "951:4:252",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 122526,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "951:4:252",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "950:6:252"
+            },
+            "scope": 122637,
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          },
+          {
+            "id": 122562,
+            "nodeType": "FunctionDefinition",
+            "src": "1110:158:252",
+            "nodes": [],
+            "body": {
+              "id": 122561,
+              "nodeType": "Block",
+              "src": "1163:105:252",
+              "nodes": [],
+              "statements": [
+                {
+                  "condition": {
+                    "id": 122548,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+                    "src": "1173:18:252",
+                    "subExpression": {
+                      "baseExpression": {
+                        "id": 122545,
+                        "name": "accessList",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 122494,
+                        "src": "1174:10:252",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                          "typeString": "mapping(address => bool)"
+                        }
+                      },
+                      "id": 122547,
+                      "indexExpression": {
+                        "id": 122546,
+                        "name": "_user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 122540,
+                        "src": "1185:5:252",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "1174:17:252",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 122560,
+                  "nodeType": "IfStatement",
+                  "src": "1169:95:252",
+                  "trueBody": {
+                    "id": 122559,
+                    "nodeType": "Block",
+                    "src": "1193:71:252",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 122553,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "baseExpression": {
+                              "id": 122549,
+                              "name": "accessList",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 122494,
+                              "src": "1201:10:252",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                                "typeString": "mapping(address => bool)"
+                              }
+                            },
+                            "id": 122551,
+                            "indexExpression": {
+                              "id": 122550,
+                              "name": "_user",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 122540,
+                              "src": "1212:5:252",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "nodeType": "IndexAccess",
+                            "src": "1201:17:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "hexValue": "74727565",
+                            "id": 122552,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "bool",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1221:4:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            },
+                            "value": "true"
+                          },
+                          "src": "1201:24:252",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "id": 122554,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1201:24:252"
+                      },
+                      {
+                        "eventCall": {
+                          "arguments": [
+                            {
+                              "id": 122556,
+                              "name": "_user",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 122540,
+                              "src": "1251:5:252",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "id": 122555,
+                            "name": "AddedAccess",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 122498,
+                            "src": "1239:11:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                              "typeString": "function (address)"
+                            }
+                          },
+                          "id": 122557,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1239:18:252",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 122558,
+                        "nodeType": "EmitStatement",
+                        "src": "1234:23:252"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": {
+              "id": 122538,
+              "nodeType": "StructuredDocumentation",
+              "src": "1013:94:252",
+              "text": " @notice Adds an address to the access list\n @param _user The address to add"
+            },
+            "functionSelector": "a118f249",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 122543,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 122542,
+                  "name": "onlyOwner",
+                  "nameLocations": [
+                    "1153:9:252"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 122432,
+                  "src": "1153:9:252"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1153:9:252"
+              }
+            ],
+            "name": "addAccess",
+            "nameLocation": "1119:9:252",
+            "parameters": {
+              "id": 122541,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 122540,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nameLocation": "1137:5:252",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 122562,
+                  "src": "1129:13:252",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 122539,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1129:7:252",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1128:15:252"
+            },
+            "returnParameters": {
+              "id": 122544,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1163:0:252"
+            },
+            "scope": 122637,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 122586,
+            "nodeType": "FunctionDefinition",
+            "src": "1377:163:252",
+            "nodes": [],
+            "body": {
+              "id": 122585,
+              "nodeType": "Block",
+              "src": "1433:107:252",
+              "nodes": [],
+              "statements": [
+                {
+                  "condition": {
+                    "baseExpression": {
+                      "id": 122570,
+                      "name": "accessList",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 122494,
+                      "src": "1443:10:252",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                        "typeString": "mapping(address => bool)"
+                      }
+                    },
+                    "id": 122572,
+                    "indexExpression": {
+                      "id": 122571,
+                      "name": "_user",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 122565,
+                      "src": "1454:5:252",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1443:17:252",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 122584,
+                  "nodeType": "IfStatement",
+                  "src": "1439:97:252",
+                  "trueBody": {
+                    "id": 122583,
+                    "nodeType": "Block",
+                    "src": "1462:74:252",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 122577,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "baseExpression": {
+                              "id": 122573,
+                              "name": "accessList",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 122494,
+                              "src": "1470:10:252",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                                "typeString": "mapping(address => bool)"
+                              }
+                            },
+                            "id": 122575,
+                            "indexExpression": {
+                              "id": 122574,
+                              "name": "_user",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 122565,
+                              "src": "1481:5:252",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "nodeType": "IndexAccess",
+                            "src": "1470:17:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "hexValue": "66616c7365",
+                            "id": 122576,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "bool",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1490:5:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            },
+                            "value": "false"
+                          },
+                          "src": "1470:25:252",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "id": 122578,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1470:25:252"
+                      },
+                      {
+                        "eventCall": {
+                          "arguments": [
+                            {
+                              "id": 122580,
+                              "name": "_user",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 122565,
+                              "src": "1523:5:252",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "id": 122579,
+                            "name": "RemovedAccess",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 122502,
+                            "src": "1509:13:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                              "typeString": "function (address)"
+                            }
+                          },
+                          "id": 122581,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1509:20:252",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 122582,
+                        "nodeType": "EmitStatement",
+                        "src": "1504:25:252"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": {
+              "id": 122563,
+              "nodeType": "StructuredDocumentation",
+              "src": "1272:102:252",
+              "text": " @notice Removes an address from the access list\n @param _user The address to remove"
+            },
+            "functionSelector": "8823da6c",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 122568,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 122567,
+                  "name": "onlyOwner",
+                  "nameLocations": [
+                    "1423:9:252"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 122432,
+                  "src": "1423:9:252"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1423:9:252"
+              }
+            ],
+            "name": "removeAccess",
+            "nameLocation": "1386:12:252",
+            "parameters": {
+              "id": 122566,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 122565,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nameLocation": "1407:5:252",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 122586,
+                  "src": "1399:13:252",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 122564,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1399:7:252",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1398:15:252"
+            },
+            "returnParameters": {
+              "id": 122569,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1433:0:252"
+            },
+            "scope": 122637,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 122604,
+            "nodeType": "FunctionDefinition",
+            "src": "1601:145:252",
+            "nodes": [],
+            "body": {
+              "id": 122603,
+              "nodeType": "Block",
+              "src": "1649:97:252",
+              "nodes": [],
+              "statements": [
+                {
+                  "condition": {
+                    "id": 122593,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+                    "src": "1659:13:252",
+                    "subExpression": {
+                      "id": 122592,
+                      "name": "checkEnabled",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 122490,
+                      "src": "1660:12:252",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 122602,
+                  "nodeType": "IfStatement",
+                  "src": "1655:87:252",
+                  "trueBody": {
+                    "id": 122601,
+                    "nodeType": "Block",
+                    "src": "1674:68:252",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 122596,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "id": 122594,
+                            "name": "checkEnabled",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 122490,
+                            "src": "1682:12:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "hexValue": "74727565",
+                            "id": 122595,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "bool",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1697:4:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            },
+                            "value": "true"
+                          },
+                          "src": "1682:19:252",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "id": 122597,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1682:19:252"
+                      },
+                      {
+                        "eventCall": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 122598,
+                            "name": "CheckAccessEnabled",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 122504,
+                            "src": "1715:18:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_event_nonpayable$__$returns$__$",
+                              "typeString": "function ()"
+                            }
+                          },
+                          "id": 122599,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1715:20:252",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 122600,
+                        "nodeType": "EmitStatement",
+                        "src": "1710:25:252"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": {
+              "id": 122587,
+              "nodeType": "StructuredDocumentation",
+              "src": "1544:54:252",
+              "text": " @notice makes the access check enforced"
+            },
+            "functionSelector": "8038e4a1",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 122590,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 122589,
+                  "name": "onlyOwner",
+                  "nameLocations": [
+                    "1639:9:252"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 122432,
+                  "src": "1639:9:252"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1639:9:252"
+              }
+            ],
+            "name": "enableAccessCheck",
+            "nameLocation": "1610:17:252",
+            "parameters": {
+              "id": 122588,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1627:2:252"
+            },
+            "returnParameters": {
+              "id": 122591,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1649:0:252"
+            },
+            "scope": 122637,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 122621,
+            "nodeType": "FunctionDefinition",
+            "src": "1809:147:252",
+            "nodes": [],
+            "body": {
+              "id": 122620,
+              "nodeType": "Block",
+              "src": "1858:98:252",
+              "nodes": [],
+              "statements": [
+                {
+                  "condition": {
+                    "id": 122610,
+                    "name": "checkEnabled",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 122490,
+                    "src": "1868:12:252",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 122619,
+                  "nodeType": "IfStatement",
+                  "src": "1864:88:252",
+                  "trueBody": {
+                    "id": 122618,
+                    "nodeType": "Block",
+                    "src": "1882:70:252",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 122613,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "id": 122611,
+                            "name": "checkEnabled",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 122490,
+                            "src": "1890:12:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "hexValue": "66616c7365",
+                            "id": 122612,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "bool",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1905:5:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            },
+                            "value": "false"
+                          },
+                          "src": "1890:20:252",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "id": 122614,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1890:20:252"
+                      },
+                      {
+                        "eventCall": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 122615,
+                            "name": "CheckAccessDisabled",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 122506,
+                            "src": "1924:19:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_event_nonpayable$__$returns$__$",
+                              "typeString": "function ()"
+                            }
+                          },
+                          "id": 122616,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1924:21:252",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 122617,
+                        "nodeType": "EmitStatement",
+                        "src": "1919:26:252"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": {
+              "id": 122605,
+              "nodeType": "StructuredDocumentation",
+              "src": "1750:56:252",
+              "text": " @notice makes the access check unenforced"
+            },
+            "functionSelector": "0a756983",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 122608,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 122607,
+                  "name": "onlyOwner",
+                  "nameLocations": [
+                    "1848:9:252"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 122432,
+                  "src": "1848:9:252"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1848:9:252"
+              }
+            ],
+            "name": "disableAccessCheck",
+            "nameLocation": "1818:18:252",
+            "parameters": {
+              "id": 122606,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1836:2:252"
+            },
+            "returnParameters": {
+              "id": 122609,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1858:0:252"
+            },
+            "scope": 122637,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 122636,
+            "nodeType": "ModifierDefinition",
+            "src": "2025:94:252",
+            "nodes": [],
+            "body": {
+              "id": 122635,
+              "nodeType": "Block",
+              "src": "2048:71:252",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "id": 122626,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": -15,
+                              "src": "2072:3:252",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 122627,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "2076:6:252",
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "src": "2072:10:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "expression": {
+                              "id": 122628,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": -15,
+                              "src": "2084:3:252",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 122629,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "2088:4:252",
+                            "memberName": "data",
+                            "nodeType": "MemberAccess",
+                            "src": "2084:8:252",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes_calldata_ptr",
+                              "typeString": "bytes calldata"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_bytes_calldata_ptr",
+                              "typeString": "bytes calldata"
+                            }
+                          ],
+                          "id": 122625,
+                          "name": "hasAccess",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 122537,
+                          "src": "2062:9:252",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$_t_bytes_memory_ptr_$returns$_t_bool_$",
+                            "typeString": "function (address,bytes memory) view returns (bool)"
+                          }
+                        },
+                        "id": 122630,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "2062:31:252",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4e6f20616363657373",
+                        "id": 122631,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2095:11:252",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_87589d3e364d25220f4fcbb8f43a8d72cb8377e2d18fa62010b1c9b009ed9815",
+                          "typeString": "literal_string \"No access\""
+                        },
+                        "value": "No access"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_87589d3e364d25220f4fcbb8f43a8d72cb8377e2d18fa62010b1c9b009ed9815",
+                          "typeString": "literal_string \"No access\""
+                        }
+                      ],
+                      "id": 122624,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "2054:7:252",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 122632,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2054:53:252",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 122633,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2054:53:252"
+                },
+                {
+                  "id": 122634,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "2113:1:252"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 122622,
+              "nodeType": "StructuredDocumentation",
+              "src": "1960:62:252",
+              "text": " @dev reverts if the caller does not have access"
+            },
+            "name": "checkAccess",
+            "nameLocation": "2034:11:252",
+            "parameters": {
+              "id": 122623,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2045:2:252"
+            },
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 122485,
+              "name": "AccessControllerInterface",
+              "nameLocations": [
+                "436:25:252"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 122855,
+              "src": "436:25:252"
+            },
+            "id": 122486,
+            "nodeType": "InheritanceSpecifier",
+            "src": "436:25:252"
+          },
+          {
+            "baseName": {
+              "id": 122487,
+              "name": "ConfirmedOwner",
+              "nameLocations": [
+                "463:14:252"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 122271,
+              "src": "463:14:252"
+            },
+            "id": 122488,
+            "nodeType": "InheritanceSpecifier",
+            "src": "463:14:252"
+          }
+        ],
+        "canonicalName": "SimpleWriteAccessController",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 122484,
+          "nodeType": "StructuredDocumentation",
+          "src": "143:252:252",
+          "text": " @title SimpleWriteAccessController\n @notice Gives access to accounts explicitly added to an access list by the\n controller's owner.\n @dev does not make any special permissions for externally, see\n SimpleReadAccessController for that."
+        },
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          122637,
+          122271,
+          122433,
+          122895,
+          122855
+        ],
+        "name": "SimpleWriteAccessController",
+        "nameLocation": "405:27:252",
+        "scope": 122638,
+        "usedErrors": [],
+        "usedEvents": [
+          122287,
+          122293,
+          122498,
+          122502,
+          122504,
+          122506
+        ]
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 252
+}

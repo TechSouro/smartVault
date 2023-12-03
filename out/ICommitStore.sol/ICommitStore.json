@@ -1,0 +1,452 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getExpectedNextSequenceNumber",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "sequenceNumber",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32[]",
+          "name": "hashedLeaves",
+          "type": "bytes32[]"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "proofs",
+          "type": "bytes32[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "proofFlagBits",
+          "type": "uint256"
+        }
+      ],
+      "name": "verify",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "getExpectedNextSequenceNumber()": "4120fccd",
+    "verify(bytes32[],bytes32[],uint256)": "32048875"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getExpectedNextSequenceNumber\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"sequenceNumber\",\"type\":\"uint64\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"hashedLeaves\",\"type\":\"bytes32[]\"},{\"internalType\":\"bytes32[]\",\"name\":\"proofs\",\"type\":\"bytes32[]\"},{\"internalType\":\"uint256\",\"name\":\"proofFlagBits\",\"type\":\"uint256\"}],\"name\":\"verify\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"verify(bytes32[],bytes32[],uint256)\":{\"details\":\"This method uses a merkle tree within a merkle tree, with the hashedLeaves, proofs and proofFlagBits being used to get the root of the inner tree. This root is then used as the singular leaf of the outer tree.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getExpectedNextSequenceNumber()\":{\"notice\":\"Returns the expected next sequence number\"},\"verify(bytes32[],bytes32[],uint256)\":{\"notice\":\"Returns timestamp of when root was accepted or 0 if verification fails.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/v0.8/ccip/interfaces/ICommitStore.sol\":\"ICommitStore\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/v0.8/ccip/interfaces/ICommitStore.sol\":{\"keccak256\":\"0x07eefec62840b0cbb72d2c3ae0db5185e7be3bf18a4e46c7321092df4582ca4b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b9a4fa46de25eef979b73256c125160fed84bef208501de933a45c83b5f7b60c\",\"dweb:/ipfs/QmdBwDXe9Ra2BB2JAaNwVN6YqTJPziffah2RkEtc2ZkhWS\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getExpectedNextSequenceNumber",
+          "outputs": [
+            {
+              "internalType": "uint64",
+              "name": "sequenceNumber",
+              "type": "uint64"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32[]",
+              "name": "hashedLeaves",
+              "type": "bytes32[]"
+            },
+            {
+              "internalType": "bytes32[]",
+              "name": "proofs",
+              "type": "bytes32[]"
+            },
+            {
+              "internalType": "uint256",
+              "name": "proofFlagBits",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "verify",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "verify(bytes32[],bytes32[],uint256)": {
+            "details": "This method uses a merkle tree within a merkle tree, with the hashedLeaves, proofs and proofFlagBits being used to get the root of the inner tree. This root is then used as the singular leaf of the outer tree."
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "getExpectedNextSequenceNumber()": {
+            "notice": "Returns the expected next sequence number"
+          },
+          "verify(bytes32[],bytes32[],uint256)": {
+            "notice": "Returns timestamp of when root was accepted or 0 if verification fails."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/v0.8/ccip/interfaces/ICommitStore.sol": "ICommitStore"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/v0.8/ccip/interfaces/ICommitStore.sol": {
+        "keccak256": "0x07eefec62840b0cbb72d2c3ae0db5185e7be3bf18a4e46c7321092df4582ca4b",
+        "urls": [
+          "bzz-raw://b9a4fa46de25eef979b73256c125160fed84bef208501de933a45c83b5f7b60c",
+          "dweb:/ipfs/QmdBwDXe9Ra2BB2JAaNwVN6YqTJPziffah2RkEtc2ZkhWS"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/v0.8/ccip/interfaces/ICommitStore.sol",
+    "id": 70892,
+    "exportedSymbols": {
+      "ICommitStore": [
+        70891
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:678:112",
+    "nodes": [
+      {
+        "id": 70870,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:112",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 70891,
+        "nodeType": "ContractDefinition",
+        "src": "57:652:112",
+        "nodes": [
+          {
+            "id": 70884,
+            "nodeType": "FunctionDefinition",
+            "src": "403:157:112",
+            "nodes": [],
+            "documentation": {
+              "id": 70871,
+              "nodeType": "StructuredDocumentation",
+              "src": "84:316:112",
+              "text": "@notice Returns timestamp of when root was accepted or 0 if verification fails.\n @dev This method uses a merkle tree within a merkle tree, with the hashedLeaves,\n proofs and proofFlagBits being used to get the root of the inner tree.\n This root is then used as the singular leaf of the outer tree."
+            },
+            "functionSelector": "32048875",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verify",
+            "nameLocation": "412:6:112",
+            "parameters": {
+              "id": 70880,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70874,
+                  "mutability": "mutable",
+                  "name": "hashedLeaves",
+                  "nameLocation": "443:12:112",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70884,
+                  "src": "424:31:112",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_calldata_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 70872,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "424:7:112",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 70873,
+                    "nodeType": "ArrayTypeName",
+                    "src": "424:9:112",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70877,
+                  "mutability": "mutable",
+                  "name": "proofs",
+                  "nameLocation": "480:6:112",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70884,
+                  "src": "461:25:112",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_calldata_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 70875,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "461:7:112",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 70876,
+                    "nodeType": "ArrayTypeName",
+                    "src": "461:9:112",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70879,
+                  "mutability": "mutable",
+                  "name": "proofFlagBits",
+                  "nameLocation": "500:13:112",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70884,
+                  "src": "492:21:112",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 70878,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "492:7:112",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "418:99:112"
+            },
+            "returnParameters": {
+              "id": 70883,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70882,
+                  "mutability": "mutable",
+                  "name": "timestamp",
+                  "nameLocation": "549:9:112",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70884,
+                  "src": "541:17:112",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 70881,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "541:7:112",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "540:19:112"
+            },
+            "scope": 70891,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 70890,
+            "nodeType": "FunctionDefinition",
+            "src": "620:87:112",
+            "nodes": [],
+            "documentation": {
+              "id": 70885,
+              "nodeType": "StructuredDocumentation",
+              "src": "564:53:112",
+              "text": "@notice Returns the expected next sequence number"
+            },
+            "functionSelector": "4120fccd",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getExpectedNextSequenceNumber",
+            "nameLocation": "629:29:112",
+            "parameters": {
+              "id": 70886,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "658:2:112"
+            },
+            "returnParameters": {
+              "id": 70889,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70888,
+                  "mutability": "mutable",
+                  "name": "sequenceNumber",
+                  "nameLocation": "691:14:112",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70890,
+                  "src": "684:21:112",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 70887,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "684:6:112",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "683:23:112"
+            },
+            "scope": 70891,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ICommitStore",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          70891
+        ],
+        "name": "ICommitStore",
+        "nameLocation": "67:12:112",
+        "scope": 70892,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 112
+}

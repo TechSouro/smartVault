@@ -1,0 +1,1742 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "gasLimit",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "gasPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint96",
+          "name": "donFee",
+          "type": "uint96"
+        },
+        {
+          "internalType": "uint96",
+          "name": "registryFee",
+          "type": "uint96"
+        }
+      ],
+      "name": "estimateCost",
+      "outputs": [
+        {
+          "internalType": "uint96",
+          "name": "",
+          "type": "uint96"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "requestId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "response",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "err",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "transmitter",
+          "type": "address"
+        },
+        {
+          "internalType": "address[31]",
+          "name": "signers",
+          "type": "address[31]"
+        },
+        {
+          "internalType": "uint8",
+          "name": "signerCount",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "reportValidationGas",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "initialGas",
+          "type": "uint256"
+        }
+      ],
+      "name": "fulfillAndBill",
+      "outputs": [
+        {
+          "internalType": "enum IFunctionsBillingRegistry.FulfillResult",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getRequestConfig",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        },
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint64",
+              "name": "subscriptionId",
+              "type": "uint64"
+            },
+            {
+              "internalType": "address",
+              "name": "client",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "gasLimit",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "gasPrice",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IFunctionsBillingRegistry.RequestBilling",
+          "name": "billing",
+          "type": "tuple"
+        }
+      ],
+      "name": "getRequiredFee",
+      "outputs": [
+        {
+          "internalType": "uint96",
+          "name": "",
+          "type": "uint96"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "subscriptionId",
+          "type": "uint64"
+        }
+      ],
+      "name": "getSubscriptionOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint64",
+              "name": "subscriptionId",
+              "type": "uint64"
+            },
+            {
+              "internalType": "address",
+              "name": "client",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "gasLimit",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "gasPrice",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IFunctionsBillingRegistry.RequestBilling",
+          "name": "billing",
+          "type": "tuple"
+        }
+      ],
+      "name": "startBilling",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "estimateCost(uint32,uint256,uint96,uint96)": "a1a6d041",
+    "fulfillAndBill(bytes32,bytes,bytes,address,address[31],uint8,uint256,uint256)": "0739e4f1",
+    "getRequestConfig()": "00012291",
+    "getRequiredFee(bytes,(uint64,address,uint32,uint256))": "f1e14a21",
+    "getSubscriptionOwner(uint64)": "b2a489ff",
+    "startBilling(bytes,(uint64,address,uint32,uint256))": "a9d03c05"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"gasLimit\",\"type\":\"uint32\"},{\"internalType\":\"uint256\",\"name\":\"gasPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint96\",\"name\":\"donFee\",\"type\":\"uint96\"},{\"internalType\":\"uint96\",\"name\":\"registryFee\",\"type\":\"uint96\"}],\"name\":\"estimateCost\",\"outputs\":[{\"internalType\":\"uint96\",\"name\":\"\",\"type\":\"uint96\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"requestId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"response\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"err\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"transmitter\",\"type\":\"address\"},{\"internalType\":\"address[31]\",\"name\":\"signers\",\"type\":\"address[31]\"},{\"internalType\":\"uint8\",\"name\":\"signerCount\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"reportValidationGas\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"initialGas\",\"type\":\"uint256\"}],\"name\":\"fulfillAndBill\",\"outputs\":[{\"internalType\":\"enum IFunctionsBillingRegistry.FulfillResult\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRequestConfig\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"},{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"components\":[{\"internalType\":\"uint64\",\"name\":\"subscriptionId\",\"type\":\"uint64\"},{\"internalType\":\"address\",\"name\":\"client\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"gasLimit\",\"type\":\"uint32\"},{\"internalType\":\"uint256\",\"name\":\"gasPrice\",\"type\":\"uint256\"}],\"internalType\":\"struct IFunctionsBillingRegistry.RequestBilling\",\"name\":\"billing\",\"type\":\"tuple\"}],\"name\":\"getRequiredFee\",\"outputs\":[{\"internalType\":\"uint96\",\"name\":\"\",\"type\":\"uint96\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"subscriptionId\",\"type\":\"uint64\"}],\"name\":\"getSubscriptionOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"components\":[{\"internalType\":\"uint64\",\"name\":\"subscriptionId\",\"type\":\"uint64\"},{\"internalType\":\"address\",\"name\":\"client\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"gasLimit\",\"type\":\"uint32\"},{\"internalType\":\"uint256\",\"name\":\"gasPrice\",\"type\":\"uint256\"}],\"internalType\":\"struct IFunctionsBillingRegistry.RequestBilling\",\"name\":\"billing\",\"type\":\"tuple\"}],\"name\":\"startBilling\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"estimateCost(uint32,uint256,uint96,uint96)\":{\"params\":{\"donFee\":\"Fee charged by the DON that is paid to Oracle Node\",\"gasLimit\":\"Encoded Chainlink Functions request data, use FunctionsClient API to encode a request\",\"gasPrice\":\"The request's billing configuration\",\"registryFee\":\"Fee charged by the DON that is paid to Oracle Node\"},\"returns\":{\"_0\":\"costEstimate Cost in Juels (1e18) of LINK\"}},\"fulfillAndBill(bytes32,bytes,bytes,address,address[31],uint8,uint256,uint256)\":{\"details\":\"Only callable by a node that has been approved on the Registrysimulated offchain to determine if sufficient balance is present to fulfill the request\",\"params\":{\"err\":\"error from DON consensus\",\"initialGas\":\"the initial amount of gas that should be used as a baseline to charge the single fulfillment for execution cost\",\"reportValidationGas\":\"the amount of gas used for the report validation. Cost is split by all fulfillments on the report.\",\"requestId\":\"identifier for the request that was generated by the Registry in the beginBilling commitment\",\"response\":\"response data from DON consensus\",\"signerCount\":\"the number of signers on the report\",\"signers\":\"the Oracles who had a part in generating the report\",\"transmitter\":\"the Oracle who sent the report\"},\"returns\":{\"_0\":\"result fulfillment result\"}},\"getRequestConfig()\":{\"returns\":{\"_0\":\"uint32 global max for request gas limit\",\"_1\":\"address[] list of registered DONs\"}},\"getRequiredFee(bytes,(uint64,address,uint32,uint256))\":{\"params\":{\"billing\":\"The request's billing configuration\",\"data\":\"Encoded Chainlink Functions request data, use FunctionsClient API to encode a request\"},\"returns\":{\"_0\":\"fee Cost in Juels (1e18) of LINK\"}},\"getSubscriptionOwner(uint64)\":{\"params\":{\"subscriptionId\":\"- ID of the subscription\"},\"returns\":{\"owner\":\"- owner of the subscription.\"}},\"startBilling(bytes,(uint64,address,uint32,uint256))\":{\"details\":\"Only callable by a node that has been approved on the Registry\",\"params\":{\"billing\":\"Billing configuration for the request\",\"data\":\"Encoded Chainlink Functions request data, use FunctionsClient API to encode a request\"},\"returns\":{\"_0\":\"requestId - A unique identifier of the request. Can be used to match a request to a response in fulfillRequest.\"}}},\"title\":\"Chainlink Functions billing subscription registry interface.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"estimateCost(uint32,uint256,uint96,uint96)\":{\"notice\":\"Estimate the total cost to make a request: gas re-imbursement, plus DON fee, plus Registry fee\"},\"fulfillAndBill(bytes32,bytes,bytes,address,address[31],uint8,uint256,uint256)\":{\"notice\":\"Finalize billing process for an Functions request by sending a callback to the Client contract and then charging the subscription\"},\"getRequestConfig()\":{\"notice\":\"Get configuration relevant for making requests\"},\"getRequiredFee(bytes,(uint64,address,uint32,uint256))\":{\"notice\":\"Determine the charged fee that will be paid to the Registry owner\"},\"getSubscriptionOwner(uint64)\":{\"notice\":\"Gets subscription owner.\"},\"startBilling(bytes,(uint64,address,uint32,uint256))\":{\"notice\":\"Initiate the billing process for an Functions request\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/v0.8/functions/dev/v0_0_0/interfaces/IFunctionsBillingRegistry.sol\":\"IFunctionsBillingRegistry\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/v0.8/functions/dev/v0_0_0/interfaces/IFunctionsBillingRegistry.sol\":{\"keccak256\":\"0x66bf91c68501bf24ddcfea4adbb96fae7934f71d84680f609e6d43ef452d50b4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a481232bdfdb5c2e088e0968d4974aba3f6657c3fbb96faa60501b17ba55c4d\",\"dweb:/ipfs/QmSoMrpnXuxueGmNNdi7pamSbUVRAU2qBJ2YKEWahwhQG1\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "gasLimit",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "gasPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint96",
+              "name": "donFee",
+              "type": "uint96"
+            },
+            {
+              "internalType": "uint96",
+              "name": "registryFee",
+              "type": "uint96"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "estimateCost",
+          "outputs": [
+            {
+              "internalType": "uint96",
+              "name": "",
+              "type": "uint96"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "requestId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "response",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "err",
+              "type": "bytes"
+            },
+            {
+              "internalType": "address",
+              "name": "transmitter",
+              "type": "address"
+            },
+            {
+              "internalType": "address[31]",
+              "name": "signers",
+              "type": "address[31]"
+            },
+            {
+              "internalType": "uint8",
+              "name": "signerCount",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "reportValidationGas",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "initialGas",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "fulfillAndBill",
+          "outputs": [
+            {
+              "internalType": "enum IFunctionsBillingRegistry.FulfillResult",
+              "name": "",
+              "type": "uint8"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getRequestConfig",
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            },
+            {
+              "internalType": "address[]",
+              "name": "",
+              "type": "address[]"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            },
+            {
+              "internalType": "struct IFunctionsBillingRegistry.RequestBilling",
+              "name": "billing",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint64",
+                  "name": "subscriptionId",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "address",
+                  "name": "client",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "gasLimit",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "gasPrice",
+                  "type": "uint256"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getRequiredFee",
+          "outputs": [
+            {
+              "internalType": "uint96",
+              "name": "",
+              "type": "uint96"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint64",
+              "name": "subscriptionId",
+              "type": "uint64"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getSubscriptionOwner",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            },
+            {
+              "internalType": "struct IFunctionsBillingRegistry.RequestBilling",
+              "name": "billing",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint64",
+                  "name": "subscriptionId",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "address",
+                  "name": "client",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "gasLimit",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "gasPrice",
+                  "type": "uint256"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "startBilling",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "estimateCost(uint32,uint256,uint96,uint96)": {
+            "params": {
+              "donFee": "Fee charged by the DON that is paid to Oracle Node",
+              "gasLimit": "Encoded Chainlink Functions request data, use FunctionsClient API to encode a request",
+              "gasPrice": "The request's billing configuration",
+              "registryFee": "Fee charged by the DON that is paid to Oracle Node"
+            },
+            "returns": {
+              "_0": "costEstimate Cost in Juels (1e18) of LINK"
+            }
+          },
+          "fulfillAndBill(bytes32,bytes,bytes,address,address[31],uint8,uint256,uint256)": {
+            "details": "Only callable by a node that has been approved on the Registrysimulated offchain to determine if sufficient balance is present to fulfill the request",
+            "params": {
+              "err": "error from DON consensus",
+              "initialGas": "the initial amount of gas that should be used as a baseline to charge the single fulfillment for execution cost",
+              "reportValidationGas": "the amount of gas used for the report validation. Cost is split by all fulfillments on the report.",
+              "requestId": "identifier for the request that was generated by the Registry in the beginBilling commitment",
+              "response": "response data from DON consensus",
+              "signerCount": "the number of signers on the report",
+              "signers": "the Oracles who had a part in generating the report",
+              "transmitter": "the Oracle who sent the report"
+            },
+            "returns": {
+              "_0": "result fulfillment result"
+            }
+          },
+          "getRequestConfig()": {
+            "returns": {
+              "_0": "uint32 global max for request gas limit",
+              "_1": "address[] list of registered DONs"
+            }
+          },
+          "getRequiredFee(bytes,(uint64,address,uint32,uint256))": {
+            "params": {
+              "billing": "The request's billing configuration",
+              "data": "Encoded Chainlink Functions request data, use FunctionsClient API to encode a request"
+            },
+            "returns": {
+              "_0": "fee Cost in Juels (1e18) of LINK"
+            }
+          },
+          "getSubscriptionOwner(uint64)": {
+            "params": {
+              "subscriptionId": "- ID of the subscription"
+            },
+            "returns": {
+              "owner": "- owner of the subscription."
+            }
+          },
+          "startBilling(bytes,(uint64,address,uint32,uint256))": {
+            "details": "Only callable by a node that has been approved on the Registry",
+            "params": {
+              "billing": "Billing configuration for the request",
+              "data": "Encoded Chainlink Functions request data, use FunctionsClient API to encode a request"
+            },
+            "returns": {
+              "_0": "requestId - A unique identifier of the request. Can be used to match a request to a response in fulfillRequest."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "estimateCost(uint32,uint256,uint96,uint96)": {
+            "notice": "Estimate the total cost to make a request: gas re-imbursement, plus DON fee, plus Registry fee"
+          },
+          "fulfillAndBill(bytes32,bytes,bytes,address,address[31],uint8,uint256,uint256)": {
+            "notice": "Finalize billing process for an Functions request by sending a callback to the Client contract and then charging the subscription"
+          },
+          "getRequestConfig()": {
+            "notice": "Get configuration relevant for making requests"
+          },
+          "getRequiredFee(bytes,(uint64,address,uint32,uint256))": {
+            "notice": "Determine the charged fee that will be paid to the Registry owner"
+          },
+          "getSubscriptionOwner(uint64)": {
+            "notice": "Gets subscription owner."
+          },
+          "startBilling(bytes,(uint64,address,uint32,uint256))": {
+            "notice": "Initiate the billing process for an Functions request"
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/v0.8/functions/dev/v0_0_0/interfaces/IFunctionsBillingRegistry.sol": "IFunctionsBillingRegistry"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/v0.8/functions/dev/v0_0_0/interfaces/IFunctionsBillingRegistry.sol": {
+        "keccak256": "0x66bf91c68501bf24ddcfea4adbb96fae7934f71d84680f609e6d43ef452d50b4",
+        "urls": [
+          "bzz-raw://6a481232bdfdb5c2e088e0968d4974aba3f6657c3fbb96faa60501b17ba55c4d",
+          "dweb:/ipfs/QmSoMrpnXuxueGmNNdi7pamSbUVRAU2qBJ2YKEWahwhQG1"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/v0.8/functions/dev/v0_0_0/interfaces/IFunctionsBillingRegistry.sol",
+    "id": 84690,
+    "exportedSymbols": {
+      "IFunctionsBillingRegistry": [
+        84689
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:4130:149",
+    "nodes": [
+      {
+        "id": 84596,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:149",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".6"
+        ]
+      },
+      {
+        "id": 84689,
+        "nodeType": "ContractDefinition",
+        "src": "136:4025:149",
+        "nodes": [
+          {
+            "id": 84606,
+            "nodeType": "StructDefinition",
+            "src": "176:452:149",
+            "nodes": [],
+            "canonicalName": "IFunctionsBillingRegistry.RequestBilling",
+            "members": [
+              {
+                "constant": false,
+                "id": 84599,
+                "mutability": "mutable",
+                "name": "subscriptionId",
+                "nameLocation": "272:14:149",
+                "nodeType": "VariableDeclaration",
+                "scope": 84606,
+                "src": "265:21:149",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 84598,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "265:6:149",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 84601,
+                "mutability": "mutable",
+                "name": "client",
+                "nameLocation": "447:6:149",
+                "nodeType": "VariableDeclaration",
+                "scope": 84606,
+                "src": "439:14:149",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 84600,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "439:7:149",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 84603,
+                "mutability": "mutable",
+                "name": "gasLimit",
+                "nameLocation": "531:8:149",
+                "nodeType": "VariableDeclaration",
+                "scope": 84606,
+                "src": "524:15:149",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 84602,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "524:6:149",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 84605,
+                "mutability": "mutable",
+                "name": "gasPrice",
+                "nameLocation": "615:8:149",
+                "nodeType": "VariableDeclaration",
+                "scope": 84606,
+                "src": "607:16:149",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 84604,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "607:7:149",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "RequestBilling",
+            "nameLocation": "183:14:149",
+            "scope": 84689,
+            "visibility": "public"
+          },
+          {
+            "id": 84610,
+            "nodeType": "EnumDefinition",
+            "src": "632:81:149",
+            "nodes": [],
+            "canonicalName": "IFunctionsBillingRegistry.FulfillResult",
+            "members": [
+              {
+                "id": 84607,
+                "name": "USER_SUCCESS",
+                "nameLocation": "657:12:149",
+                "nodeType": "EnumValue",
+                "src": "657:12:149"
+              },
+              {
+                "id": 84608,
+                "name": "USER_ERROR",
+                "nameLocation": "675:10:149",
+                "nodeType": "EnumValue",
+                "src": "675:10:149"
+              },
+              {
+                "id": 84609,
+                "name": "INVALID_REQUEST_ID",
+                "nameLocation": "691:18:149",
+                "nodeType": "EnumValue",
+                "src": "691:18:149"
+              }
+            ],
+            "name": "FulfillResult",
+            "nameLocation": "637:13:149"
+          },
+          {
+            "id": 84619,
+            "nodeType": "FunctionDefinition",
+            "src": "889:77:149",
+            "nodes": [],
+            "documentation": {
+              "id": 84611,
+              "nodeType": "StructuredDocumentation",
+              "src": "717:169:149",
+              "text": " @notice Get configuration relevant for making requests\n @return uint32 global max for request gas limit\n @return address[] list of registered DONs"
+            },
+            "functionSelector": "00012291",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getRequestConfig",
+            "nameLocation": "898:16:149",
+            "parameters": {
+              "id": 84612,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "914:2:149"
+            },
+            "returnParameters": {
+              "id": 84618,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 84614,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84619,
+                  "src": "940:6:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 84613,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "940:6:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84617,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84619,
+                  "src": "948:16:149",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 84615,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "948:7:149",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 84616,
+                    "nodeType": "ArrayTypeName",
+                    "src": "948:9:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "939:26:149"
+            },
+            "scope": 84689,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 84630,
+            "nodeType": "FunctionDefinition",
+            "src": "1266:107:149",
+            "nodes": [],
+            "documentation": {
+              "id": 84620,
+              "nodeType": "StructuredDocumentation",
+              "src": "970:293:149",
+              "text": " @notice Determine the charged fee that will be paid to the Registry owner\n @param data Encoded Chainlink Functions request data, use FunctionsClient API to encode a request\n @param billing The request's billing configuration\n @return fee Cost in Juels (1e18) of LINK"
+            },
+            "functionSelector": "f1e14a21",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getRequiredFee",
+            "nameLocation": "1275:14:149",
+            "parameters": {
+              "id": 84626,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 84622,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "1305:4:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84630,
+                  "src": "1290:19:149",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 84621,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1290:5:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84625,
+                  "mutability": "mutable",
+                  "name": "billing",
+                  "nameLocation": "1333:7:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84630,
+                  "src": "1311:29:149",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_RequestBilling_$84606_memory_ptr",
+                    "typeString": "struct IFunctionsBillingRegistry.RequestBilling"
+                  },
+                  "typeName": {
+                    "id": 84624,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 84623,
+                      "name": "RequestBilling",
+                      "nameLocations": [
+                        "1311:14:149"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 84606,
+                      "src": "1311:14:149"
+                    },
+                    "referencedDeclaration": 84606,
+                    "src": "1311:14:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_RequestBilling_$84606_storage_ptr",
+                      "typeString": "struct IFunctionsBillingRegistry.RequestBilling"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1289:52:149"
+            },
+            "returnParameters": {
+              "id": 84629,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 84628,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84630,
+                  "src": "1365:6:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint96",
+                    "typeString": "uint96"
+                  },
+                  "typeName": {
+                    "id": 84627,
+                    "name": "uint96",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1365:6:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1364:8:149"
+            },
+            "scope": 84689,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 84644,
+            "nodeType": "FunctionDefinition",
+            "src": "1861:143:149",
+            "nodes": [],
+            "documentation": {
+              "id": 84631,
+              "nodeType": "StructuredDocumentation",
+              "src": "1377:481:149",
+              "text": " @notice Estimate the total cost to make a request: gas re-imbursement, plus DON fee, plus Registry fee\n @param gasLimit Encoded Chainlink Functions request data, use FunctionsClient API to encode a request\n @param gasPrice The request's billing configuration\n @param donFee Fee charged by the DON that is paid to Oracle Node\n @param registryFee Fee charged by the DON that is paid to Oracle Node\n @return costEstimate Cost in Juels (1e18) of LINK"
+            },
+            "functionSelector": "a1a6d041",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "estimateCost",
+            "nameLocation": "1870:12:149",
+            "parameters": {
+              "id": 84640,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 84633,
+                  "mutability": "mutable",
+                  "name": "gasLimit",
+                  "nameLocation": "1895:8:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84644,
+                  "src": "1888:15:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 84632,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1888:6:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84635,
+                  "mutability": "mutable",
+                  "name": "gasPrice",
+                  "nameLocation": "1917:8:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84644,
+                  "src": "1909:16:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 84634,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1909:7:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84637,
+                  "mutability": "mutable",
+                  "name": "donFee",
+                  "nameLocation": "1938:6:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84644,
+                  "src": "1931:13:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint96",
+                    "typeString": "uint96"
+                  },
+                  "typeName": {
+                    "id": 84636,
+                    "name": "uint96",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1931:6:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84639,
+                  "mutability": "mutable",
+                  "name": "registryFee",
+                  "nameLocation": "1957:11:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84644,
+                  "src": "1950:18:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint96",
+                    "typeString": "uint96"
+                  },
+                  "typeName": {
+                    "id": 84638,
+                    "name": "uint96",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1950:6:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1882:90:149"
+            },
+            "returnParameters": {
+              "id": 84643,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 84642,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84644,
+                  "src": "1996:6:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint96",
+                    "typeString": "uint96"
+                  },
+                  "typeName": {
+                    "id": 84641,
+                    "name": "uint96",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1996:6:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1995:8:149"
+            },
+            "scope": 84689,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 84655,
+            "nodeType": "FunctionDefinition",
+            "src": "2446:103:149",
+            "nodes": [],
+            "documentation": {
+              "id": 84645,
+              "nodeType": "StructuredDocumentation",
+              "src": "2008:435:149",
+              "text": " @notice Initiate the billing process for an Functions request\n @param data Encoded Chainlink Functions request data, use FunctionsClient API to encode a request\n @param billing Billing configuration for the request\n @return requestId - A unique identifier of the request. Can be used to match a request to a response in fulfillRequest.\n @dev Only callable by a node that has been approved on the Registry"
+            },
+            "functionSelector": "a9d03c05",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "startBilling",
+            "nameLocation": "2455:12:149",
+            "parameters": {
+              "id": 84651,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 84647,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "2483:4:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84655,
+                  "src": "2468:19:149",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 84646,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2468:5:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84650,
+                  "mutability": "mutable",
+                  "name": "billing",
+                  "nameLocation": "2513:7:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84655,
+                  "src": "2489:31:149",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_RequestBilling_$84606_calldata_ptr",
+                    "typeString": "struct IFunctionsBillingRegistry.RequestBilling"
+                  },
+                  "typeName": {
+                    "id": 84649,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 84648,
+                      "name": "RequestBilling",
+                      "nameLocations": [
+                        "2489:14:149"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 84606,
+                      "src": "2489:14:149"
+                    },
+                    "referencedDeclaration": 84606,
+                    "src": "2489:14:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_RequestBilling_$84606_storage_ptr",
+                      "typeString": "struct IFunctionsBillingRegistry.RequestBilling"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2467:54:149"
+            },
+            "returnParameters": {
+              "id": 84654,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 84653,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84655,
+                  "src": "2540:7:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 84652,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2540:7:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2539:9:149"
+            },
+            "scope": 84689,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 84680,
+            "nodeType": "FunctionDefinition",
+            "src": "3581:333:149",
+            "nodes": [],
+            "documentation": {
+              "id": 84656,
+              "nodeType": "StructuredDocumentation",
+              "src": "2553:1025:149",
+              "text": " @notice Finalize billing process for an Functions request by sending a callback to the Client contract and then charging the subscription\n @param requestId identifier for the request that was generated by the Registry in the beginBilling commitment\n @param response response data from DON consensus\n @param err error from DON consensus\n @param transmitter the Oracle who sent the report\n @param signers the Oracles who had a part in generating the report\n @param signerCount the number of signers on the report\n @param reportValidationGas the amount of gas used for the report validation. Cost is split by all fulfillments on the report.\n @param initialGas the initial amount of gas that should be used as a baseline to charge the single fulfillment for execution cost\n @return result fulfillment result\n @dev Only callable by a node that has been approved on the Registry\n @dev simulated offchain to determine if sufficient balance is present to fulfill the request"
+            },
+            "functionSelector": "0739e4f1",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "fulfillAndBill",
+            "nameLocation": "3590:14:149",
+            "parameters": {
+              "id": 84675,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 84658,
+                  "mutability": "mutable",
+                  "name": "requestId",
+                  "nameLocation": "3618:9:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84680,
+                  "src": "3610:17:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 84657,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3610:7:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84660,
+                  "mutability": "mutable",
+                  "name": "response",
+                  "nameLocation": "3648:8:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84680,
+                  "src": "3633:23:149",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 84659,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3633:5:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84662,
+                  "mutability": "mutable",
+                  "name": "err",
+                  "nameLocation": "3677:3:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84680,
+                  "src": "3662:18:149",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 84661,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3662:5:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84664,
+                  "mutability": "mutable",
+                  "name": "transmitter",
+                  "nameLocation": "3694:11:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84680,
+                  "src": "3686:19:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 84663,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3686:7:149",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84668,
+                  "mutability": "mutable",
+                  "name": "signers",
+                  "nameLocation": "3730:7:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84680,
+                  "src": "3711:26:149",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$31_memory_ptr",
+                    "typeString": "address[31]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 84665,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "3711:7:149",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 84667,
+                    "length": {
+                      "hexValue": "3331",
+                      "id": 84666,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "3719:2:149",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_31_by_1",
+                        "typeString": "int_const 31"
+                      },
+                      "value": "31"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "3711:11:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$31_storage_ptr",
+                      "typeString": "address[31]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84670,
+                  "mutability": "mutable",
+                  "name": "signerCount",
+                  "nameLocation": "3808:11:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84680,
+                  "src": "3802:17:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 84669,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3802:5:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84672,
+                  "mutability": "mutable",
+                  "name": "reportValidationGas",
+                  "nameLocation": "3833:19:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84680,
+                  "src": "3825:27:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 84671,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3825:7:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84674,
+                  "mutability": "mutable",
+                  "name": "initialGas",
+                  "nameLocation": "3866:10:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84680,
+                  "src": "3858:18:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 84673,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3858:7:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3604:276:149"
+            },
+            "returnParameters": {
+              "id": 84679,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 84678,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84680,
+                  "src": "3899:13:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_FulfillResult_$84610",
+                    "typeString": "enum IFunctionsBillingRegistry.FulfillResult"
+                  },
+                  "typeName": {
+                    "id": 84677,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 84676,
+                      "name": "FulfillResult",
+                      "nameLocations": [
+                        "3899:13:149"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 84610,
+                      "src": "3899:13:149"
+                    },
+                    "referencedDeclaration": 84610,
+                    "src": "3899:13:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_FulfillResult_$84610",
+                      "typeString": "enum IFunctionsBillingRegistry.FulfillResult"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3898:15:149"
+            },
+            "scope": 84689,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 84688,
+            "nodeType": "FunctionDefinition",
+            "src": "4068:91:149",
+            "nodes": [],
+            "documentation": {
+              "id": 84681,
+              "nodeType": "StructuredDocumentation",
+              "src": "3918:147:149",
+              "text": " @notice Gets subscription owner.\n @param subscriptionId - ID of the subscription\n @return owner - owner of the subscription."
+            },
+            "functionSelector": "b2a489ff",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getSubscriptionOwner",
+            "nameLocation": "4077:20:149",
+            "parameters": {
+              "id": 84684,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 84683,
+                  "mutability": "mutable",
+                  "name": "subscriptionId",
+                  "nameLocation": "4105:14:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84688,
+                  "src": "4098:21:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 84682,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4098:6:149",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4097:23:149"
+            },
+            "returnParameters": {
+              "id": 84687,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 84686,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "4152:5:149",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84688,
+                  "src": "4144:13:149",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 84685,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4144:7:149",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4143:15:149"
+            },
+            "scope": 84689,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IFunctionsBillingRegistry",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 84597,
+          "nodeType": "StructuredDocumentation",
+          "src": "57:78:149",
+          "text": " @title Chainlink Functions billing subscription registry interface."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          84689
+        ],
+        "name": "IFunctionsBillingRegistry",
+        "nameLocation": "146:25:149",
+        "scope": 84690,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 149
+}

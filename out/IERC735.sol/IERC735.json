@@ -1,0 +1,2004 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "claimId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "topic",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "scheme",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "issuer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "signature",
+          "type": "bytes"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "uri",
+          "type": "string"
+        }
+      ],
+      "name": "ClaimAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "claimId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "topic",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "scheme",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "issuer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "signature",
+          "type": "bytes"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "uri",
+          "type": "string"
+        }
+      ],
+      "name": "ClaimChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "claimId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "topic",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "scheme",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "issuer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "signature",
+          "type": "bytes"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "uri",
+          "type": "string"
+        }
+      ],
+      "name": "ClaimRemoved",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_topic",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_scheme",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "issuer",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_signature",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        },
+        {
+          "internalType": "string",
+          "name": "_uri",
+          "type": "string"
+        }
+      ],
+      "name": "addClaim",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "claimRequestId",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_claimId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getClaim",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "topic",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "scheme",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "issuer",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "signature",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "internalType": "string",
+          "name": "uri",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_topic",
+          "type": "uint256"
+        }
+      ],
+      "name": "getClaimIdsByTopic",
+      "outputs": [
+        {
+          "internalType": "bytes32[]",
+          "name": "claimIds",
+          "type": "bytes32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_claimId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "removeClaim",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "addClaim(uint256,uint256,address,bytes,bytes,string)": "b1a34e0d",
+    "getClaim(bytes32)": "c9100bcb",
+    "getClaimIdsByTopic(uint256)": "80e9e9e1",
+    "removeClaim(bytes32)": "4eee424a"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"claimId\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"topic\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"scheme\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"issuer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"uri\",\"type\":\"string\"}],\"name\":\"ClaimAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"claimId\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"topic\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"scheme\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"issuer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"uri\",\"type\":\"string\"}],\"name\":\"ClaimChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"claimId\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"topic\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"scheme\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"issuer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"uri\",\"type\":\"string\"}],\"name\":\"ClaimRemoved\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_topic\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_scheme\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"issuer\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_signature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"},{\"internalType\":\"string\",\"name\":\"_uri\",\"type\":\"string\"}],\"name\":\"addClaim\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"claimRequestId\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_claimId\",\"type\":\"bytes32\"}],\"name\":\"getClaim\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"topic\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"scheme\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"issuer\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"internalType\":\"string\",\"name\":\"uri\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_topic\",\"type\":\"uint256\"}],\"name\":\"getClaimIdsByTopic\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"claimIds\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_claimId\",\"type\":\"bytes32\"}],\"name\":\"removeClaim\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"interface of the ERC735 (Claim Holder) standard as defined in the EIP.\",\"events\":{\"ClaimAdded(bytes32,uint256,uint256,address,bytes,bytes,string)\":{\"details\":\"Emitted when a claim was added. Specification: MUST be triggered when a claim was successfully added.\"},\"ClaimChanged(bytes32,uint256,uint256,address,bytes,bytes,string)\":{\"details\":\"Emitted when a claim was changed. Specification: MUST be triggered when addClaim was successfully called on an existing claimId.\"},\"ClaimRemoved(bytes32,uint256,uint256,address,bytes,bytes,string)\":{\"details\":\"Emitted when a claim was removed. Specification: MUST be triggered when removeClaim was successfully called.\"}},\"kind\":\"dev\",\"methods\":{\"addClaim(uint256,uint256,address,bytes,bytes,string)\":{\"details\":\"Add or update a claim. Triggers Event: `ClaimAdded`, `ClaimChanged` Specification: Add or update a claim from an issuer. _signature is a signed message of the following structure: `keccak256(abi.encode(address identityHolder_address, uint256 topic, bytes data))`. Claim IDs are generated using `keccak256(abi.encode(address issuer_address + uint256 topic))`.\"},\"getClaim(bytes32)\":{\"details\":\"Get a claim by its ID. Claim IDs are generated using `keccak256(abi.encode(address issuer_address, uint256 topic))`.\"},\"getClaimIdsByTopic(uint256)\":{\"details\":\"Returns an array of claim IDs by topic.\"},\"removeClaim(bytes32)\":{\"details\":\"Removes a claim. Triggers Event: `ClaimRemoved` Claim IDs are generated using `keccak256(abi.encode(address issuer_address, uint256 topic))`.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/solidity/contracts/interface/IERC735.sol\":\"IERC735\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"lib/solidity/contracts/interface/IERC735.sol\":{\"keccak256\":\"0x287356bd54aa3b1a73cedc7cf9f59d3cb534f645ebea9cbfc98dd306b940c8d3\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://b52a73a33ab585f491762ddd2b0578bfba76114a80483c7e2d2093203550c5cd\",\"dweb:/ipfs/QmSBK7ad7XQH8msNfXgGobtSnD3DDCeACQeCpXX9ojsuDL\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "claimId",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "topic",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "scheme",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "address",
+              "name": "issuer",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "bytes",
+              "name": "signature",
+              "type": "bytes",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes",
+              "indexed": false
+            },
+            {
+              "internalType": "string",
+              "name": "uri",
+              "type": "string",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ClaimAdded",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "claimId",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "topic",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "scheme",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "address",
+              "name": "issuer",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "bytes",
+              "name": "signature",
+              "type": "bytes",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes",
+              "indexed": false
+            },
+            {
+              "internalType": "string",
+              "name": "uri",
+              "type": "string",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ClaimChanged",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "claimId",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "topic",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "scheme",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "address",
+              "name": "issuer",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "bytes",
+              "name": "signature",
+              "type": "bytes",
+              "indexed": false
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes",
+              "indexed": false
+            },
+            {
+              "internalType": "string",
+              "name": "uri",
+              "type": "string",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ClaimRemoved",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_topic",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_scheme",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "issuer",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_signature",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_data",
+              "type": "bytes"
+            },
+            {
+              "internalType": "string",
+              "name": "_uri",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addClaim",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "claimRequestId",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "_claimId",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getClaim",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "topic",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "scheme",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "issuer",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes",
+              "name": "signature",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            },
+            {
+              "internalType": "string",
+              "name": "uri",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_topic",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getClaimIdsByTopic",
+          "outputs": [
+            {
+              "internalType": "bytes32[]",
+              "name": "claimIds",
+              "type": "bytes32[]"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "_claimId",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "removeClaim",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "success",
+              "type": "bool"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "addClaim(uint256,uint256,address,bytes,bytes,string)": {
+            "details": "Add or update a claim. Triggers Event: `ClaimAdded`, `ClaimChanged` Specification: Add or update a claim from an issuer. _signature is a signed message of the following structure: `keccak256(abi.encode(address identityHolder_address, uint256 topic, bytes data))`. Claim IDs are generated using `keccak256(abi.encode(address issuer_address + uint256 topic))`."
+          },
+          "getClaim(bytes32)": {
+            "details": "Get a claim by its ID. Claim IDs are generated using `keccak256(abi.encode(address issuer_address, uint256 topic))`."
+          },
+          "getClaimIdsByTopic(uint256)": {
+            "details": "Returns an array of claim IDs by topic."
+          },
+          "removeClaim(bytes32)": {
+            "details": "Removes a claim. Triggers Event: `ClaimRemoved` Claim IDs are generated using `keccak256(abi.encode(address issuer_address, uint256 topic))`."
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "lib/solidity/contracts/interface/IERC735.sol": "IERC735"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/solidity/contracts/interface/IERC735.sol": {
+        "keccak256": "0x287356bd54aa3b1a73cedc7cf9f59d3cb534f645ebea9cbfc98dd306b940c8d3",
+        "urls": [
+          "bzz-raw://b52a73a33ab585f491762ddd2b0578bfba76114a80483c7e2d2093203550c5cd",
+          "dweb:/ipfs/QmSBK7ad7XQH8msNfXgGobtSnD3DDCeACQeCpXX9ojsuDL"
+        ],
+        "license": "GPL-3.0"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/solidity/contracts/interface/IERC735.sol",
+    "id": 57691,
+    "exportedSymbols": {
+      "IERC735": [
+        57690
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "36:2740:67",
+    "nodes": [
+      {
+        "id": 57584,
+        "nodeType": "PragmaDirective",
+        "src": "36:23:67",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".21"
+        ]
+      },
+      {
+        "id": 57690,
+        "nodeType": "ContractDefinition",
+        "src": "148:2627:67",
+        "nodes": [
+          {
+            "id": 57602,
+            "nodeType": "EventDefinition",
+            "src": "317:203:67",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 57586,
+              "nodeType": "StructuredDocumentation",
+              "src": "173:139:67",
+              "text": " @dev Emitted when a claim was added.\n Specification: MUST be triggered when a claim was successfully added."
+            },
+            "eventSelector": "46149b18aa084502c3f12bc75e19eda8bda8d102b82cce8474677a6d0d5f43c5",
+            "name": "ClaimAdded",
+            "nameLocation": "323:10:67",
+            "parameters": {
+              "id": 57601,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57588,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "claimId",
+                  "nameLocation": "359:7:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57602,
+                  "src": "343:23:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 57587,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "343:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57590,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "topic",
+                  "nameLocation": "392:5:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57602,
+                  "src": "376:21:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57589,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "376:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57592,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "scheme",
+                  "nameLocation": "415:6:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57602,
+                  "src": "407:14:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57591,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "407:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57594,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "issuer",
+                  "nameLocation": "447:6:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57602,
+                  "src": "431:22:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57593,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "431:7:67",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57596,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "signature",
+                  "nameLocation": "469:9:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57602,
+                  "src": "463:15:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 57595,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "463:5:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57598,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "494:4:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57602,
+                  "src": "488:10:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 57597,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "488:5:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57600,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "uri",
+                  "nameLocation": "515:3:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57602,
+                  "src": "508:10:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 57599,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "508:6:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "333:186:67"
+            }
+          },
+          {
+            "id": 57619,
+            "nodeType": "EventDefinition",
+            "src": "677:205:67",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 57603,
+              "nodeType": "StructuredDocumentation",
+              "src": "526:146:67",
+              "text": " @dev Emitted when a claim was removed.\n Specification: MUST be triggered when removeClaim was successfully called."
+            },
+            "eventSelector": "3cf57863a89432c61c4a27073c6ee39e8a764bff5a05aebfbcdcdc80b2e6130a",
+            "name": "ClaimRemoved",
+            "nameLocation": "683:12:67",
+            "parameters": {
+              "id": 57618,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57605,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "claimId",
+                  "nameLocation": "721:7:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57619,
+                  "src": "705:23:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 57604,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "705:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57607,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "topic",
+                  "nameLocation": "754:5:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57619,
+                  "src": "738:21:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57606,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "738:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57609,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "scheme",
+                  "nameLocation": "777:6:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57619,
+                  "src": "769:14:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57608,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "769:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57611,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "issuer",
+                  "nameLocation": "809:6:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57619,
+                  "src": "793:22:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57610,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "793:7:67",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57613,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "signature",
+                  "nameLocation": "831:9:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57619,
+                  "src": "825:15:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 57612,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "825:5:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57615,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "856:4:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57619,
+                  "src": "850:10:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 57614,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "850:5:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57617,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "uri",
+                  "nameLocation": "877:3:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57619,
+                  "src": "870:10:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 57616,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "870:6:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "695:186:67"
+            }
+          },
+          {
+            "id": 57636,
+            "nodeType": "EventDefinition",
+            "src": "1059:205:67",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 57620,
+              "nodeType": "StructuredDocumentation",
+              "src": "888:166:67",
+              "text": " @dev Emitted when a claim was changed.\n Specification: MUST be triggered when addClaim was successfully called on an existing claimId."
+            },
+            "eventSelector": "3bab293fc00db832d7619a9299914251b8747c036867ec056cbd506f60135b13",
+            "name": "ClaimChanged",
+            "nameLocation": "1065:12:67",
+            "parameters": {
+              "id": 57635,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57622,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "claimId",
+                  "nameLocation": "1103:7:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57636,
+                  "src": "1087:23:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 57621,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1087:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57624,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "topic",
+                  "nameLocation": "1136:5:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57636,
+                  "src": "1120:21:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57623,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1120:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57626,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "scheme",
+                  "nameLocation": "1159:6:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57636,
+                  "src": "1151:14:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57625,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1151:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57628,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "issuer",
+                  "nameLocation": "1191:6:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57636,
+                  "src": "1175:22:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57627,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1175:7:67",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57630,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "signature",
+                  "nameLocation": "1213:9:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57636,
+                  "src": "1207:15:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 57629,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1207:5:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57632,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "1238:4:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57636,
+                  "src": "1232:10:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 57631,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1232:5:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57634,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "uri",
+                  "nameLocation": "1259:3:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57636,
+                  "src": "1252:10:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 57633,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1252:6:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1077:186:67"
+            }
+          },
+          {
+            "id": 57654,
+            "nodeType": "FunctionDefinition",
+            "src": "1713:233:67",
+            "nodes": [],
+            "documentation": {
+              "id": 57637,
+              "nodeType": "StructuredDocumentation",
+              "src": "1270:438:67",
+              "text": " @dev Add or update a claim.\n Triggers Event: `ClaimAdded`, `ClaimChanged`\n Specification: Add or update a claim from an issuer.\n _signature is a signed message of the following structure:\n `keccak256(abi.encode(address identityHolder_address, uint256 topic, bytes data))`.\n Claim IDs are generated using `keccak256(abi.encode(address issuer_address + uint256 topic))`."
+            },
+            "functionSelector": "b1a34e0d",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addClaim",
+            "nameLocation": "1722:8:67",
+            "parameters": {
+              "id": 57650,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57639,
+                  "mutability": "mutable",
+                  "name": "_topic",
+                  "nameLocation": "1748:6:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57654,
+                  "src": "1740:14:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57638,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1740:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57641,
+                  "mutability": "mutable",
+                  "name": "_scheme",
+                  "nameLocation": "1772:7:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57654,
+                  "src": "1764:15:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57640,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1764:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57643,
+                  "mutability": "mutable",
+                  "name": "issuer",
+                  "nameLocation": "1797:6:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57654,
+                  "src": "1789:14:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57642,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1789:7:67",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57645,
+                  "mutability": "mutable",
+                  "name": "_signature",
+                  "nameLocation": "1828:10:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57654,
+                  "src": "1813:25:67",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 57644,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1813:5:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57647,
+                  "mutability": "mutable",
+                  "name": "_data",
+                  "nameLocation": "1863:5:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57654,
+                  "src": "1848:20:67",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 57646,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1848:5:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57649,
+                  "mutability": "mutable",
+                  "name": "_uri",
+                  "nameLocation": "1894:4:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57654,
+                  "src": "1878:20:67",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 57648,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1878:6:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1730:169:67"
+            },
+            "returnParameters": {
+              "id": 57653,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57652,
+                  "mutability": "mutable",
+                  "name": "claimRequestId",
+                  "nameLocation": "1930:14:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57654,
+                  "src": "1922:22:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 57651,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1922:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1921:24:67"
+            },
+            "scope": 57690,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57662,
+            "nodeType": "FunctionDefinition",
+            "src": "2150:71:67",
+            "nodes": [],
+            "documentation": {
+              "id": 57655,
+              "nodeType": "StructuredDocumentation",
+              "src": "1952:193:67",
+              "text": " @dev Removes a claim.\n Triggers Event: `ClaimRemoved`\n Claim IDs are generated using `keccak256(abi.encode(address issuer_address, uint256 topic))`."
+            },
+            "functionSelector": "4eee424a",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeClaim",
+            "nameLocation": "2159:11:67",
+            "parameters": {
+              "id": 57658,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57657,
+                  "mutability": "mutable",
+                  "name": "_claimId",
+                  "nameLocation": "2179:8:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57662,
+                  "src": "2171:16:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 57656,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2171:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2170:18:67"
+            },
+            "returnParameters": {
+              "id": 57661,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57660,
+                  "mutability": "mutable",
+                  "name": "success",
+                  "nameLocation": "2212:7:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57662,
+                  "src": "2207:12:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 57659,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2207:4:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2206:14:67"
+            },
+            "scope": 57690,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57680,
+            "nodeType": "FunctionDefinition",
+            "src": "2386:220:67",
+            "nodes": [],
+            "documentation": {
+              "id": 57663,
+              "nodeType": "StructuredDocumentation",
+              "src": "2227:154:67",
+              "text": " @dev Get a claim by its ID.\n Claim IDs are generated using `keccak256(abi.encode(address issuer_address, uint256 topic))`."
+            },
+            "functionSelector": "c9100bcb",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getClaim",
+            "nameLocation": "2395:8:67",
+            "parameters": {
+              "id": 57666,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57665,
+                  "mutability": "mutable",
+                  "name": "_claimId",
+                  "nameLocation": "2412:8:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57680,
+                  "src": "2404:16:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 57664,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2404:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2403:18:67"
+            },
+            "returnParameters": {
+              "id": 57679,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57668,
+                  "mutability": "mutable",
+                  "name": "topic",
+                  "nameLocation": "2465:5:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57680,
+                  "src": "2457:13:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57667,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2457:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57670,
+                  "mutability": "mutable",
+                  "name": "scheme",
+                  "nameLocation": "2488:6:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57680,
+                  "src": "2480:14:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57669,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2480:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57672,
+                  "mutability": "mutable",
+                  "name": "issuer",
+                  "nameLocation": "2512:6:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57680,
+                  "src": "2504:14:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 57671,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2504:7:67",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57674,
+                  "mutability": "mutable",
+                  "name": "signature",
+                  "nameLocation": "2541:9:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57680,
+                  "src": "2528:22:67",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 57673,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2528:5:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57676,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "2573:4:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57680,
+                  "src": "2560:17:67",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 57675,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2560:5:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 57678,
+                  "mutability": "mutable",
+                  "name": "uri",
+                  "nameLocation": "2601:3:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57680,
+                  "src": "2587:17:67",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 57677,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2587:6:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2447:158:67"
+            },
+            "scope": 57690,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 57689,
+            "nodeType": "FunctionDefinition",
+            "src": "2680:93:67",
+            "nodes": [],
+            "documentation": {
+              "id": 57681,
+              "nodeType": "StructuredDocumentation",
+              "src": "2612:63:67",
+              "text": " @dev Returns an array of claim IDs by topic."
+            },
+            "functionSelector": "80e9e9e1",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getClaimIdsByTopic",
+            "nameLocation": "2689:18:67",
+            "parameters": {
+              "id": 57684,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57683,
+                  "mutability": "mutable",
+                  "name": "_topic",
+                  "nameLocation": "2716:6:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57689,
+                  "src": "2708:14:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 57682,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2708:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2707:16:67"
+            },
+            "returnParameters": {
+              "id": 57688,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57687,
+                  "mutability": "mutable",
+                  "name": "claimIds",
+                  "nameLocation": "2763:8:67",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 57689,
+                  "src": "2746:25:67",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 57685,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2746:7:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 57686,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2746:9:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2745:27:67"
+            },
+            "scope": 57690,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IERC735",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 57585,
+          "nodeType": "StructuredDocumentation",
+          "src": "61:86:67",
+          "text": " @dev interface of the ERC735 (Claim Holder) standard as defined in the EIP."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          57690
+        ],
+        "name": "IERC735",
+        "nameLocation": "158:7:67",
+        "scope": 57691,
+        "usedErrors": [],
+        "usedEvents": [
+          57602,
+          57619,
+          57636
+        ]
+      }
+    ],
+    "license": "GPL-3.0"
+  },
+  "id": 67
+}

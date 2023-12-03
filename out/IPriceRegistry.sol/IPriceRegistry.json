@@ -1,0 +1,1486 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "fromToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "fromTokenAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "toToken",
+          "type": "address"
+        }
+      ],
+      "name": "convertTokenAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "toTokenAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "destChainSelector",
+          "type": "uint64"
+        }
+      ],
+      "name": "getDestinationChainGasPrice",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint224",
+              "name": "value",
+              "type": "uint224"
+            },
+            {
+              "internalType": "uint32",
+              "name": "timestamp",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct Internal.TimestampedPackedUint224",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint64",
+          "name": "destChainSelector",
+          "type": "uint64"
+        }
+      ],
+      "name": "getTokenAndGasPrices",
+      "outputs": [
+        {
+          "internalType": "uint224",
+          "name": "tokenPrice",
+          "type": "uint224"
+        },
+        {
+          "internalType": "uint224",
+          "name": "gasPrice",
+          "type": "uint224"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        }
+      ],
+      "name": "getTokenPrice",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint224",
+              "name": "value",
+              "type": "uint224"
+            },
+            {
+              "internalType": "uint32",
+              "name": "timestamp",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct Internal.TimestampedPackedUint224",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "tokens",
+          "type": "address[]"
+        }
+      ],
+      "name": "getTokenPrices",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint224",
+              "name": "value",
+              "type": "uint224"
+            },
+            {
+              "internalType": "uint32",
+              "name": "timestamp",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct Internal.TimestampedPackedUint224[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        }
+      ],
+      "name": "getValidatedTokenPrice",
+      "outputs": [
+        {
+          "internalType": "uint224",
+          "name": "",
+          "type": "uint224"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "sourceToken",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint224",
+                  "name": "usdPerToken",
+                  "type": "uint224"
+                }
+              ],
+              "internalType": "struct Internal.TokenPriceUpdate[]",
+              "name": "tokenPriceUpdates",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint64",
+                  "name": "destChainSelector",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint224",
+                  "name": "usdPerUnitGas",
+                  "type": "uint224"
+                }
+              ],
+              "internalType": "struct Internal.GasPriceUpdate[]",
+              "name": "gasPriceUpdates",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct Internal.PriceUpdates",
+          "name": "priceUpdates",
+          "type": "tuple"
+        }
+      ],
+      "name": "updatePrices",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "convertTokenAmount(address,uint256,address)": "0041e5be",
+    "getDestinationChainGasPrice(uint64)": "514e8cff",
+    "getTokenAndGasPrices(address,uint64)": "ffdb4b37",
+    "getTokenPrice(address)": "d02641a0",
+    "getTokenPrices(address[])": "45ac924d",
+    "getValidatedTokenPrice(address)": "4ab35b0b",
+    "updatePrices(((address,uint224)[],(uint64,uint224)[]))": "3937306f"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"fromToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"fromTokenAmount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"toToken\",\"type\":\"address\"}],\"name\":\"convertTokenAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"toTokenAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"destChainSelector\",\"type\":\"uint64\"}],\"name\":\"getDestinationChainGasPrice\",\"outputs\":[{\"components\":[{\"internalType\":\"uint224\",\"name\":\"value\",\"type\":\"uint224\"},{\"internalType\":\"uint32\",\"name\":\"timestamp\",\"type\":\"uint32\"}],\"internalType\":\"struct Internal.TimestampedPackedUint224\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"destChainSelector\",\"type\":\"uint64\"}],\"name\":\"getTokenAndGasPrices\",\"outputs\":[{\"internalType\":\"uint224\",\"name\":\"tokenPrice\",\"type\":\"uint224\"},{\"internalType\":\"uint224\",\"name\":\"gasPrice\",\"type\":\"uint224\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"getTokenPrice\",\"outputs\":[{\"components\":[{\"internalType\":\"uint224\",\"name\":\"value\",\"type\":\"uint224\"},{\"internalType\":\"uint32\",\"name\":\"timestamp\",\"type\":\"uint32\"}],\"internalType\":\"struct Internal.TimestampedPackedUint224\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"tokens\",\"type\":\"address[]\"}],\"name\":\"getTokenPrices\",\"outputs\":[{\"components\":[{\"internalType\":\"uint224\",\"name\":\"value\",\"type\":\"uint224\"},{\"internalType\":\"uint32\",\"name\":\"timestamp\",\"type\":\"uint32\"}],\"internalType\":\"struct Internal.TimestampedPackedUint224[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"getValidatedTokenPrice\",\"outputs\":[{\"internalType\":\"uint224\",\"name\":\"\",\"type\":\"uint224\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"sourceToken\",\"type\":\"address\"},{\"internalType\":\"uint224\",\"name\":\"usdPerToken\",\"type\":\"uint224\"}],\"internalType\":\"struct Internal.TokenPriceUpdate[]\",\"name\":\"tokenPriceUpdates\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"uint64\",\"name\":\"destChainSelector\",\"type\":\"uint64\"},{\"internalType\":\"uint224\",\"name\":\"usdPerUnitGas\",\"type\":\"uint224\"}],\"internalType\":\"struct Internal.GasPriceUpdate[]\",\"name\":\"gasPriceUpdates\",\"type\":\"tuple[]\"}],\"internalType\":\"struct Internal.PriceUpdates\",\"name\":\"priceUpdates\",\"type\":\"tuple\"}],\"name\":\"updatePrices\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"convertTokenAmount(address,uint256,address)\":{\"params\":{\"fromToken\":\"The given token address.\",\"fromTokenAmount\":\"The given token amount.\",\"toToken\":\"The target token address.\"},\"returns\":{\"toTokenAmount\":\"The target token amount.\"}},\"getDestinationChainGasPrice(uint64)\":{\"params\":{\"destChainSelector\":\"The destination chain to get the price for.\"},\"returns\":{\"_0\":\"gasPrice The encoded gasPrice for the given destination chain ID.\"}},\"getTokenAndGasPrices(address,uint64)\":{\"params\":{\"destChainSelector\":\"The destination chain to get the gas price for.\",\"token\":\"The source token to get the price for.\"},\"returns\":{\"gasPrice\":\"The price of gas in 1e18 dollars per base unit.\",\"tokenPrice\":\"The price of the feeToken in 1e18 dollars per base unit.\"}},\"getTokenPrice(address)\":{\"params\":{\"token\":\"The token to get the price for.\"},\"returns\":{\"_0\":\"tokenPrice The tokenPrice for the given token.\"}},\"getTokenPrices(address[])\":{\"params\":{\"tokens\":\"The tokens to get prices for.\"},\"returns\":{\"_0\":\"tokenPrices The tokenPrices for the given tokens.\"}},\"getValidatedTokenPrice(address)\":{\"params\":{\"token\":\"The token to get the price for.\"},\"returns\":{\"_0\":\"tokenPrice The tokenPrice for the given token if it exists and is valid.\"}},\"updatePrices(((address,uint224)[],(uint64,uint224)[]))\":{\"params\":{\"priceUpdates\":\"The price updates to apply.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"convertTokenAmount(address,uint256,address)\":{\"notice\":\"Convert a given token amount to target token amount.\"},\"getDestinationChainGasPrice(uint64)\":{\"notice\":\"Get an encoded `gasPrice` for a given destination chain ID. The 224-bit result encodes necessary gas price components. On L1 chains like Ethereum or Avax, the only component is the gas price. On Optimistic Rollups, there are two components - the L2 gas price, and L1 base fee for data availability. On future chains, there could be more or differing price components. PriceRegistry does not contain chain-specific logic to parse destination chain price components.\"},\"getTokenAndGasPrices(address,uint64)\":{\"notice\":\"Gets the fee token price and the gas price, both denominated in dollars.\"},\"getTokenPrice(address)\":{\"notice\":\"Get the `tokenPrice` for a given token.\"},\"getTokenPrices(address[])\":{\"notice\":\"Get the `tokenPrice` for an array of tokens.\"},\"getValidatedTokenPrice(address)\":{\"notice\":\"Get the `tokenPrice` for a given token, checks if the price is valid.\"},\"updatePrices(((address,uint224)[],(uint64,uint224)[]))\":{\"notice\":\"Update the price for given tokens and gas prices for given chains.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/v0.8/ccip/interfaces/IPriceRegistry.sol\":\"IPriceRegistry\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/v0.8/ccip/interfaces/IPriceRegistry.sol\":{\"keccak256\":\"0xa720e33296cbb18dffe5dcf9d7e3c4b4c0532bdd09dec689243bda01d50d07e8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://aebab6f04456ec25ce4ec289012b9401ec10fb4426c09095595ac4ffca15ae77\",\"dweb:/ipfs/QmfCnSXWSSiXd5pPTYZKkq6NcbpCto6tFM6EGeWqZ6TyMv\"]},\"src/v0.8/ccip/libraries/Client.sol\":{\"keccak256\":\"0x8af3ac1085c87342373772fb1a0107c7b90258e6bfed318ab2a601a14477e679\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://14395fefc8310c9a355262359c8f51036f83c004982fb600164c2a007629f81e\",\"dweb:/ipfs/QmeCLr8a5bDVyLQm8v947ULgV4CZmUeQPjVyWixzieBD5o\"]},\"src/v0.8/ccip/libraries/Internal.sol\":{\"keccak256\":\"0x47b734c896e5a286ff0f18d20fd208bc87150ceb724aebda836c681f58fe2013\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://394af09ff5d59cf031fadf2ada0562ea8703f28582034e1ba8edfd673925df20\",\"dweb:/ipfs/Qmdm4N95RKwq6QLce8scsccT5pvNPAccQKt3i4WniUwLaj\"]},\"src/v0.8/ccip/libraries/MerkleMultiProof.sol\":{\"keccak256\":\"0x9f2e5edd718cd1b5aa7143ca39ee50d7c15b8456ce32c49c10833c9ef3b0eb72\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://c2591501ed4b28164009e58166324634a0ce79a0599ee682d47d825f302a9955\",\"dweb:/ipfs/QmeN35m4PFQDBc1ew2Q5koYNfchf8DcTemUmXVFVSuZV5t\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "fromToken",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fromTokenAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "toToken",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "convertTokenAmount",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "toTokenAmount",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint64",
+              "name": "destChainSelector",
+              "type": "uint64"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getDestinationChainGasPrice",
+          "outputs": [
+            {
+              "internalType": "struct Internal.TimestampedPackedUint224",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint224",
+                  "name": "value",
+                  "type": "uint224"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "timestamp",
+                  "type": "uint32"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint64",
+              "name": "destChainSelector",
+              "type": "uint64"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getTokenAndGasPrices",
+          "outputs": [
+            {
+              "internalType": "uint224",
+              "name": "tokenPrice",
+              "type": "uint224"
+            },
+            {
+              "internalType": "uint224",
+              "name": "gasPrice",
+              "type": "uint224"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getTokenPrice",
+          "outputs": [
+            {
+              "internalType": "struct Internal.TimestampedPackedUint224",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint224",
+                  "name": "value",
+                  "type": "uint224"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "timestamp",
+                  "type": "uint32"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address[]",
+              "name": "tokens",
+              "type": "address[]"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getTokenPrices",
+          "outputs": [
+            {
+              "internalType": "struct Internal.TimestampedPackedUint224[]",
+              "name": "",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "uint224",
+                  "name": "value",
+                  "type": "uint224"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "timestamp",
+                  "type": "uint32"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getValidatedTokenPrice",
+          "outputs": [
+            {
+              "internalType": "uint224",
+              "name": "",
+              "type": "uint224"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct Internal.PriceUpdates",
+              "name": "priceUpdates",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "struct Internal.TokenPriceUpdate[]",
+                  "name": "tokenPriceUpdates",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "address",
+                      "name": "sourceToken",
+                      "type": "address"
+                    },
+                    {
+                      "internalType": "uint224",
+                      "name": "usdPerToken",
+                      "type": "uint224"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "struct Internal.GasPriceUpdate[]",
+                  "name": "gasPriceUpdates",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "uint64",
+                      "name": "destChainSelector",
+                      "type": "uint64"
+                    },
+                    {
+                      "internalType": "uint224",
+                      "name": "usdPerUnitGas",
+                      "type": "uint224"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updatePrices"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "convertTokenAmount(address,uint256,address)": {
+            "params": {
+              "fromToken": "The given token address.",
+              "fromTokenAmount": "The given token amount.",
+              "toToken": "The target token address."
+            },
+            "returns": {
+              "toTokenAmount": "The target token amount."
+            }
+          },
+          "getDestinationChainGasPrice(uint64)": {
+            "params": {
+              "destChainSelector": "The destination chain to get the price for."
+            },
+            "returns": {
+              "_0": "gasPrice The encoded gasPrice for the given destination chain ID."
+            }
+          },
+          "getTokenAndGasPrices(address,uint64)": {
+            "params": {
+              "destChainSelector": "The destination chain to get the gas price for.",
+              "token": "The source token to get the price for."
+            },
+            "returns": {
+              "gasPrice": "The price of gas in 1e18 dollars per base unit.",
+              "tokenPrice": "The price of the feeToken in 1e18 dollars per base unit."
+            }
+          },
+          "getTokenPrice(address)": {
+            "params": {
+              "token": "The token to get the price for."
+            },
+            "returns": {
+              "_0": "tokenPrice The tokenPrice for the given token."
+            }
+          },
+          "getTokenPrices(address[])": {
+            "params": {
+              "tokens": "The tokens to get prices for."
+            },
+            "returns": {
+              "_0": "tokenPrices The tokenPrices for the given tokens."
+            }
+          },
+          "getValidatedTokenPrice(address)": {
+            "params": {
+              "token": "The token to get the price for."
+            },
+            "returns": {
+              "_0": "tokenPrice The tokenPrice for the given token if it exists and is valid."
+            }
+          },
+          "updatePrices(((address,uint224)[],(uint64,uint224)[]))": {
+            "params": {
+              "priceUpdates": "The price updates to apply."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "convertTokenAmount(address,uint256,address)": {
+            "notice": "Convert a given token amount to target token amount."
+          },
+          "getDestinationChainGasPrice(uint64)": {
+            "notice": "Get an encoded `gasPrice` for a given destination chain ID. The 224-bit result encodes necessary gas price components. On L1 chains like Ethereum or Avax, the only component is the gas price. On Optimistic Rollups, there are two components - the L2 gas price, and L1 base fee for data availability. On future chains, there could be more or differing price components. PriceRegistry does not contain chain-specific logic to parse destination chain price components."
+          },
+          "getTokenAndGasPrices(address,uint64)": {
+            "notice": "Gets the fee token price and the gas price, both denominated in dollars."
+          },
+          "getTokenPrice(address)": {
+            "notice": "Get the `tokenPrice` for a given token."
+          },
+          "getTokenPrices(address[])": {
+            "notice": "Get the `tokenPrice` for an array of tokens."
+          },
+          "getValidatedTokenPrice(address)": {
+            "notice": "Get the `tokenPrice` for a given token, checks if the price is valid."
+          },
+          "updatePrices(((address,uint224)[],(uint64,uint224)[]))": {
+            "notice": "Update the price for given tokens and gas prices for given chains."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/v0.8/ccip/interfaces/IPriceRegistry.sol": "IPriceRegistry"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/v0.8/ccip/interfaces/IPriceRegistry.sol": {
+        "keccak256": "0xa720e33296cbb18dffe5dcf9d7e3c4b4c0532bdd09dec689243bda01d50d07e8",
+        "urls": [
+          "bzz-raw://aebab6f04456ec25ce4ec289012b9401ec10fb4426c09095595ac4ffca15ae77",
+          "dweb:/ipfs/QmfCnSXWSSiXd5pPTYZKkq6NcbpCto6tFM6EGeWqZ6TyMv"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/ccip/libraries/Client.sol": {
+        "keccak256": "0x8af3ac1085c87342373772fb1a0107c7b90258e6bfed318ab2a601a14477e679",
+        "urls": [
+          "bzz-raw://14395fefc8310c9a355262359c8f51036f83c004982fb600164c2a007629f81e",
+          "dweb:/ipfs/QmeCLr8a5bDVyLQm8v947ULgV4CZmUeQPjVyWixzieBD5o"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/ccip/libraries/Internal.sol": {
+        "keccak256": "0x47b734c896e5a286ff0f18d20fd208bc87150ceb724aebda836c681f58fe2013",
+        "urls": [
+          "bzz-raw://394af09ff5d59cf031fadf2ada0562ea8703f28582034e1ba8edfd673925df20",
+          "dweb:/ipfs/Qmdm4N95RKwq6QLce8scsccT5pvNPAccQKt3i4WniUwLaj"
+        ],
+        "license": "MIT"
+      },
+      "src/v0.8/ccip/libraries/MerkleMultiProof.sol": {
+        "keccak256": "0x9f2e5edd718cd1b5aa7143ca39ee50d7c15b8456ce32c49c10833c9ef3b0eb72",
+        "urls": [
+          "bzz-raw://c2591501ed4b28164009e58166324634a0ce79a0599ee682d47d825f302a9955",
+          "dweb:/ipfs/QmeN35m4PFQDBc1ew2Q5koYNfchf8DcTemUmXVFVSuZV5t"
+        ],
+        "license": "BUSL-1.1"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/v0.8/ccip/interfaces/IPriceRegistry.sol",
+    "id": 71056,
+    "exportedSymbols": {
+      "IPriceRegistry": [
+        71055
+      ],
+      "Internal": [
+        71518
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:2944:115",
+    "nodes": [
+      {
+        "id": 70984,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:115",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 70986,
+        "nodeType": "ImportDirective",
+        "src": "57:51:115",
+        "nodes": [],
+        "absolutePath": "src/v0.8/ccip/libraries/Internal.sol",
+        "file": "../libraries/Internal.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 71056,
+        "sourceUnit": 71519,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 70985,
+              "name": "Internal",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 71518,
+              "src": "65:8:115",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 71055,
+        "nodeType": "ContractDefinition",
+        "src": "110:2865:115",
+        "nodes": [
+          {
+            "id": 70993,
+            "nodeType": "FunctionDefinition",
+            "src": "274:74:115",
+            "nodes": [],
+            "documentation": {
+              "id": 70987,
+              "nodeType": "StructuredDocumentation",
+              "src": "139:132:115",
+              "text": "@notice Update the price for given tokens and gas prices for given chains.\n @param priceUpdates The price updates to apply."
+            },
+            "functionSelector": "3937306f",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updatePrices",
+            "nameLocation": "283:12:115",
+            "parameters": {
+              "id": 70991,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70990,
+                  "mutability": "mutable",
+                  "name": "priceUpdates",
+                  "nameLocation": "325:12:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70993,
+                  "src": "296:41:115",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_PriceUpdates_$71330_memory_ptr",
+                    "typeString": "struct Internal.PriceUpdates"
+                  },
+                  "typeName": {
+                    "id": 70989,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70988,
+                      "name": "Internal.PriceUpdates",
+                      "nameLocations": [
+                        "296:8:115",
+                        "305:12:115"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71330,
+                      "src": "296:21:115"
+                    },
+                    "referencedDeclaration": 71330,
+                    "src": "296:21:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_PriceUpdates_$71330_storage_ptr",
+                      "typeString": "struct Internal.PriceUpdates"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "295:43:115"
+            },
+            "returnParameters": {
+              "id": 70992,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "347:0:115"
+            },
+            "scope": 71055,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 71002,
+            "nodeType": "FunctionDefinition",
+            "src": "518:103:115",
+            "nodes": [],
+            "documentation": {
+              "id": 70994,
+              "nodeType": "StructuredDocumentation",
+              "src": "352:163:115",
+              "text": "@notice Get the `tokenPrice` for a given token.\n @param token The token to get the price for.\n @return tokenPrice The tokenPrice for the given token."
+            },
+            "functionSelector": "d02641a0",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTokenPrice",
+            "nameLocation": "527:13:115",
+            "parameters": {
+              "id": 70997,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 70996,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "549:5:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71002,
+                  "src": "541:13:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 70995,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "541:7:115",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "540:15:115"
+            },
+            "returnParameters": {
+              "id": 71001,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71000,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71002,
+                  "src": "579:40:115",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_TimestampedPackedUint224_$71348_memory_ptr",
+                    "typeString": "struct Internal.TimestampedPackedUint224"
+                  },
+                  "typeName": {
+                    "id": 70999,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 70998,
+                      "name": "Internal.TimestampedPackedUint224",
+                      "nameLocations": [
+                        "579:8:115",
+                        "588:24:115"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71348,
+                      "src": "579:33:115"
+                    },
+                    "referencedDeclaration": 71348,
+                    "src": "579:33:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_TimestampedPackedUint224_$71348_storage_ptr",
+                      "typeString": "struct Internal.TimestampedPackedUint224"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "578:42:115"
+            },
+            "scope": 71055,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 71010,
+            "nodeType": "FunctionDefinition",
+            "src": "847:79:115",
+            "nodes": [],
+            "documentation": {
+              "id": 71003,
+              "nodeType": "StructuredDocumentation",
+              "src": "625:219:115",
+              "text": "@notice Get the `tokenPrice` for a given token, checks if the price is valid.\n @param token The token to get the price for.\n @return tokenPrice The tokenPrice for the given token if it exists and is valid."
+            },
+            "functionSelector": "4ab35b0b",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getValidatedTokenPrice",
+            "nameLocation": "856:22:115",
+            "parameters": {
+              "id": 71006,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71005,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "887:5:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71010,
+                  "src": "879:13:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 71004,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "879:7:115",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "878:15:115"
+            },
+            "returnParameters": {
+              "id": 71009,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71008,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71010,
+                  "src": "917:7:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint224",
+                    "typeString": "uint224"
+                  },
+                  "typeName": {
+                    "id": 71007,
+                    "name": "uint224",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "917:7:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint224",
+                      "typeString": "uint224"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "916:9:115"
+            },
+            "scope": 71055,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 71021,
+            "nodeType": "FunctionDefinition",
+            "src": "1103:118:115",
+            "nodes": [],
+            "documentation": {
+              "id": 71011,
+              "nodeType": "StructuredDocumentation",
+              "src": "930:170:115",
+              "text": "@notice Get the `tokenPrice` for an array of tokens.\n @param tokens The tokens to get prices for.\n @return tokenPrices The tokenPrices for the given tokens."
+            },
+            "functionSelector": "45ac924d",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTokenPrices",
+            "nameLocation": "1112:14:115",
+            "parameters": {
+              "id": 71015,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71014,
+                  "mutability": "mutable",
+                  "name": "tokens",
+                  "nameLocation": "1146:6:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71021,
+                  "src": "1127:25:115",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 71012,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1127:7:115",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 71013,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1127:9:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1126:27:115"
+            },
+            "returnParameters": {
+              "id": 71020,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71019,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71021,
+                  "src": "1177:42:115",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_TimestampedPackedUint224_$71348_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct Internal.TimestampedPackedUint224[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 71017,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 71016,
+                        "name": "Internal.TimestampedPackedUint224",
+                        "nameLocations": [
+                          "1177:8:115",
+                          "1186:24:115"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 71348,
+                        "src": "1177:33:115"
+                      },
+                      "referencedDeclaration": 71348,
+                      "src": "1177:33:115",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_TimestampedPackedUint224_$71348_storage_ptr",
+                        "typeString": "struct Internal.TimestampedPackedUint224"
+                      }
+                    },
+                    "id": 71018,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1177:35:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_TimestampedPackedUint224_$71348_storage_$dyn_storage_ptr",
+                      "typeString": "struct Internal.TimestampedPackedUint224[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1176:44:115"
+            },
+            "scope": 71055,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 71030,
+            "nodeType": "FunctionDefinition",
+            "src": "1889:136:115",
+            "nodes": [],
+            "documentation": {
+              "id": 71022,
+              "nodeType": "StructuredDocumentation",
+              "src": "1225:661:115",
+              "text": "@notice Get an encoded `gasPrice` for a given destination chain ID.\n The 224-bit result encodes necessary gas price components.\n On L1 chains like Ethereum or Avax, the only component is the gas price.\n On Optimistic Rollups, there are two components - the L2 gas price, and L1 base fee for data availability.\n On future chains, there could be more or differing price components.\n PriceRegistry does not contain chain-specific logic to parse destination chain price components.\n @param destChainSelector The destination chain to get the price for.\n @return gasPrice The encoded gasPrice for the given destination chain ID."
+            },
+            "functionSelector": "514e8cff",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDestinationChainGasPrice",
+            "nameLocation": "1898:27:115",
+            "parameters": {
+              "id": 71025,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71024,
+                  "mutability": "mutable",
+                  "name": "destChainSelector",
+                  "nameLocation": "1938:17:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71030,
+                  "src": "1931:24:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 71023,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1931:6:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1925:34:115"
+            },
+            "returnParameters": {
+              "id": 71029,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71028,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71030,
+                  "src": "1983:40:115",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_TimestampedPackedUint224_$71348_memory_ptr",
+                    "typeString": "struct Internal.TimestampedPackedUint224"
+                  },
+                  "typeName": {
+                    "id": 71027,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 71026,
+                      "name": "Internal.TimestampedPackedUint224",
+                      "nameLocations": [
+                        "1983:8:115",
+                        "1992:24:115"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 71348,
+                      "src": "1983:33:115"
+                    },
+                    "referencedDeclaration": 71348,
+                    "src": "1983:33:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_TimestampedPackedUint224_$71348_storage_ptr",
+                      "typeString": "struct Internal.TimestampedPackedUint224"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1982:42:115"
+            },
+            "scope": 71055,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 71042,
+            "nodeType": "FunctionDefinition",
+            "src": "2406:144:115",
+            "nodes": [],
+            "documentation": {
+              "id": 71031,
+              "nodeType": "StructuredDocumentation",
+              "src": "2029:374:115",
+              "text": "@notice Gets the fee token price and the gas price, both denominated in dollars.\n @param token The source token to get the price for.\n @param destChainSelector The destination chain to get the gas price for.\n @return tokenPrice The price of the feeToken in 1e18 dollars per base unit.\n @return gasPrice The price of gas in 1e18 dollars per base unit."
+            },
+            "functionSelector": "ffdb4b37",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTokenAndGasPrices",
+            "nameLocation": "2415:20:115",
+            "parameters": {
+              "id": 71036,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71033,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "2449:5:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71042,
+                  "src": "2441:13:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 71032,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2441:7:115",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 71035,
+                  "mutability": "mutable",
+                  "name": "destChainSelector",
+                  "nameLocation": "2467:17:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71042,
+                  "src": "2460:24:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 71034,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2460:6:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2435:53:115"
+            },
+            "returnParameters": {
+              "id": 71041,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71038,
+                  "mutability": "mutable",
+                  "name": "tokenPrice",
+                  "nameLocation": "2520:10:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71042,
+                  "src": "2512:18:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint224",
+                    "typeString": "uint224"
+                  },
+                  "typeName": {
+                    "id": 71037,
+                    "name": "uint224",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2512:7:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint224",
+                      "typeString": "uint224"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 71040,
+                  "mutability": "mutable",
+                  "name": "gasPrice",
+                  "nameLocation": "2540:8:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71042,
+                  "src": "2532:16:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint224",
+                    "typeString": "uint224"
+                  },
+                  "typeName": {
+                    "id": 71039,
+                    "name": "uint224",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2532:7:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint224",
+                      "typeString": "uint224"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2511:38:115"
+            },
+            "scope": 71055,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 71054,
+            "nodeType": "FunctionDefinition",
+            "src": "2822:151:115",
+            "nodes": [],
+            "documentation": {
+              "id": 71043,
+              "nodeType": "StructuredDocumentation",
+              "src": "2554:265:115",
+              "text": "@notice Convert a given token amount to target token amount.\n @param fromToken The given token address.\n @param fromTokenAmount The given token amount.\n @param toToken The target token address.\n @return toTokenAmount The target token amount."
+            },
+            "functionSelector": "0041e5be",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "convertTokenAmount",
+            "nameLocation": "2831:18:115",
+            "parameters": {
+              "id": 71050,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71045,
+                  "mutability": "mutable",
+                  "name": "fromToken",
+                  "nameLocation": "2863:9:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71054,
+                  "src": "2855:17:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 71044,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2855:7:115",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 71047,
+                  "mutability": "mutable",
+                  "name": "fromTokenAmount",
+                  "nameLocation": "2886:15:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71054,
+                  "src": "2878:23:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 71046,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2878:7:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 71049,
+                  "mutability": "mutable",
+                  "name": "toToken",
+                  "nameLocation": "2915:7:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71054,
+                  "src": "2907:15:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 71048,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2907:7:115",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2849:77:115"
+            },
+            "returnParameters": {
+              "id": 71053,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71052,
+                  "mutability": "mutable",
+                  "name": "toTokenAmount",
+                  "nameLocation": "2958:13:115",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 71054,
+                  "src": "2950:21:115",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 71051,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2950:7:115",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2949:23:115"
+            },
+            "scope": 71055,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IPriceRegistry",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          71055
+        ],
+        "name": "IPriceRegistry",
+        "nameLocation": "120:14:115",
+        "scope": 71056,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 115
+}

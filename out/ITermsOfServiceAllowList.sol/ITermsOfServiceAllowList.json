@@ -1,0 +1,1012 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "acceptor",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "r",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "s",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint8",
+          "name": "v",
+          "type": "uint8"
+        }
+      ],
+      "name": "acceptTermsOfService",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "blockSender",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllAllowedSenders",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "acceptor",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        }
+      ],
+      "name": "getMessage",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "isBlockedSender",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "unblockSender",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "acceptTermsOfService(address,address,bytes32,bytes32,uint8)": "3908c4d4",
+    "blockSender(address)": "82184c7b",
+    "getAllAllowedSenders()": "817ef62e",
+    "getMessage(address,address)": "a39b06e3",
+    "isBlockedSender(address)": "a5e1d61d",
+    "unblockSender(address)": "47663acb"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"acceptor\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"}],\"name\":\"acceptTermsOfService\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"blockSender\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllAllowedSenders\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"acceptor\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"}],\"name\":\"getMessage\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"isBlockedSender\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"unblockSender\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"acceptTermsOfService(address,address,bytes32,bytes32,uint8)\":{\"params\":{\"acceptor\":\"- The wallet address that has accepted the Terms of Service on the UI\",\"r\":\"- ECDSA signature r data produced by the Chainlink Functions Subscription UI\",\"recipient\":\"- The recipient address that the acceptor is taking responsibility for\",\"s\":\"- ECDSA signature s produced by the Chainlink Functions Subscription UI\",\"v\":\"- ECDSA signature v produced by the Chainlink Functions Subscription UI\"}},\"blockSender(address)\":{\"params\":{\"sender\":\"- Address of the sender to block\"}},\"getAllAllowedSenders()\":{\"details\":\"WARNING: This operation will copy the entire storage to memory, which can be quite expensive. This is designed to mostly be used by view accessors that are queried without any gas fees. Developers should keep in mind that this function has an unbounded cost, and using it as part of a state-changing function may render the function uncallable if the set grows to a point where copying to memory consumes too much gas to fit in a block.\",\"returns\":{\"_0\":\"addresses - all allowed addresses\"}},\"getMessage(address,address)\":{\"params\":{\"acceptor\":\"- The wallet address that has accepted the Terms of Service on the UI\",\"recipient\":\"- The recipient address that the acceptor is taking responsibility for\"},\"returns\":{\"_0\":\"Hash of the message data\"}},\"isBlockedSender(address)\":{\"params\":{\"sender\":\"The transaction sender's address\"},\"returns\":{\"_0\":\"True or false\"}},\"unblockSender(address)\":{\"params\":{\"sender\":\"- Address of the sender to unblock\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"acceptTermsOfService(address,address,bytes32,bytes32,uint8)\":{\"notice\":\"Allows access to the sender based on acceptance of the Terms of Service\"},\"blockSender(address)\":{\"notice\":\"Removes a sender's access if already authorized, and disallows re-accepting the Terms of Service\"},\"getAllAllowedSenders()\":{\"notice\":\"Get a list of all allowed senders\"},\"getMessage(address,address)\":{\"notice\":\"Return the message data for the proof given to accept the Terms of Service\"},\"isBlockedSender(address)\":{\"notice\":\"Check if the address is blocked for usage\"},\"unblockSender(address)\":{\"notice\":\"Re-allows a previously blocked sender to accept the Terms of Service\"}},\"notice\":\"A contract to handle access control of subscription management dependent on signing a Terms of Service\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/v0.8/functions/dev/v1_0_0/accessControl/interfaces/ITermsOfServiceAllowList.sol\":\"ITermsOfServiceAllowList\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"none\"},\"optimizer\":{\"enabled\":true,\"runs\":10000},\"remappings\":[\":@ERC3643/=lib/ERC-3643/contracts/\",\":@chainlink/contracts-ccip/=src/v0.8/\",\":@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/\",\":@erc721a/=lib/ERC721A/contracts/\",\":@onchain-id/solidity/contracts/=lib/solidity/contracts/\",\":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@prb/test/=lib/prb-test/src/\",\":ERC-3643/=lib/ERC-3643/contracts/\",\":ERC721A/=lib/ERC721A/contracts/\",\":chainlink/=lib/chainlink/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/\",\":prb-test/=lib/prb-test/src/\",\":solidity/=lib/solidity/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/v0.8/functions/dev/v1_0_0/accessControl/interfaces/ITermsOfServiceAllowList.sol\":{\"keccak256\":\"0xa485228d63af400ddbdfb86ab7c5de998777f3cfd1e555bf0509ec3e23a5d6b3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://822aeb07aab245d0d76c34bbf43b220a4c88ff02b7b515a2d60b9fbc77c094aa\",\"dweb:/ipfs/QmbyhzcFavxhCeWzrPk56sTqkvNHhegC9BGfNSYDw5TGgE\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "acceptor",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "r",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "s",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "v",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "acceptTermsOfService"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "blockSender"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getAllAllowedSenders",
+          "outputs": [
+            {
+              "internalType": "address[]",
+              "name": "",
+              "type": "address[]"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "acceptor",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "getMessage",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "isBlockedSender",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "sender",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "unblockSender"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "acceptTermsOfService(address,address,bytes32,bytes32,uint8)": {
+            "params": {
+              "acceptor": "- The wallet address that has accepted the Terms of Service on the UI",
+              "r": "- ECDSA signature r data produced by the Chainlink Functions Subscription UI",
+              "recipient": "- The recipient address that the acceptor is taking responsibility for",
+              "s": "- ECDSA signature s produced by the Chainlink Functions Subscription UI",
+              "v": "- ECDSA signature v produced by the Chainlink Functions Subscription UI"
+            }
+          },
+          "blockSender(address)": {
+            "params": {
+              "sender": "- Address of the sender to block"
+            }
+          },
+          "getAllAllowedSenders()": {
+            "details": "WARNING: This operation will copy the entire storage to memory, which can be quite expensive. This is designed to mostly be used by view accessors that are queried without any gas fees. Developers should keep in mind that this function has an unbounded cost, and using it as part of a state-changing function may render the function uncallable if the set grows to a point where copying to memory consumes too much gas to fit in a block.",
+            "returns": {
+              "_0": "addresses - all allowed addresses"
+            }
+          },
+          "getMessage(address,address)": {
+            "params": {
+              "acceptor": "- The wallet address that has accepted the Terms of Service on the UI",
+              "recipient": "- The recipient address that the acceptor is taking responsibility for"
+            },
+            "returns": {
+              "_0": "Hash of the message data"
+            }
+          },
+          "isBlockedSender(address)": {
+            "params": {
+              "sender": "The transaction sender's address"
+            },
+            "returns": {
+              "_0": "True or false"
+            }
+          },
+          "unblockSender(address)": {
+            "params": {
+              "sender": "- Address of the sender to unblock"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "acceptTermsOfService(address,address,bytes32,bytes32,uint8)": {
+            "notice": "Allows access to the sender based on acceptance of the Terms of Service"
+          },
+          "blockSender(address)": {
+            "notice": "Removes a sender's access if already authorized, and disallows re-accepting the Terms of Service"
+          },
+          "getAllAllowedSenders()": {
+            "notice": "Get a list of all allowed senders"
+          },
+          "getMessage(address,address)": {
+            "notice": "Return the message data for the proof given to accept the Terms of Service"
+          },
+          "isBlockedSender(address)": {
+            "notice": "Check if the address is blocked for usage"
+          },
+          "unblockSender(address)": {
+            "notice": "Re-allows a previously blocked sender to accept the Terms of Service"
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@ERC3643/=lib/ERC-3643/contracts/",
+        "@chainlink/contracts-ccip/=src/v0.8/",
+        "@chainlink/contracts/=node_modules/@chainlink/contracts/src/v0.6/",
+        "@erc721a/=lib/ERC721A/contracts/",
+        "@onchain-id/solidity/contracts/=lib/solidity/contracts/",
+        "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@prb/test/=lib/prb-test/src/",
+        "ERC-3643/=lib/ERC-3643/contracts/",
+        "ERC721A/=lib/ERC721A/contracts/",
+        "chainlink/=lib/chainlink/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/contracts-upgradleable/=lib/openzeppelin-contracts-upgradleable/contracts/",
+        "prb-test/=lib/prb-test/src/",
+        "solidity/=lib/solidity/contracts/",
+        "solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000
+      },
+      "metadata": {
+        "bytecodeHash": "none"
+      },
+      "compilationTarget": {
+        "src/v0.8/functions/dev/v1_0_0/accessControl/interfaces/ITermsOfServiceAllowList.sol": "ITermsOfServiceAllowList"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/v0.8/functions/dev/v1_0_0/accessControl/interfaces/ITermsOfServiceAllowList.sol": {
+        "keccak256": "0xa485228d63af400ddbdfb86ab7c5de998777f3cfd1e555bf0509ec3e23a5d6b3",
+        "urls": [
+          "bzz-raw://822aeb07aab245d0d76c34bbf43b220a4c88ff02b7b515a2d60b9fbc77c094aa",
+          "dweb:/ipfs/QmbyhzcFavxhCeWzrPk56sTqkvNHhegC9BGfNSYDw5TGgE"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/v0.8/functions/dev/v1_0_0/accessControl/interfaces/ITermsOfServiceAllowList.sol",
+    "id": 91596,
+    "exportedSymbols": {
+      "ITermsOfServiceAllowList": [
+        91595
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:2484:162",
+    "nodes": [
+      {
+        "id": 91542,
+        "nodeType": "PragmaDirective",
+        "src": "32:24:162",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".19"
+        ]
+      },
+      {
+        "id": 91595,
+        "nodeType": "ContractDefinition",
+        "src": "173:2342:162",
+        "nodes": [
+          {
+            "id": 91553,
+            "nodeType": "FunctionDefinition",
+            "src": "526:89:162",
+            "nodes": [],
+            "documentation": {
+              "id": 91544,
+              "nodeType": "StructuredDocumentation",
+              "src": "212:311:162",
+              "text": "@notice Return the message data for the proof given to accept the Terms of Service\n @param acceptor - The wallet address that has accepted the Terms of Service on the UI\n @param recipient - The recipient address that the acceptor is taking responsibility for\n @return Hash of the message data"
+            },
+            "functionSelector": "a39b06e3",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMessage",
+            "nameLocation": "535:10:162",
+            "parameters": {
+              "id": 91549,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 91546,
+                  "mutability": "mutable",
+                  "name": "acceptor",
+                  "nameLocation": "554:8:162",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91553,
+                  "src": "546:16:162",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 91545,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "546:7:162",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 91548,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nameLocation": "572:9:162",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91553,
+                  "src": "564:17:162",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 91547,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "564:7:162",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "545:37:162"
+            },
+            "returnParameters": {
+              "id": 91552,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 91551,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91553,
+                  "src": "606:7:162",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 91550,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "606:7:162",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "605:9:162"
+            },
+            "scope": 91595,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 91561,
+            "nodeType": "FunctionDefinition",
+            "src": "756:65:162",
+            "nodes": [],
+            "documentation": {
+              "id": 91554,
+              "nodeType": "StructuredDocumentation",
+              "src": "619:134:162",
+              "text": "@notice Check if the address is blocked for usage\n @param sender The transaction sender's address\n @return True or false"
+            },
+            "functionSelector": "a5e1d61d",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isBlockedSender",
+            "nameLocation": "765:15:162",
+            "parameters": {
+              "id": 91557,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 91556,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "789:6:162",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91561,
+                  "src": "781:14:162",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 91555,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "781:7:162",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "780:16:162"
+            },
+            "returnParameters": {
+              "id": 91560,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 91559,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91561,
+                  "src": "815:4:162",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 91558,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "815:4:162",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "814:6:162"
+            },
+            "scope": 91595,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 91568,
+            "nodeType": "FunctionDefinition",
+            "src": "1387:73:162",
+            "nodes": [],
+            "documentation": {
+              "id": 91562,
+              "nodeType": "StructuredDocumentation",
+              "src": "825:559:162",
+              "text": "@notice Get a list of all allowed senders\n @dev WARNING: This operation will copy the entire storage to memory, which can be quite expensive. This is designed\n to mostly be used by view accessors that are queried without any gas fees. Developers should keep in mind that\n this function has an unbounded cost, and using it as part of a state-changing function may render the function\n uncallable if the set grows to a point where copying to memory consumes too much gas to fit in a block.\n @return addresses - all allowed addresses"
+            },
+            "functionSelector": "817ef62e",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAllAllowedSenders",
+            "nameLocation": "1396:20:162",
+            "parameters": {
+              "id": 91563,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1416:2:162"
+            },
+            "returnParameters": {
+              "id": 91567,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 91566,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91568,
+                  "src": "1442:16:162",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 91564,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1442:7:162",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 91565,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1442:9:162",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1441:18:162"
+            },
+            "scope": 91595,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 91582,
+            "nodeType": "FunctionDefinition",
+            "src": "2002:107:162",
+            "nodes": [],
+            "documentation": {
+              "id": 91569,
+              "nodeType": "StructuredDocumentation",
+              "src": "1464:535:162",
+              "text": "@notice Allows access to the sender based on acceptance of the Terms of Service\n @param acceptor - The wallet address that has accepted the Terms of Service on the UI\n @param recipient - The recipient address that the acceptor is taking responsibility for\n @param r - ECDSA signature r data produced by the Chainlink Functions Subscription UI\n @param s - ECDSA signature s produced by the Chainlink Functions Subscription UI\n @param v - ECDSA signature v produced by the Chainlink Functions Subscription UI"
+            },
+            "functionSelector": "3908c4d4",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "acceptTermsOfService",
+            "nameLocation": "2011:20:162",
+            "parameters": {
+              "id": 91580,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 91571,
+                  "mutability": "mutable",
+                  "name": "acceptor",
+                  "nameLocation": "2040:8:162",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91582,
+                  "src": "2032:16:162",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 91570,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2032:7:162",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 91573,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nameLocation": "2058:9:162",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91582,
+                  "src": "2050:17:162",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 91572,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2050:7:162",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 91575,
+                  "mutability": "mutable",
+                  "name": "r",
+                  "nameLocation": "2077:1:162",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91582,
+                  "src": "2069:9:162",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 91574,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2069:7:162",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 91577,
+                  "mutability": "mutable",
+                  "name": "s",
+                  "nameLocation": "2088:1:162",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91582,
+                  "src": "2080:9:162",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 91576,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2080:7:162",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 91579,
+                  "mutability": "mutable",
+                  "name": "v",
+                  "nameLocation": "2097:1:162",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91582,
+                  "src": "2091:7:162",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 91578,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2091:5:162",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2031:68:162"
+            },
+            "returnParameters": {
+              "id": 91581,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2108:0:162"
+            },
+            "scope": 91595,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 91588,
+            "nodeType": "FunctionDefinition",
+            "src": "2277:46:162",
+            "nodes": [],
+            "documentation": {
+              "id": 91583,
+              "nodeType": "StructuredDocumentation",
+              "src": "2113:161:162",
+              "text": "@notice Removes a sender's access if already authorized, and disallows re-accepting the Terms of Service\n @param sender - Address of the sender to block"
+            },
+            "functionSelector": "82184c7b",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "blockSender",
+            "nameLocation": "2286:11:162",
+            "parameters": {
+              "id": 91586,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 91585,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "2306:6:162",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91588,
+                  "src": "2298:14:162",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 91584,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2298:7:162",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2297:16:162"
+            },
+            "returnParameters": {
+              "id": 91587,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2322:0:162"
+            },
+            "scope": 91595,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 91594,
+            "nodeType": "FunctionDefinition",
+            "src": "2465:48:162",
+            "nodes": [],
+            "documentation": {
+              "id": 91589,
+              "nodeType": "StructuredDocumentation",
+              "src": "2327:135:162",
+              "text": "@notice Re-allows a previously blocked sender to accept the Terms of Service\n @param sender - Address of the sender to unblock"
+            },
+            "functionSelector": "47663acb",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unblockSender",
+            "nameLocation": "2474:13:162",
+            "parameters": {
+              "id": 91592,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 91591,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "2496:6:162",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91594,
+                  "src": "2488:14:162",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 91590,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2488:7:162",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2487:16:162"
+            },
+            "returnParameters": {
+              "id": 91593,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2512:0:162"
+            },
+            "scope": 91595,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ITermsOfServiceAllowList",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 91543,
+          "nodeType": "StructuredDocumentation",
+          "src": "58:115:162",
+          "text": "@notice A contract to handle access control of subscription management dependent on signing a Terms of Service"
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          91595
+        ],
+        "name": "ITermsOfServiceAllowList",
+        "nameLocation": "183:24:162",
+        "scope": 91596,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 162
+}
