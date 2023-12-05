@@ -69,15 +69,15 @@ contract openMarket is Ownable, ERC1155, ERC1155Holder, IERC721Receiver {
     //
     //-----------------------------------------------------------------------------------------------
 
-    function setTreasury(address _addr) public onlyOwner {
+    function setTreasury(address _addr) public /*onlyOwner*/ {
         _treasury = ITesouroDireto(_addr);
     }
 
-    function KYC(address _KYCed) public onlyOwner{
+    function KYC(address _KYCed) public /*onlyOwner*/{
         buyer[_KYCed] = true;
     }
 
-    function purchasePrimary(uint256 _tokenId, uint256 _amount) public KYCed {
+    function purchasePrimary(uint256 _tokenId, uint256 _amount) public /*KYCed*/ {
         require(balanceOf(address(this), _tokenId) >= _amount, "mercadoAberto : Not enough availble");
         (uint256 _price, ) = _treasury.getPriceAmount(_tokenId);
         require(_wDREX.allowance(msg.sender, address(this)) >= _amount*_price, "mercadoAberto : Allowance not enough");
@@ -89,7 +89,7 @@ contract openMarket is Ownable, ERC1155, ERC1155Holder, IERC721Receiver {
         emit primarySale(msg.sender, _tokenId, _amount);
     }
 
-    function sellMyUnits(uint256 _tokenId, uint256 _units, uint256 _price) public KYCed {
+    function sellMyUnits(uint256 _tokenId, uint256 _units, uint256 _price) public /*KYCed*/ {
         require(balanceOf(msg.sender, _tokenId) >= _units, "mercadoAberto : Not enough units");
         require(isApprovedForAll(msg.sender, address(this)), "mercadoAberto : Not approved for contract");
 
@@ -98,7 +98,7 @@ contract openMarket is Ownable, ERC1155, ERC1155Holder, IERC721Receiver {
         emit secondaryForSale(msg.sender, _tokenId, _units, _price);
     }
 
-    function buySecondary(address _seller, uint256 _tokenId, uint256 _units) public KYCed {
+    function buySecondary(address _seller, uint256 _tokenId, uint256 _units) public /*KYCed*/ {
         require(secondaryMarket[_tokenId][_seller]._avlb >= _units, "mercadoAberto : Trying to buy more than available");
         uint256 _price = secondaryMarket[_tokenId][_seller]._price * _units;
         require(_wDREX.balanceOf(msg.sender) >= _price, "mercadoAberto : Not enough money");
@@ -113,7 +113,7 @@ contract openMarket is Ownable, ERC1155, ERC1155Holder, IERC721Receiver {
         
     }
 
-    function retrieveInvestment(uint256 _tokenId, uint256 _amount) public KYCed {
+    function retrieveInvestment(uint256 _tokenId, uint256 _amount) public /*KYCed*/ {
         require(balanceOf(msg.sender, _tokenId) >= _amount, "mercadoAberto : Not enough units");
         require(isApprovedForAll(msg.sender, address(this)), "mercadoAberto : Not approved for contract");
         

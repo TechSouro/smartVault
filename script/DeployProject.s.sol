@@ -55,7 +55,6 @@ contract DeployDestination is Script, Helper {
 
         mercadoAberto = new openMarket("testURI", address(oracleDREX), 0x5bb7dd6a6eb4a440d6C70e1165243190295e290B);
     
-        mercadoAberto.setTreasury(address(tesourodireto));
         mercadoAberto.KYC(0x5bb7dd6a6eb4a440d6C70e1165243190295e290B);
         mercadoAberto.KYC(0x53318BF24EB52341b882b947b3761A5e22a15e76);
         mercadoAberto.KYC(0xAaa7cCF1627aFDeddcDc2093f078C3F173C46cA4);
@@ -72,18 +71,23 @@ contract DeployDestination is Script, Helper {
         
         // vm.stopPrank();
 
+<<<<<<< Updated upstream
         tesouroDireto myNFT = new tesouroDireto("Tesouro Direto", "TD", address(mercadoAberto), address(oracleDREX));
+=======
+        tesourodireto = new tesouroDireto("Tesouro Direto", "TD", address(mercadoAberto), address(mockErc20));
+        mercadoAberto.setTreasury(address(tesourodireto));
+>>>>>>> Stashed changes
 
         console2.log(
             "tesourodireto deployed on ",
             networks[destination],
             "with address: ",
-            address(myNFT)
+            address(tesourodireto)
         );
 
         DestinationMinter destinationMinter = new DestinationMinter(
             router,
-            address(myNFT)
+            address(tesourodireto)
         );
 
         console2.log(
@@ -93,12 +97,18 @@ contract DeployDestination is Script, Helper {
             address(destinationMinter)
         );
 
+<<<<<<< Updated upstream
         myNFT.setEmmiter(address(destinationMinter));
         myNFT.setEmmiter(address(destinationMinter));
         myNFT.setEmmiter(0x53318BF24EB52341b882b947b3761A5e22a15e76);
         myNFT.setEmmiter(0x53318BF24EB52341b882b947b3761A5e22a15e76);
         myNFT.transferOwnership(address(destinationMinter));
         address minter = myNFT.owner();
+=======
+        tesourodireto.setEmmiter(address(destinationMinter));
+        tesourodireto.transferOwnership(address(destinationMinter));
+        address minter = tesourodireto.owner();
+>>>>>>> Stashed changes
 
         console2.log("Minter role granted to: ", minter);
 

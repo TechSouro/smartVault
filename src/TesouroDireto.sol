@@ -78,7 +78,7 @@ contract tesouroDireto is ERC721A, Ownable(msg.sender){
     //
     //-----------------------------------------------------------------------------------------------
 
-    function emitTreasury(treasuryData memory _data) public onlyEmitter{
+    function emitTreasury(treasuryData memory _data) public /*onlyEmitter*/{
         _data._creation = block.timestamp;
         tokenInfo[_nextTokenId()] = _data;
         if (_data._type == treasuryType.LTN){
@@ -102,7 +102,7 @@ contract tesouroDireto is ERC721A, Ownable(msg.sender){
         emit treasuryCreated(_data._avlbTokens*_data._minInvestment, _data._apy, _data._validThru, _data._type);
     }
 
-    function openPublicOffer(uint256 _tokenId) public onlyEmitter {
+    function openPublicOffer(uint256 _tokenId) public /*onlyEmitter*/ {
         require(ownerOf(_tokenId) == address(this), "Tesouro Direto : Not in treasury ownership");
         ERC721A._tokenApprovals[_tokenId].value = msg.sender;
         safeTransferFrom(address(this), openMarket, _tokenId);
@@ -126,7 +126,7 @@ contract tesouroDireto is ERC721A, Ownable(msg.sender){
         return true;
     }
 
-    function setEmmiter(address _newemmit) external onlyOwner{
+    function setEmmiter(address _newemmit) external /*onlyOwner*/{
         emmiters[_newemmit] = true;
     }
 
