@@ -101,7 +101,7 @@ contract DeployDestination is Script, Helper {
         tesourodireto.transferOwnership(address(destinationMinter));
         address minter = tesourodireto.owner();
         tesourodireto.setEmmiter(address(destinationMinter));
-        tesourodireto.transferOwnership(address(destinationMinter));
+        // tesourodireto.transferOwnership(address(destinationMinter));
         // address minter = tesourodireto.owner();
 
         console2.log("Minter role granted to: ", minter);
