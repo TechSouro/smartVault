@@ -27,7 +27,7 @@ contract DeployDestination is Script, Helper {
 
 
     VaultSimple public vaultSimple;
-     oracleDrex public oracleDREX;
+    mockERC20 public oracleDREX;
     
 
     address public owner = makeAddr("owner"); //also the emitter
@@ -71,8 +71,8 @@ contract DeployDestination is Script, Helper {
         
         // vm.stopPrank();
 
-        tesouroDireto myNFT = new tesouroDireto("Tesouro Direto", "TD", address(mercadoAberto), address(oracleDREX));
-        tesourodireto = new tesouroDireto("Tesouro Direto", "TD", address(mercadoAberto), address(mockErc20));
+        // tesouroDireto myNFT = new tesouroDireto("Tesouro Direto", "TD", address(mercadoAberto), address(oracleDREX));
+        tesourodireto = new tesouroDireto("Tesouro Direto", "TD", address(mercadoAberto), address(oracleDREX));
         mercadoAberto.setTreasury(address(tesourodireto));
 
         console2.log(
