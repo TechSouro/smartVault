@@ -12,7 +12,7 @@ import {DestinationMinter} from "../src/cross-chain-nft-minter/DestinationMinter
 import {SourceMinter} from "../src/cross-chain-nft-minter/SourceMinterTesouro.sol";
 
 //Vault and OracleDREX
-import {oracleDrex} from "../src/oracleDREX.sol";
+// import {oracleDrex} from "../src/oracleDREX.sol";
 
 import {VaultSimple} from "../src/VaultSimple.sol";
 import "../test/mocks/mockERC20DREX.sol";
@@ -43,7 +43,7 @@ contract DeployDestination is Script, Helper {
         (address router, , , ) = getConfigFromNetwork(destination);
 
         
-        oracleDREX = new oracleDrex();
+        oracleDREX = new mockERC20();
         // oracleDREX.mintTest(0xAaa7cCF1627aFDeddcDc2093f078C3F173C46cA4, 10000); //mint 100 DREX
         oracleDREX.mint(0x53318BF24EB52341b882b947b3761A5e22a15e76,10000000);
         oracleDREX.mint(0x53318BF24EB52341b882b947b3761A5e22a15e76,10000000);
@@ -102,7 +102,7 @@ contract DeployDestination is Script, Helper {
         address minter = tesourodireto.owner();
         tesourodireto.setEmmiter(address(destinationMinter));
         tesourodireto.transferOwnership(address(destinationMinter));
-        address minter = tesourodireto.owner();
+        // address minter = tesourodireto.owner();
 
         console2.log("Minter role granted to: ", minter);
 

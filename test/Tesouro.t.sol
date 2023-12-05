@@ -71,7 +71,7 @@ contract Tesouro is Test {
         testCreateTesouroDireto();
 
         vm.startPrank(user);
-        mockErc20.mint( 3 ether);
+        mockErc20.mint(user, 3 ether);
         mockErc20.approve(address(mercadoAberto), 2 ether);
         console.log("wDrex balance of user previous to purchase: ", mockErc20.balanceOf(user));
         console.log("wDrex balance of union previous to purchase: ", mockErc20.balanceOf(union));
