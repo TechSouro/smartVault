@@ -71,12 +71,9 @@ contract DeployDestination is Script, Helper {
         
         // vm.stopPrank();
 
-<<<<<<< Updated upstream
         tesouroDireto myNFT = new tesouroDireto("Tesouro Direto", "TD", address(mercadoAberto), address(oracleDREX));
-=======
         tesourodireto = new tesouroDireto("Tesouro Direto", "TD", address(mercadoAberto), address(mockErc20));
         mercadoAberto.setTreasury(address(tesourodireto));
->>>>>>> Stashed changes
 
         console2.log(
             "tesourodireto deployed on ",
@@ -97,18 +94,15 @@ contract DeployDestination is Script, Helper {
             address(destinationMinter)
         );
 
-<<<<<<< Updated upstream
-        myNFT.setEmmiter(address(destinationMinter));
-        myNFT.setEmmiter(address(destinationMinter));
-        myNFT.setEmmiter(0x53318BF24EB52341b882b947b3761A5e22a15e76);
-        myNFT.setEmmiter(0x53318BF24EB52341b882b947b3761A5e22a15e76);
-        myNFT.transferOwnership(address(destinationMinter));
-        address minter = myNFT.owner();
-=======
+        tesourodireto.setEmmiter(address(destinationMinter));
+        tesourodireto.setEmmiter(address(destinationMinter));
+        tesourodireto.setEmmiter(0x53318BF24EB52341b882b947b3761A5e22a15e76);
+        tesourodireto.setEmmiter(0x53318BF24EB52341b882b947b3761A5e22a15e76);
+        tesourodireto.transferOwnership(address(destinationMinter));
+        address minter = tesourodireto.owner();
         tesourodireto.setEmmiter(address(destinationMinter));
         tesourodireto.transferOwnership(address(destinationMinter));
         address minter = tesourodireto.owner();
->>>>>>> Stashed changes
 
         console2.log("Minter role granted to: ", minter);
 
