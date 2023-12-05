@@ -65,32 +65,32 @@ contract VaultSimple is Ownable(msg.sender) {
         emit UpdatedAuthorization(_target, _value);
     }
 
-    function setGovernor(address _governance, bool _value) external onlyOwner{
+    function setGovernor(address _governance, bool _value) external /*onlyOwner*/{
         governor[_governance] = _value;
         emit NewGovernor(_governance, _value);
     }
 
-    function setLimitTransfer(address _from, address _to, uint _amount) external onlyOwner{
+    function setLimitTransfer(address _from, address _to, uint _amount) external /*onlyOwner*/{
         approvedMove[_from][_to] = _amount;
         emit Approved(_from, _to,_amount);
     }
 
 //deposit in vault
-  function deposit(uint256 _amount) external onlyUnlocked {
+  function deposit(uint256 _amount) external /*onlyUnlocked*/ {
     //approve this address before transfer
     IERC20(drex).transferFrom(msg.sender, address(this), _amount);
     emit Deposit(msg.sender, _amount, address(this));
   }
 
-  function withdrawOwner(uint256 _amount) external onlyEmergency  {
+  function withdrawOwner(uint256 _amount) external /*onlyEmergency*/  {
     _onlyAuthorized();
     IERC20(drex).transfer(msg.sender, _amount);
     emit Withdraw(msg.sender, _amount);
   }
 
 ///@dev drex movement related to the municipality and quantity approved by Bacen
-  function moveDREX(address _to, uint256 _amount)external onlyUnlocked amountApprove(_to, _amount){
-    _onlyGovernor();
+  function moveDREX(address _to, uint256 _amount)external /*onlyUnlocked amountApprove(_to, _amount)*/{
+    //_onlyGovernor();
     IERC20(drex).transfer(msg.sender, _amount);
    emit MoveDREX(msg.sender,_to,_amount);
   }
@@ -107,54 +107,59 @@ contract VaultSimple is Ownable(msg.sender) {
     state = VaultState.Locked;
     emit StateUpdated(VaultState.Locked);
   }
+  function unlock()external onlyOwner{
+    stateBeforePause = state;
+    state = VaultState.Unlocked;
+    emit StateUpdated(VaultState.Unlocked);
+  }
 
 
-     function _onlyAuthorized() internal view {
-        require(authorizedAddresses[msg.sender] == true || governor[msg.sender] == true, "!authorized");
-    }
+  function _onlyAuthorized() internal view {
+      require(authorizedAddresses[msg.sender] == true || governor[msg.sender] == true, "!authorized");
+  }
 
-    function _onlyGovernor() internal view {
-        require(governor[msg.sender] == true, "!governor");
-    }
-
-
-
-        /*=====================
-    *     Modifiers      *
-    *====================*/
-
-    /**
-     * @dev can only be executed in the unlocked state.
-     */
-    modifier onlyUnlocked {
-        require(state == VaultState.Unlocked, "!Unlocked");
-        _;
-    }
-
-    /**
-     * @dev can only be executed in the locked state.
-     */
-    modifier onlyLocked {
-        require(state == VaultState.Locked, "!Locked");
-        _;
-    }
-
-    /**
-     * @dev can only be executed in the locked state.
-     */
-    modifier onlyEmergency {
-        require(state == VaultState.Emergency, "!Emergency");
-        _;
-    }
+  function _onlyGovernor() internal view {
+      require(governor[msg.sender] == true, "!governor");
+  }
 
 
-    /**
-     * @dev can only be move amount approved
-     */
-    modifier amountApprove(address _to, uint256 _amount) {
-        require(approvedMove[msg.sender][_to] <= _amount, "not approved move this amount");
-        _;
-    }
+
+  /*=====================
+  *     Modifiers      *
+  *====================*/
+
+  /**
+   * @dev can only be executed in the unlocked state.
+   */
+  modifier onlyUnlocked {
+      require(state == VaultState.Unlocked, "!Unlocked");
+      _;
+  }
+
+  /**
+   * @dev can only be executed in the locked state.
+   */
+  modifier onlyLocked {
+      require(state == VaultState.Locked, "!Locked");
+      _;
+  }
+
+  /**
+   * @dev can only be executed in the locked state.
+   */
+  modifier onlyEmergency {
+      require(state == VaultState.Emergency, "!Emergency");
+      _;
+  }
+
+
+  /**
+   * @dev can only be move amount approved
+   */
+  modifier amountApprove(address _to, uint256 _amount) {
+      require(approvedMove[msg.sender][_to] <= _amount, "not approved move this amount");
+      _;
+  }
 
 }
 

@@ -23,7 +23,7 @@ contract tesouroDireto is ERC721A, Ownable(msg.sender){
     //
     //-----------------------------------------------------------------------------------------------
 
-    event treasuryCreated(uint256 indexed _totalValue, uint256 indexed _apy, uint256 indexed _duration, treasuryType);
+    event treasuryCreated(uint256 indexed _tokenId, uint256 indexed _totalValue, uint256 indexed _apy, uint256 _duration, treasuryType);
     
 
     //-----------------------------------------------------------------------------------------------
@@ -99,7 +99,7 @@ contract tesouroDireto is ERC721A, Ownable(msg.sender){
         }else{
             revert NotValidTreasuryType();
         }
-        emit treasuryCreated(_data._avlbTokens*_data._minInvestment, _data._apy, _data._validThru, _data._type);
+        emit treasuryCreated(_nextTokenId()-1,_data._avlbTokens*_data._minInvestment, _data._apy, _data._validThru, _data._type);
     }
 
     function openPublicOffer(uint256 _tokenId) public /*onlyEmitter*/ {
