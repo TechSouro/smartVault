@@ -12,8 +12,7 @@ import {DestinationMinter} from "../src/cross-chain-nft-minter/DestinationMinter
 import {SourceMinter} from "../src/cross-chain-nft-minter/SourceMinterTesouro.sol";
 
 //Vault and OracleDREX
-import {VaultERC3643} from "../src/VaultERC3643.sol";
-import {OracleDREXerc3643} from "../src/OracleDREXerc3643.sol";
+import {oracleDrex} from "../src/oracleDREX.sol";
 
 import {VaultSimple} from "../src/VaultSimple.sol";
 import "../test/mocks/mockERC20DREX.sol";
@@ -24,11 +23,11 @@ contract DeployDestination is Script, Helper {
 
     tesouroDireto public tesourodireto;
     openMarket public mercadoAberto;
-    mockERC20 public mockErc20;
+    //mockERC20 public mockErc20;
 
 
     VaultSimple public vaultSimple;
-    // OracleDREXerc3643 public oracleDREX;
+     oracleDrex public oracleDREX;
     
 
     address public owner = makeAddr("owner"); //also the emitter
@@ -44,25 +43,36 @@ contract DeployDestination is Script, Helper {
         (address router, , , ) = getConfigFromNetwork(destination);
 
         
-        mockErc20 = new mockERC20();
+        oracleDREX = new oracleDrex();
         // oracleDREX.mintTest(0xAaa7cCF1627aFDeddcDc2093f078C3F173C46cA4, 10000); //mint 100 DREX
-        mockErc20.mint(10000);
+        oracleDREX.mint(0x53318BF24EB52341b882b947b3761A5e22a15e76,10000000);
+        oracleDREX.mint(0x53318BF24EB52341b882b947b3761A5e22a15e76,10000000);
+        oracleDREX.mint(0xAaa7cCF1627aFDeddcDc2093f078C3F173C46cA4,10000000);
+        
+        //0xAaa7cCF1627aFDeddcDc2093f078C3F173C46cA4
 
-        vaultSimple = new VaultSimple(address(mockErc20));
+        vaultSimple = new VaultSimple(address(oracleDREX));
 
-        mercadoAberto = new openMarket("testURI", address(mockErc20), 0x5bb7dd6a6eb4a440d6C70e1165243190295e290B);
+        mercadoAberto = new openMarket("testURI", address(oracleDREX), 0x5bb7dd6a6eb4a440d6C70e1165243190295e290B);
     
         mercadoAberto.setTreasury(address(tesourodireto));
         mercadoAberto.KYC(0x5bb7dd6a6eb4a440d6C70e1165243190295e290B);
+        mercadoAberto.KYC(0x53318BF24EB52341b882b947b3761A5e22a15e76);
+        mercadoAberto.KYC(0xAaa7cCF1627aFDeddcDc2093f078C3F173C46cA4);
+        oracleDREX.approve(address(mercadoAberto), 100000000000000000000000);
+        oracleDREX.mint(address(mercadoAberto), 1000000000000);
 
-        console2.log("Address of oracleDREX: ", address(mockErc20));
+
+
+//0x53318BF24EB52341b882b947b3761A5e22a15e76
+        console2.log("Address of oracleDREX: ", address(oracleDREX));
         console2.log("Address of mercadoAberto: ", address(mercadoAberto));
         console2.log("Address of Vault: ", address(vaultSimple));
         
         
         // vm.stopPrank();
 
-        tesouroDireto myNFT = new tesouroDireto("Tesouro Direto", "TD", address(mercadoAberto), address(mockErc20));
+        tesouroDireto myNFT = new tesouroDireto("Tesouro Direto", "TD", address(mercadoAberto), address(oracleDREX));
 
         console2.log(
             "tesourodireto deployed on ",
@@ -84,6 +94,9 @@ contract DeployDestination is Script, Helper {
         );
 
         myNFT.setEmmiter(address(destinationMinter));
+        myNFT.setEmmiter(address(destinationMinter));
+        myNFT.setEmmiter(0x53318BF24EB52341b882b947b3761A5e22a15e76);
+        myNFT.setEmmiter(0x53318BF24EB52341b882b947b3761A5e22a15e76);
         myNFT.transferOwnership(address(destinationMinter));
         address minter = myNFT.owner();
 

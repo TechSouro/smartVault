@@ -74,6 +74,19 @@ src
 
 `forge verify-contract 0x6ec34D04a5F321F854a8fEd1a754fC54B61f59fc src/cross-chain-nft-minter/SourceMinterTesouro.sol:SourceMinter --chain-id 80001 --num-of-optimizations 1000000 --watch --constructor-args $(cast abi-encode "constructor(address,address)" 0x70499c328e1E2a3c41108bd3730F6670a44595D1 0x326C977E6efc84E512bB9C30f76E30c160eD06FB) \--etherscan-api-key EBDF8WC3ADE16T9YUD9Y81F8TJJF52FG7E`
 
+Comandos para verificar:
+
+`forge verify-contract 0x45c41FeDC33e85047B60D448FC4eF16981822A09 src/mercadoAberto.sol:openMarket --chain-id 11155111 --num-of-optimizations 1000000 --watch --constructor-args $(cast abi-encode "constructor(string,address,address)" "testURI" 0x60e20aC02Ccf5C35056C6b698DBbbe0e662bf1dB 0x5bb7dd6a6eb4a440d6C70e1165243190295e290B) \--etherscan-api-key ECJCCZZKNZEH8Z8P2EJ6GCE7G7YCRFTRZA
+
+
+forge verify-contract 0x4978A4140DF1245d19430BAe86Aa954bD33BCf07 src/TesouroDireto.sol:tesouroDireto --chain-id 11155111 --num-of-optimizations 1000000 --watch --constructor-args $(cast abi-encode "constructor(string,string,address,address)" "Tesouro Direto" "TD" 0x45c41FeDC33e85047B60D448FC4eF16981822A09 0x60e20aC02Ccf5C35056C6b698DBbbe0e662bf1dB) \--etherscan-api-key ECJCCZZKNZEH8Z8P2EJ6GCE7G7YCRFTRZA
+
+forge verify-contract 0x60e20aC02Ccf5C35056C6b698DBbbe0e662bf1dB src/OracleDREX.sol:oracleDrex --chain-id 11155111 --etherscan-api-key ECJCCZZKNZEH8Z8P2EJ6GCE7G7YCRFTRZA
+
+
+forge verify-contract 0x45c41FeDC33e85047B60D448FC4eF16981822A09 src/mercadoAberto.sol:openMarket --chain-id 11155111 --num-of-optimizations 1000000 --watch --constructor-args $(cast abi-encode "constructor(string,address,address)" "testURI" 0x60e20aC02Ccf5C35056C6b698DBbbe0e662bf1dB 0x5bb7dd6a6eb4a440d6C70e1165243190295e290B) \--etherscan-api-key ECJCCZZKNZEH8Z8P2EJ6GCE7G7YCRFTRZA
+Start verifying contract `0x45c41fedc33e85047b60d448fc4ef16981822a09``
+
 - O contrato e os parametros:
 https://mumbai.polygonscan.com/address/0x94673693c7C8201FACAdE1ff62AB3f760A81DF1d#writeContract
 

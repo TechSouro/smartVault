@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.8.21;
 
 import "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol";
@@ -14,15 +14,16 @@ contract oracleDrex is ERC20, Ownable(msg.sender) {
 
     /// @dev current state of the oracle
     State public state;
+forge verify-contract 0x45c41FeDC33e85047B60D448FC4eF16981822A09 src/mercadoAberto.sol:openMarket --chain-id 11155111 --num-of-optimizations 1000000 --watch --constructor-args $(cast abi-encode "constructor(string,address,address)" "testURI" 0x60e20aC02Ccf5C35056C6b698DBbbe0e662bf1dB 0x5bb7dd6a6eb4a440d6C70e1165243190295e290B) \--etherscan-api-key ECJCCZZKNZEH8Z8P2EJ6GCE7G7YCRFTRZA
 
-    /// @dev state of the oracle before it was paused
-    State public stateBeforePause;
 
-    /// @dev the timestamp at which the current oracle started
-    uint256 public startTime;
+forge verify-contract 0x4978A4140DF1245d19430BAe86Aa954bD33BCf07 src/TesouroDireto.sol:tesouroDireto --chain-id 11155111 --num-of-optimizations 1000000 --watch --constructor-args $(cast abi-encode "constructor(string,string,address,address)" "Tesouro Direto" "TD" 0x45c41FeDC33e85047B60D448FC4eF16981822A09 0x60e20aC02Ccf5C35056C6b698DBbbe0e662bf1dB) \--etherscan-api-key ECJCCZZKNZEH8Z8P2EJ6GCE7G7YCRFTRZA
 
-    mapping(address => bool) public authorizedAddresses;
-    mapping(address => bool) public governor;
+forge verify-contract 0x60e20aC02Ccf5C35056C6b698DBbbe0e662bf1dB src/OracleDREX.sol:oracleDrex --chain-id 11155111 --etherscan-api-key ECJCCZZKNZEH8Z8P2EJ6GCE7G7YCRFTRZA
+
+
+forge verify-contract 0x45c41FeDC33e85047B60D448FC4eF16981822A09 src/mercadoAberto.sol:openMarket --chain-id 11155111 --num-of-optimizations 1000000 --watch --constructor-args $(cast abi-encode "constructor(string,address,address)" "testURI" 0x60e20aC02Ccf5C35056C6b698DBbbe0e662bf1dB 0x5bb7dd6a6eb4a440d6C70e1165243190295e290B) \--etherscan-api-key ECJCCZZKNZEH8Z8P2EJ6GCE7G7YCRFTRZA
+Start verifying contract `0x45c41fedc33e85047b60d448fc4ef16981822a09`;
 
 
     /*=====================
